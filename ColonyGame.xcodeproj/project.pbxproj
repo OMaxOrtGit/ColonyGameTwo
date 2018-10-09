@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		44CF4580213A0121006077E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF457F213A0121006077E1 /* AppDelegate.swift */; };
+		44CF4582213A0121006077E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CF4581213A0121006077E1 /* ViewController.swift */; };
+		44CF4585213A0121006077E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CF4583213A0121006077E1 /* Main.storyboard */; };
+		44CF4587213A0124006077E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44CF4586213A0124006077E1 /* Assets.xcassets */; };
+		44CF458A213A0124006077E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44CF4588213A0124006077E1 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		44CF4591213A0124006077E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44CF4574213A0121006077E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44CF457B213A0121006077E1;
+			remoteInfo = ColonyGame;
+		};
+		44CF459C213A0124006077E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44CF4574213A0121006077E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 44CF457B213A0121006077E1;
+			remoteInfo = ColonyGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		44CF457C213A0121006077E1 /* ColonyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColonyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		44CF457F213A0121006077E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		44CF4581213A0121006077E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		44CF4584213A0121006077E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44CF4586213A0124006077E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		44CF4589213A0124006077E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		44CF458B213A0124006077E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44CF4590213A0124006077E1 /* ColonyGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColonyGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		44CF459B213A0124006077E1 /* ColonyGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColonyGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44CF4579213A0121006077E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF458D213A0124006077E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF4598213A0124006077E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		44CF4573213A0121006077E1 = {
+			isa = PBXGroup;
+			children = (
+				44CF457E213A0121006077E1 /* ColonyGame */,
+				44CF457D213A0121006077E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		44CF457D213A0121006077E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44CF457C213A0121006077E1 /* ColonyGame.app */,
+				44CF4590213A0124006077E1 /* ColonyGameTests.xctest */,
+				44CF459B213A0124006077E1 /* ColonyGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		44CF457E213A0121006077E1 /* ColonyGame */ = {
+			isa = PBXGroup;
+			children = (
+				44CF457F213A0121006077E1 /* AppDelegate.swift */,
+				44CF4581213A0121006077E1 /* ViewController.swift */,
+				44CF4583213A0121006077E1 /* Main.storyboard */,
+				44CF4586213A0124006077E1 /* Assets.xcassets */,
+				44CF4588213A0124006077E1 /* LaunchScreen.storyboard */,
+				44CF458B213A0124006077E1 /* Info.plist */,
+			);
+			path = ColonyGame;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		44CF457B213A0121006077E1 /* ColonyGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44CF45A4213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGame" */;
+			buildPhases = (
+				44CF4578213A0121006077E1 /* Sources */,
+				44CF4579213A0121006077E1 /* Frameworks */,
+				44CF457A213A0121006077E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColonyGame;
+			productName = ColonyGame;
+			productReference = 44CF457C213A0121006077E1 /* ColonyGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		44CF458F213A0124006077E1 /* ColonyGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44CF45A7213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGameTests" */;
+			buildPhases = (
+				44CF458C213A0124006077E1 /* Sources */,
+				44CF458D213A0124006077E1 /* Frameworks */,
+				44CF458E213A0124006077E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44CF4592213A0124006077E1 /* PBXTargetDependency */,
+			);
+			name = ColonyGameTests;
+			productName = ColonyGameTests;
+			productReference = 44CF4590213A0124006077E1 /* ColonyGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		44CF459A213A0124006077E1 /* ColonyGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 44CF45AA213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGameUITests" */;
+			buildPhases = (
+				44CF4597213A0124006077E1 /* Sources */,
+				44CF4598213A0124006077E1 /* Frameworks */,
+				44CF4599213A0124006077E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				44CF459D213A0124006077E1 /* PBXTargetDependency */,
+			);
+			name = ColonyGameUITests;
+			productName = ColonyGameUITests;
+			productReference = 44CF459B213A0124006077E1 /* ColonyGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		44CF4574213A0121006077E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Jennifer Ortman";
+				TargetAttributes = {
+					44CF457B213A0121006077E1 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					44CF458F213A0124006077E1 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 44CF457B213A0121006077E1;
+					};
+					44CF459A213A0124006077E1 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 44CF457B213A0121006077E1;
+					};
+				};
+			};
+			buildConfigurationList = 44CF4577213A0121006077E1 /* Build configuration list for PBXProject "ColonyGame" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 44CF4573213A0121006077E1;
+			productRefGroup = 44CF457D213A0121006077E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				44CF457B213A0121006077E1 /* ColonyGame */,
+				44CF458F213A0124006077E1 /* ColonyGameTests */,
+				44CF459A213A0124006077E1 /* ColonyGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		44CF457A213A0121006077E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44CF458A213A0124006077E1 /* LaunchScreen.storyboard in Resources */,
+				44CF4587213A0124006077E1 /* Assets.xcassets in Resources */,
+				44CF4585213A0121006077E1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF458E213A0124006077E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF4599213A0124006077E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		44CF4578213A0121006077E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44CF4582213A0121006077E1 /* ViewController.swift in Sources */,
+				44CF4580213A0121006077E1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF458C213A0124006077E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44CF4597213A0124006077E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		44CF4592213A0124006077E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44CF457B213A0121006077E1 /* ColonyGame */;
+			targetProxy = 44CF4591213A0124006077E1 /* PBXContainerItemProxy */;
+		};
+		44CF459D213A0124006077E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 44CF457B213A0121006077E1 /* ColonyGame */;
+			targetProxy = 44CF459C213A0124006077E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		44CF4583213A0121006077E1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44CF4584213A0121006077E1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		44CF4588213A0124006077E1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				44CF4589213A0124006077E1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		44CF45A2213A0124006077E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		44CF45A3213A0124006077E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		44CF45A5213A0124006077E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YQ2953637;
+				INFOPLIST_FILE = ColonyGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		44CF45A6213A0124006077E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4YQ2953637;
+				INFOPLIST_FILE = ColonyGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		44CF45A8213A0124006077E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColonyGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.temp.ColonyGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColonyGame.app/ColonyGame";
+			};
+			name = Debug;
+		};
+		44CF45A9213A0124006077E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColonyGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.temp.ColonyGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ColonyGame.app/ColonyGame";
+			};
+			name = Release;
+		};
+		44CF45AB213A0124006077E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColonyGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.temp.ColonyGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ColonyGame;
+			};
+			name = Debug;
+		};
+		44CF45AC213A0124006077E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColonyGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.temp.ColonyGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ColonyGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		44CF4577213A0121006077E1 /* Build configuration list for PBXProject "ColonyGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44CF45A2213A0124006077E1 /* Debug */,
+				44CF45A3213A0124006077E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44CF45A4213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44CF45A5213A0124006077E1 /* Debug */,
+				44CF45A6213A0124006077E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44CF45A7213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44CF45A8213A0124006077E1 /* Debug */,
+				44CF45A9213A0124006077E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		44CF45AA213A0124006077E1 /* Build configuration list for PBXNativeTarget "ColonyGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				44CF45AB213A0124006077E1 /* Debug */,
+				44CF45AC213A0124006077E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 44CF4574213A0121006077E1 /* Project object */;
+}
