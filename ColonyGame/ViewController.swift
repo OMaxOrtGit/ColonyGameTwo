@@ -168,7 +168,7 @@ var A7V = 0
 var A8V = 0
 var A9V = 0
 
-var FightsNum = 1
+var FightsNum = 4
 
 var date = Date()
 var dateDB = ""
@@ -1739,6 +1739,7 @@ class War: UIViewController {
         date = Date()
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
+            
             CR1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
             CR2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
             CR3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
@@ -1748,6 +1749,29 @@ class War: UIViewController {
             CR7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
             CR8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
             CR9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            
+            
+            SM1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR1.text!)! / 3)"
+            SM2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR2.text!)! / 3)"
+            SM3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR3.text!)! / 3)"
+            SM4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR4.text!)! / 3)"
+            SM5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR5.text!)! / 3)"
+            SM6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR6.text!)! / 3)"
+            SM7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR7.text!)! / 3)"
+            SM8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR8.text!)! / 3)"
+            SM9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR9.text!)! / 3)"
+            
+            
+            A1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR1.text!)! / 3)"
+            A2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR2.text!)! / 3)"
+            A3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR3.text!)! / 3)"
+            A4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR4.text!)! / 3)"
+            A5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR5.text!)! / 3)"
+            A6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR6.text!)! / 3)"
+            A7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR7.text!)! / 3)"
+            A8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR8.text!)! / 3)"
+            A9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(5, FightsNum))) ))) / 2 + Int(CR9.text!)! / 3)"
+            
         }
         date = Date()
         formatter.dateFormat = "dd.MM.yyyy"
