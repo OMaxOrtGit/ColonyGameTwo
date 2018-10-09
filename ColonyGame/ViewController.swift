@@ -168,9 +168,12 @@ var A7V = 0
 var A8V = 0
 var A9V = 0
 
-var FightsNum = 0
+var FightsNum = 1
 
-let date = Date()
+var date = Date()
+var dateDB = ""
+var dateDN = ""
+let formatter = DateFormatter()
 
 var test = false
 
@@ -1728,22 +1731,28 @@ class War: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if date == "hi" {
-            CR1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
-            CR9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum))"
+        
+        //if userDefaults.string(forKey: "dateDB")! == {
+        
+            //dateDB = userDefaults.string(forKey: "dateDB")!
+        //}
+        date = Date()
+        dateDN = formatter.string(from: date)
+        if dateDN == dateDB || dateDB == "" {
+            CR1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
+            CR9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(10, FightsNum)))))) + (FightsNum * 10))"
         }
         date = Date()
-        let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
-        let dateDB = formatter.string(from: date)
-        let dateDN = formatter.string(from: date)
+        dateDB = formatter.string(from: date)
+        userDefaults.set(dateDB, forKey: "dateDB")
     }
     
     
