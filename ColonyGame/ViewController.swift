@@ -1737,6 +1737,9 @@ class War: UIViewController {
             //dateDB = userDefaults.string(forKey: "dateDB")!
         //}
         date = Date()
+        if let key = UserDefaults.standard.string(forKey: "dateDB"){
+            dateDB = userDefaults.string(forKey: "dateDB")!
+        }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
             
