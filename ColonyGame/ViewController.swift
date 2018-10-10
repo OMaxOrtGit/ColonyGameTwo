@@ -1782,7 +1782,6 @@ class War: UIViewController {
     
     
     
-    
 }
 
 
