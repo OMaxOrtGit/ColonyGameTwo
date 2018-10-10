@@ -1737,12 +1737,11 @@ class War: UIViewController {
             //dateDB = userDefaults.string(forKey: "dateDB")!
         //}
         date = Date()
-        if let key = UserDefaults.standard.string(forKey: "dateDB"){
+        if UserDefaults.standard.string(forKey: "dateDB") != nil{
             dateDB = userDefaults.string(forKey: "dateDB")!
         }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
-            
             CR1.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
             CR2.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
             CR3.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
