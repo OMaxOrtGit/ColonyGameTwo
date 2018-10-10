@@ -1745,6 +1745,7 @@ class War: UIViewController {
         }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
+            
             CR1V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
             CR2V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
             CR3V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
@@ -1776,6 +1777,7 @@ class War: UIViewController {
             A7V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7V) / 30
             A8V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8V) / 30
             A9V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9V) / 30
+            
             userDefaults.set(CR1V, forKey: "CR1V")
             userDefaults.set(CR2V, forKey: "CR2V")
             userDefaults.set(CR3V, forKey: "CR3V")
