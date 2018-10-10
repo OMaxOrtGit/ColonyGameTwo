@@ -1739,40 +1739,72 @@ class War: UIViewController {
         date = Date()
         if UserDefaults.standard.string(forKey: "dateDB") != nil{
             dateDB = userDefaults.string(forKey: "dateDB")!
+            print(1)
+        } else {
+            print(1)
         }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
-            CR1.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR2.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR3.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR4.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR5.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR6.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR7.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR8.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
-            CR9.text = "\((Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10)"
+            CR1V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR2V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR3V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR4V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR5V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR6V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR7V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR8V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            CR9V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
             
             
-            SM1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1.text!)! / 30)"
-            SM2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2.text!)! / 30)"
-            SM3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3.text!)! / 30)"
-            SM4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4.text!)! / 30)"
-            SM5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5.text!)! / 30)"
-            SM6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6.text!)! / 30)"
-            SM7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7.text!)! / 30)"
-            SM8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8.text!)! / 30)"
-            SM9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9.text!)! / 30)"
+            SM1V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1V) / 30
+            SM2V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2V) / 30
+            SM3V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3V) / 30
+            SM4V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4V) / 30
+            SM5V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5V) / 30
+            SM6V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6V) / 30
+            SM7V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7V) / 30
+            SM8V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8V) / 30
+            SM9V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9V) / 30
             
             
-            A1.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1.text!)! / 30)"
-            A2.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2.text!)! / 30)"
-            A3.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3.text!)! / 30)"
-            A4.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4.text!)! / 30)"
-            A5.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5.text!)! / 30)"
-            A6.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6.text!)! / 30)"
-            A7.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7.text!)! / 30)"
-            A8.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8.text!)! / 30)"
-            A9.text = "\(Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9.text!)! / 30)"
+            A1V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1V) / 30
+            A2V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2V) / 30
+            A3V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3V) / 30
+            A4V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4V) / 30
+            A5V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5V) / 30
+            A6V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6V) / 30
+            A7V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7V) / 30
+            A8V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8V) / 30
+            A9V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9V) / 30
+            userDefaults.set(CR1V, forKey: "CR1V")
+            userDefaults.set(CR2V, forKey: "CR2V")
+            userDefaults.set(CR3V, forKey: "CR3V")
+            userDefaults.set(CR4V, forKey: "CR4V")
+            userDefaults.set(CR5V, forKey: "CR5V")
+            userDefaults.set(CR6V, forKey: "CR6V")
+            userDefaults.set(CR7V, forKey: "CR7V")
+            userDefaults.set(CR8V, forKey: "CR8V")
+            userDefaults.set(CR9V, forKey: "CR9V")
+            
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(dateDB, forKey: "dateDB")
             
             print(dateDB)
         }
