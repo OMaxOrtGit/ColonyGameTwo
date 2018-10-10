@@ -1745,7 +1745,7 @@ class War: UIViewController {
         }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
-            
+                
             CR1V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
             CR2V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
             CR3V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
