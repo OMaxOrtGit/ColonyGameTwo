@@ -35,7 +35,7 @@ var ShingleV = 0
 var RoofV = 0
 var WallV = 0
 var DoorV = 0
-var GrinderV = 3
+var GrinderV = 0
 var FurnaceV = 0
 var AnvilV = 0
 
@@ -51,7 +51,7 @@ var KingdomV = 0
 var EmpireV = 0
 
 var EmployedV = 0
-var UnEmployedV = 3
+var UnEmployedV = 0
 var FarmerV = 0
 var MinerV = 0
 var LumberJackV = 0
@@ -92,7 +92,7 @@ var LumberJackSwitch = true
 
 var StickV = 0
 var AxeV = 1
-var PickV = 0
+var PickV = 1
 var HoeV = 0
 var ScaleV = 0
 var SwordV = 0
@@ -180,8 +180,91 @@ var test = false
 class StartUp: UITableViewController {
     
     
+    
     override func viewDidLoad() {
- 
+        if MinerV >= 1 || LumberJackV >= 1 || CrafterV >= 1 || BSIV >= 1 || BSNV >= 1 || BSPV >= 1{
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
+            
+            MinerVC = true
+            test = true
+            MinerCV += 0.1 * Double(MinerV)
+            while MinerCV >= 3.0 {
+                MinerCV -= 3.0
+                RockR = Int(arc4random_uniform(5))+1
+                if RockR == 2 {
+                    IronOreV += 1
+                    userDefaults.set(IronOreV, forKey: "IronOreV")
+                } else {
+                    RockV += 1
+                    userDefaults.set(RockV, forKey: "RockV")
+                }
+            }
+            
+            LumberJackCV += 0.1 * Double(LumberJackV)
+            while LumberJackCV >= 3.0 {
+                LumberJackCV -= 3.0
+                ScrapWoodV += 5
+                userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+            }
+            
+            CrafterCV += 0.1 * Double(CrafterV)
+            while CrafterCV >= 3.0 {
+                CrafterCV -= 3.0
+                if ScrapWoodV >= 2 && GrinderV >= 1{
+                    PlankV += 1
+                    userDefaults.set(PlankV, forKey: "PlankV")
+                    ScrapWoodV -= 2
+                    userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                }}
+            
+            CarverCV += 0.3 * Double(CarverV)
+            while CarverCV >= 3.0 {
+                CarverCV -= 3.0
+                if RockV >= 1 && GrinderV >= 1{
+                    StoneV += 1
+                    userDefaults.set(StoneV, forKey: "StoneV")
+                    RockV -= 1
+                    userDefaults.set(RockV, forKey: "RockV")
+                }
+            }
+            
+            BSICV += 0.1 * Double(BSIV)
+            while BSICV >= 3.0 {
+                BSICV -= 3.0
+                if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
+                    IronV += 1
+                    userDefaults.set(IronV, forKey: "IronV")
+                    IronOreV -= 1
+                    userDefaults.set(IronOreV, forKey: "IronOreV")
+                    FireWoodV -= 1
+                    userDefaults.set(FireWoodV, forKey: "FireWoodV")
+                }
+            }
+            
+            BSNCV += 0.1 * Double(BSNV)
+            while BSNCV >= 3.0 {
+                BSNCV -= 3.0
+                if IronV >= 1 && AnvilV >= 1{
+                    NailV += 5
+                    userDefaults.set(NailV, forKey: "NailV")
+                    IronV -= 1
+                    userDefaults.set(IronV, forKey: "IronV")
+                }
+            }
+            
+            BSPCV += 0.1 * Double(BSPV)
+            while BSPCV >= 3.0 {
+                BSPCV -= 3.0
+                if IronV >= 1 && AnvilV >= 1{
+                    IronPartsV += 3
+                    userDefaults.set(IronPartsV, forKey: "IronPartsV")
+                    IronV -= 1
+                    userDefaults.set(IronV, forKey: "IronV")
+                }
+            }
+            
+            }
+        }
     }
 }
 
@@ -738,6 +821,7 @@ class Town: UIViewController {
             UnEmployedV += 3
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
             HouseL.text = "\(HouseV)"
+            userDefaults.set(HouseV, forKey: "HouseV")
             WallV -= 4
             userDefaults.set(WallV, forKey: "WallV")
             DoorV -= 1
@@ -1740,7 +1824,7 @@ class War: UIViewController {
         //    return UserDefaults.standard.string(forKey: "dateDB")!
         //}
         
-        date = Date()   
+        date = Date()
         
         dateDB = UserDefaults.standard.string(forKey: "dateDB")!
         dateDN = formatter.string(from: date)
