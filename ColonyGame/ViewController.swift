@@ -1741,7 +1741,7 @@ class War: UIViewController {
             dateDB = userDefaults.string(forKey: "dateDB")!
             print(1)
         } else {
-            print(1)
+            print(2)
         }
         dateDN = formatter.string(from: date)
         if dateDN == dateDB || dateDB == "" {
