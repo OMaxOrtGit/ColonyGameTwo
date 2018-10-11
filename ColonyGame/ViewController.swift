@@ -1740,7 +1740,7 @@ class War: UIViewController {
         //    return UserDefaults.standard.string(forKey: "dateDB")!
         //}
         
-        date = Date()
+        date = Date()   
         
         dateDB = UserDefaults.standard.string(forKey: "dateDB")!
         dateDN = formatter.string(from: date)
