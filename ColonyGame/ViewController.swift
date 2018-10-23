@@ -91,8 +91,8 @@ var BSPCV = 0.0
 var LumberJackSwitch = true
 
 var StickV = 0
-var AxeV = 1
-var PickV = 1
+var AxeV = 0
+var PickV = 0
 var HoeV = 0
 var ScaleV = 0
 var SwordV = 0
@@ -168,7 +168,15 @@ var A7V = 0
 var A8V = 0
 var A9V = 0
 
-var FightsNum = 4
+var CR1P6 = 0
+var CR1P62 = 0
+var CR1P8 = 0
+var CRR6 = 0
+var CRM = 0
+var CRR61P6 = 0
+
+var FightsNum = 1
+
 
 var date = Date()
 var dateDB = ""
@@ -182,11 +190,77 @@ class StartUp: UITableViewController {
     
     
     override func viewDidLoad() {
+        
+        BeamV = userDefaults.integer(forKey: "BeamV")
+        FrameV = userDefaults.integer(forKey: "FrameV")
+        ShingleV = userDefaults.integer(forKey: "ShingleV")
+        RoofV = userDefaults.integer(forKey: "RoofV")
+        WallV = userDefaults.integer(forKey: "WallV")
+        DoorV = userDefaults.integer(forKey: "DoorV")
+        GrinderV = userDefaults.integer(forKey: "GrinderV")
+        FurnaceV = userDefaults.integer(forKey: "FurnaceV")
+        AnvilV = userDefaults.integer(forKey: "AnvilV")
+        LogV = userDefaults.integer(forKey: "LogV")
+        ScrapWoodV = userDefaults.integer(forKey: "ScrapWoodV")
+        IronOreV = userDefaults.integer(forKey: "IronOreV")
+        RockV = userDefaults.integer(forKey: "RockV")
+        FireWoodV = userDefaults.integer(forKey: "FireWoodV")
+        StoneV = userDefaults.integer(forKey: "StoneV")
+        PlankV = userDefaults.integer(forKey: "PlankV")
+        IronV = userDefaults.integer(forKey: "IronV")
+        NailV = userDefaults.integer(forKey: "NailV")
+        IronPartsV = userDefaults.integer(forKey: "IronPartsV")
+        LandV = userDefaults.integer(forKey: "LandV")
+        HouseV = userDefaults.integer(forKey: "HouseV")
+        RoadV = userDefaults.integer(forKey: "RoadV")
+        TownV = userDefaults.integer(forKey: "TownV")
+        CastleWallV = userDefaults.integer(forKey: "CastleWallV")
+        CastleV = userDefaults.integer(forKey: "CastleWallV")
+        RCWV = userDefaults.integer(forKey: "RCWV")
+        KingdomV = userDefaults.integer(forKey: "KingdomV")
+        EmpireV = userDefaults.integer(forKey: "EmpireV")
+        EmployedV = userDefaults.integer(forKey: "EmployedV")
+        UnEmployedV = userDefaults.integer(forKey: "UnEmployedV")
+        FarmerV = userDefaults.integer(forKey: "FarmerV")
+        MinerV = userDefaults.integer(forKey: "MinerV")
+        LumberJackV = userDefaults.integer(forKey: "LumberJackV")
+        CrafterV = userDefaults.integer(forKey: "CrafterV")
+        CarverV = userDefaults.integer(forKey: "CarverV")
+        BSIV = userDefaults.integer(forKey: "BSIV")
+        BSNV = userDefaults.integer(forKey: "BSNV")
+        BSPV = userDefaults.integer(forKey: "BSPV")
+        StickV = userDefaults.integer(forKey: "StickV")
+        AxeV = userDefaults.integer(forKey: "AxeV")
+        PickV = userDefaults.integer(forKey: "PickV")
+        HoeV = userDefaults.integer(forKey: "HoeV")
+        ScaleV = userDefaults.integer(forKey: "ScaleV")
+        SwordV = userDefaults.integer(forKey: "SwordV")
+        BowV = userDefaults.integer(forKey: "BowV")
+        ArrowV = userDefaults.integer(forKey: "ArrowV")
+        BowNArrowV = userDefaults.integer(forKey: "BowNArrowV")
+        FenceV = userDefaults.integer(forKey: "FenceV")
+        CampV = userDefaults.integer(forKey: "CampV")
+        GeneralV = userDefaults.integer(forKey: "GeneralV")
+        SoldierV = userDefaults.integer(forKey: "SoldierV")
+        ASoldierV = userDefaults.integer(forKey: "ASoldierV")
+        ArcharyRangeV = userDefaults.integer(forKey: "ArcharyRangeV")
+        SwordManV = userDefaults.integer(forKey: "SwordManV")
+        ArcherV = userDefaults.integer(forKey: "ArcherV")
+        LandV = userDefaults.integer(forKey: "LandV")
+        
+        UnEmployedV = 1
+        userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
+        PickV = 1
+        userDefaults.set(PickV, forKey: "PickV")
+        
+        
+        
         if MinerV >= 1 || LumberJackV >= 1 || CrafterV >= 1 || BSIV >= 1 || BSNV >= 1 || BSPV >= 1{
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
             
             MinerVC = true
             test = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             MinerCV += 0.1 * Double(MinerV)
             while MinerCV >= 3.0 {
                 MinerCV -= 3.0
@@ -199,14 +273,14 @@ class StartUp: UITableViewController {
                     userDefaults.set(RockV, forKey: "RockV")
                 }
             }
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             LumberJackCV += 0.1 * Double(LumberJackV)
             while LumberJackCV >= 3.0 {
                 LumberJackCV -= 3.0
                 ScrapWoodV += 5
                 userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
             }
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             CrafterCV += 0.1 * Double(CrafterV)
             while CrafterCV >= 3.0 {
                 CrafterCV -= 3.0
@@ -216,7 +290,7 @@ class StartUp: UITableViewController {
                     ScrapWoodV -= 2
                     userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
                 }}
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             CarverCV += 0.3 * Double(CarverV)
             while CarverCV >= 3.0 {
                 CarverCV -= 3.0
@@ -227,7 +301,7 @@ class StartUp: UITableViewController {
                     userDefaults.set(RockV, forKey: "RockV")
                 }
             }
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             BSICV += 0.1 * Double(BSIV)
             while BSICV >= 3.0 {
                 BSICV -= 3.0
@@ -240,7 +314,7 @@ class StartUp: UITableViewController {
                     userDefaults.set(FireWoodV, forKey: "FireWoodV")
                 }
             }
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             BSNCV += 0.1 * Double(BSNV)
             while BSNCV >= 3.0 {
                 BSNCV -= 3.0
@@ -251,7 +325,7 @@ class StartUp: UITableViewController {
                     userDefaults.set(IronV, forKey: "IronV")
                 }
             }
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
             BSPCV += 0.1 * Double(BSPV)
             while BSPCV >= 3.0 {
                 BSPCV -= 3.0
@@ -261,10 +335,23 @@ class StartUp: UITableViewController {
                     IronV -= 1
                     userDefaults.set(IronV, forKey: "IronV")
                 }
-            }
-            
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                    FarmerCV += 0.3 * Double(FarmerV)
+                    while FarmerCV >= 3.0 {
+                        FarmerCV -= 3.0
+                        if LogV >= 1{
+                            ScrapWoodV += 5
+                            userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                            LogV -= 1
+                            userDefaults.set(LogV, forKey: "LogV")
+                        }
+                    }
+                }
+                }}}}}}}
             }
         }
+        
     }
 }
 
@@ -311,7 +398,6 @@ class Building: UIViewController {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
         
-        
         BeamV = userDefaults.integer(forKey: "BeamV")
         FrameV = userDefaults.integer(forKey: "FrameV")
         ShingleV = userDefaults.integer(forKey: "ShingleV")
@@ -352,7 +438,7 @@ class Building: UIViewController {
             userDefaults.set(FrameV, forKey: "FrameV")
             FrameL.text = "\(FrameV)"
             BeamV -= 36
-            userDefaults.set(FrameV, forKey: "FrameV")
+            userDefaults.set(BeamV, forKey: "BeamV")
             BeamL.text = "\(BeamV)"
             NailV -= 72
             userDefaults.set(NailV, forKey: "NailV")
@@ -584,6 +670,7 @@ class Matterials: UIViewController {
             self.PlankL.text = "\(PlankV)"
             self.NailL.text = "\(NailV)"
             self.IronPartsL.text = "\(IronPartsV)"
+            self.LogL.text = "\(LogV)"
             }
         
     }
@@ -1029,88 +1116,105 @@ class People: UIViewController {
 
     func timer() {
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
-            
-            MinerVC = true
-            test = true
-            MinerCV += 0.1 * Double(MinerV)
-            while MinerCV >= 3.0 {
-                MinerCV -= 3.0
-                RockR = Int(arc4random_uniform(5))+1
-                if RockR == 2 {
-                    IronOreV += 1
-                    userDefaults.set(IronOreV, forKey: "IronOreV")
-                } else {
-                    RockV += 1
-                    userDefaults.set(RockV, forKey: "RockV")
-                }
-            }
-            
-            LumberJackCV += 0.1 * Double(LumberJackV)
-            while LumberJackCV >= 3.0 {
-                LumberJackCV -= 3.0
-                ScrapWoodV += 5
-                userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-            }
-            
-            CrafterCV += 0.1 * Double(CrafterV)
-            while CrafterCV >= 3.0 {
-                CrafterCV -= 3.0
-                if ScrapWoodV >= 2 && GrinderV >= 1{
-                    PlankV += 1
-                    userDefaults.set(PlankV, forKey: "PlankV")
-                    ScrapWoodV -= 2
-                    userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                }}
-            
-            CarverCV += 0.3 * Double(CarverV)
-            while CarverCV >= 3.0 {
-                CarverCV -= 3.0
-                if RockV >= 1 && GrinderV >= 1{
-                    StoneV += 1
-                    userDefaults.set(StoneV, forKey: "StoneV")
-                    RockV -= 1
-                    userDefaults.set(RockV, forKey: "RockV")
-                }
-            }
-            
-            BSICV += 0.1 * Double(BSIV)
-            while BSICV >= 3.0 {
-                BSICV -= 3.0
-                if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
-                    IronV += 1
-                    userDefaults.set(IronV, forKey: "IronV")
-                    IronOreV -= 1
-                    userDefaults.set(IronOreV, forKey: "IronOreV")
-                    FireWoodV -= 1
-                    userDefaults.set(FireWoodV, forKey: "FireWoodV")
-                }
-            }
-            
-            BSNCV += 0.1 * Double(BSNV)
-            while BSNCV >= 3.0 {
-                BSNCV -= 3.0
-                if IronV >= 1 && AnvilV >= 1{
-                    NailV += 5
-                    userDefaults.set(NailV, forKey: "NailV")
-                    IronV -= 1
-                    userDefaults.set(IronV, forKey: "IronV")
-                }
-            }
-            
-            BSPCV += 0.1 * Double(BSPV)
-            while BSPCV >= 3.0 {
-                BSPCV -= 3.0
-                if IronV >= 1 && AnvilV >= 1{
-                    IronPartsV += 3
-                    userDefaults.set(IronPartsV, forKey: "IronPartsV")
-                    IronV -= 1
-                    userDefaults.set(IronV, forKey: "IronV")
-                }
+        if MinerV >= 1 || LumberJackV >= 1 || CrafterV >= 1 || BSIV >= 1 || BSNV >= 1 || BSPV >= 1{
+            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
+                
+                MinerVC = true
+                test = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                    MinerCV += 0.1 * Double(MinerV)
+                    while MinerCV >= 3.0 {
+                        MinerCV -= 3.0
+                        RockR = Int(arc4random_uniform(5))+1
+                        if RockR == 2 {
+                            IronOreV += 1
+                            userDefaults.set(IronOreV, forKey: "IronOreV")
+                        } else {
+                            RockV += 1
+                            userDefaults.set(RockV, forKey: "RockV")
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                        LumberJackCV += 0.1 * Double(LumberJackV)
+                        while LumberJackCV >= 3.0 {
+                            LumberJackCV -= 3.0
+                            LogV += 1
+                            userDefaults.set(LogV, forKey: "LogV")
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                            CrafterCV += 0.1 * Double(CrafterV)
+                            while CrafterCV >= 3.0 {
+                                CrafterCV -= 3.0
+                                if ScrapWoodV >= 2 && GrinderV >= 1{
+                                    PlankV += 1
+                                    userDefaults.set(PlankV, forKey: "PlankV")
+                                    ScrapWoodV -= 2
+                                    userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                                }}
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                                CarverCV += 0.3 * Double(CarverV)
+                                while CarverCV >= 3.0 {
+                                    CarverCV -= 3.0
+                                    if RockV >= 1 && GrinderV >= 1{
+                                        StoneV += 1
+                                        userDefaults.set(StoneV, forKey: "StoneV")
+                                        RockV -= 1
+                                        userDefaults.set(RockV, forKey: "RockV")
+                                    }
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                                    BSICV += 0.1 * Double(BSIV)
+                                    while BSICV >= 3.0 {
+                                        BSICV -= 3.0
+                                        if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
+                                            IronV += 1
+                                            userDefaults.set(IronV, forKey: "IronV")
+                                            IronOreV -= 1
+                                            userDefaults.set(IronOreV, forKey: "IronOreV")
+                                            FireWoodV -= 1
+                                            userDefaults.set(FireWoodV, forKey: "FireWoodV")
+                                        }
+                                    }
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                                        BSNCV += 0.1 * Double(BSNV)
+                                        while BSNCV >= 3.0 {
+                                            BSNCV -= 3.0
+                                            if IronV >= 1 && AnvilV >= 1{
+                                                NailV += 5
+                                                userDefaults.set(NailV, forKey: "NailV")
+                                                IronV -= 1
+                                                userDefaults.set(IronV, forKey: "IronV")
+                                            }
+                                        }
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                                            BSPCV += 0.1 * Double(BSPV)
+                                            while BSPCV >= 3.0 {
+                                                BSPCV -= 3.0
+                                                if IronV >= 1 && AnvilV >= 1{
+                                                    IronPartsV += 3
+                                                    userDefaults.set(IronPartsV, forKey: "IronPartsV")
+                                                    IronV -= 1
+                                                    userDefaults.set(IronV, forKey: "IronV")
+                                                }
+                                            }
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+                                                FarmerCV += 0.3 * Double(FarmerV)
+                                                while FarmerCV >= 3.0 {
+                                                    FarmerCV -= 3.0
+                                                    if LogV >= 1{
+                                                        ScrapWoodV += 5
+                                                        userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                                                        LogV -= 1
+                                                        userDefaults.set(LogV, forKey: "LogV")
+                                                    }
+                                                }
+                                            }
+                                        }}}}}}}
             }
         }
         
-    }
+            }
+        
     
 
     
@@ -1274,7 +1378,7 @@ class People: UIViewController {
         BSNNA.text = "Needed:"
         BSPNA.text = "Needed:"
         
-        FarmerNNA.text = "Hoe"
+        FarmerNNA.text = "Axe"
         MinerNNA.text = "PickAxe"
         LumberJackNNA.text = "Axe"
         CrafterNNA.text = "Grinder"
@@ -1324,7 +1428,6 @@ class People: UIViewController {
         BSIV = userDefaults.integer(forKey: "BSIV")
         BSNV = userDefaults.integer(forKey: "BSNV")
         BSPV = userDefaults.integer(forKey: "BSPV")
-        
         
         UnEmployedL.text = "\(UnEmployedV)"
         EmployedL.text = "\(EmployedV)"
@@ -1545,7 +1648,6 @@ class Tool: UIViewController {
         BowV = userDefaults.integer(forKey: "BowV")
         ArrowV = userDefaults.integer(forKey: "ArrowV")
         BowNArrowV = userDefaults.integer(forKey: "BowNArrowV")
-        
         
         StickL.text = "\(StickV)"
         AxeL.text = "\(AxeV)"
@@ -1810,58 +1912,85 @@ class War: UIViewController {
     @IBOutlet weak var A8: UILabel!
     @IBOutlet weak var A9: UILabel!
     
-    
+    func TwoNums() -> Int {
+        func IfNegitive(num: Int) -> Int{
+            if num < 0 {
+                return (num * -1)
+            } else {
+                return num
+            }
+            
+        }
+        let num1 = Int((pow(Double(FightsNum), 1.75) / 15) + (Double(FightsNum) * 5)) + 6
+        let num2 = Int((pow(Double(FightsNum), 1.75) / 10) + (Double(FightsNum) * 2.5))
+        return num2 + Int(arc4random_uniform(UInt32(IfNegitive(num: (num1 - num2)))))
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //if userDefaults.string(forKey: "dateDB")! == {
-        
-            //dateDB = userDefaults.string(forKey: "dateDB")!
-        //}
-        //func iskey() -> Bool {
-         //   print("hi")
-        //    return UserDefaults.standard.string(forKey: "dateDB")!
-        //}
-        
-        date = Date()
-        
-        dateDB = UserDefaults.standard.string(forKey: "dateDB")!
+        formatter.dateFormat = "dd.MM.yyyy"
+        print("Here")
+        dateDN = formatter.string(from: date)
+        if UserDefaults.standard.string(forKey: "dateDB") != nil {
+            dateDB = UserDefaults.standard.string(forKey: "dateDB")!
+            print(dateDB + "         aqswdefr")
+            print(dateDN + "         aqswdefr" )
+        } else {
+            print(dateDB + "         aqswdefr" )
+            
+            print(dateDN + "         aqswdefr" )
+        }
         dateDN = formatter.string(from: date)
         
         if dateDN == dateDB || dateDB == "" {
-                
-            CR1V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR2V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR3V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR4V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR5V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR6V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR7V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR8V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
-            CR9V = (Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum)))))) + (FightsNum * 3)) * 10
+            
+            CR1V = TwoNums()
+            CR2V = TwoNums()
+            CR3V = TwoNums()
+            CR4V = TwoNums()
+            CR5V = TwoNums()
+            CR6V = TwoNums()
+            CR7V = TwoNums()
+            CR8V = TwoNums()
+            CR9V = TwoNums()
             
             
-            SM1V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1V) / 30
-            SM2V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2V) / 30
-            SM3V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3V) / 30
-            SM4V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4V) / 30
-            SM5V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5V) / 30
-            SM6V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6V) / 30
-            SM7V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7V) / 30
-            SM8V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8V) / 30
-            SM9V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9V) / 30
             
             
-            A1V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR1V) / 30
-            A2V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR2V) / 30
-            A3V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR3V) / 30
-            A4V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR4V) / 30
-            A5V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR5V) / 30
-            A6V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR6V) / 30
-            A7V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR7V) / 30
-            A8V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR8V) / 30
-            A9V = Int(arc4random_uniform(UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(1, FightsNum))) ))) / 2 + Int(CR9V) / 30
+                /*
+            CR1V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR2V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR3V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR4V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR5V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR6V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR7V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR8V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            CR9V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            
+            
+            SM1V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
+            SM2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
+            SM3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
+            SM4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
+            SM5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
+            SM6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
+            SM7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
+            SM8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
+            SM9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
+            
+            
+            A1V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR1V) / 2
+            A2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
+            A3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
+            A4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
+            A5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
+            A6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
+            A7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
+            A8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
+            A9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
+            */
             
             userDefaults.set(CR1V, forKey: "CR1V")
             userDefaults.set(CR2V, forKey: "CR2V")
@@ -1873,34 +2002,255 @@ class War: UIViewController {
             userDefaults.set(CR8V, forKey: "CR8V")
             userDefaults.set(CR9V, forKey: "CR9V")
             
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(SM1V, forKey: "SM1V")
+            userDefaults.set(SM2V, forKey: "SM2V")
+            userDefaults.set(SM3V, forKey: "SM3V")
+            userDefaults.set(SM4V, forKey: "SM4V")
+            userDefaults.set(SM5V, forKey: "SM5V")
+            userDefaults.set(SM6V, forKey: "SM6V")
+            userDefaults.set(SM7V, forKey: "SM7V")
+            userDefaults.set(SM8V, forKey: "SM8V")
+            userDefaults.set(SM9V, forKey: "SM9V")
             
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
-            userDefaults.set(dateDB, forKey: "dateDB")
+            userDefaults.set(A1V, forKey: "A1V")
+            userDefaults.set(A2V, forKey: "A2V")
+            userDefaults.set(A3V, forKey: "A3V")
+            userDefaults.set(A4V, forKey: "A4V")
+            userDefaults.set(A5V, forKey: "A5V")
+            userDefaults.set(A6V, forKey: "A6V")
+            userDefaults.set(A7V, forKey: "A7V")
+            userDefaults.set(A8V, forKey: "A8V")
+            userDefaults.set(A9V, forKey: "A9V")
+            
+            CR1.text = "\(CR1V)"
+            CR2.text = "\(CR2V)"
+            CR3.text = "\(CR3V)"
+            CR4.text = "\(CR4V)"
+            CR5.text = "\(CR5V)"
+            CR6.text = "\(CR6V)"
+            CR7.text = "\(CR7V)"
+            CR8.text = "\(CR8V)"
+            CR9.text = "\(CR9V)"
+            
+            SM1.text = "\(SM1V)"
+            SM2.text = "\(SM2V)"
+            SM3.text = "\(SM3V)"
+            SM4.text = "\(SM4V)"
+            SM5.text = "\(SM5V)"
+            SM6.text = "\(SM6V)"
+            SM7.text = "\(SM7V)"
+            SM8.text = "\(SM8V)"
+            SM9.text = "\(SM9V)"
+            
+            A1.text = "\(A1V)"
+            A2.text = "\(A2V)"
+            A3.text = "\(A3V)"
+            A4.text = "\(A4V)"
+            A5.text = "\(A5V)"
+            A6.text = "\(A6V)"
+            A7.text = "\(A7V)"
+            A8.text = "\(A8V)"
+            A9.text = "\(A9V)"
+                
+            print(dateDB)
+            print("logang")
+            
+        } else {
+            
+            CR1V = TwoNums()
+            CR2V = TwoNums()
+            CR3V = TwoNums()
+            CR4V = TwoNums()
+            CR5V = TwoNums()
+            CR6V = TwoNums()
+            CR7V = TwoNums()
+            CR8V = TwoNums()
+            CR9V = TwoNums()
+            
+            
+            
+            CR1V = userDefaults.integer(forKey: "CR1V")
+            CR2V = userDefaults.integer(forKey: "CR2V")
+            CR3V = userDefaults.integer(forKey: "CR3V")
+            CR4V = userDefaults.integer(forKey: "CR4V")
+            CR5V = userDefaults.integer(forKey: "CR5V")
+            CR6V = userDefaults.integer(forKey: "CR6V")
+            CR7V = userDefaults.integer(forKey: "CR7V")
+            CR8V = userDefaults.integer(forKey: "CR8V")
+            CR9V = userDefaults.integer(forKey: "CR9V")
+            
+            SM1V = userDefaults.integer(forKey: "SM1V")
+            SM2V = userDefaults.integer(forKey: "SM2V")
+            SM3V = userDefaults.integer(forKey: "SM3V")
+            SM4V = userDefaults.integer(forKey: "SM4V")
+            SM5V = userDefaults.integer(forKey: "SM5V")
+            SM6V = userDefaults.integer(forKey: "SM6V")
+            SM7V = userDefaults.integer(forKey: "SM7V")
+            SM8V = userDefaults.integer(forKey: "SM8V")
+            SM9V = userDefaults.integer(forKey: "SM9V")
+            
+            A1V = userDefaults.integer(forKey: "A1V")
+            A2V = userDefaults.integer(forKey: "A2V")
+            A3V = userDefaults.integer(forKey: "A3V")
+            A4V = userDefaults.integer(forKey: "A4V")
+            A5V = userDefaults.integer(forKey: "A5V")
+            A6V = userDefaults.integer(forKey: "A6V")
+            A7V = userDefaults.integer(forKey: "A7V")
+            A8V = userDefaults.integer(forKey: "A8V")
+            A9V = userDefaults.integer(forKey: "A9V")
+            
+            CR1.text = "\(CR1V)"
+            CR2.text = "\(CR2V)"
+            CR3.text = "\(CR3V)"
+            CR4.text = "\(CR4V)"
+            CR5.text = "\(CR5V)"
+            CR6.text = "\(CR6V)"
+            CR7.text = "\(CR7V)"
+            CR8.text = "\(CR8V)"
+            CR9.text = "\(CR9V)"
+            
+            SM1.text = "\(SM1V)"
+            SM2.text = "\(SM2V)"
+            SM3.text = "\(SM3V)"
+            SM4.text = "\(SM4V)"
+            SM5.text = "\(SM5V)"
+            SM6.text = "\(SM6V)"
+            SM7.text = "\(SM7V)"
+            SM8.text = "\(SM8V)"
+            SM9.text = "\(SM9V)"
+            
+            A1.text = "\(A1V)"
+            A2.text = "\(A2V)"
+            A3.text = "\(A3V)"
+            A4.text = "\(A4V)"
+            A5.text = "\(A5V)"
+            A6.text = "\(A6V)"
+            A7.text = "\(A7V)"
+            A8.text = "\(A8V)"
+            A9.text = "\(A9V)"
             
             print(dateDB)
+            print("logang2")
         }
+        
         date = Date()
         formatter.dateFormat = "dd.MM.yyyy"
         dateDB = formatter.string(from: date)
+        print(dateDB = "       lpkoji")
         userDefaults.set(dateDB, forKey: "dateDB")
     }
     
+    @IBAction func B1C(_ sender: Any) {
+        dateDB = ""
+        
+        CR1V = TwoNums()
+        CR2V = TwoNums()
+        CR3V = TwoNums()
+        CR4V = TwoNums()
+        CR5V = TwoNums()
+        CR6V = TwoNums()
+        CR7V = TwoNums()
+        CR8V = TwoNums()
+        CR9V = TwoNums()
+        
+        /*
+        SM1V = Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR1V) / 2
+        SM2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
+        SM3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
+        SM4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
+        SM5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
+        SM6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
+        SM7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
+        SM8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
+        SM9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
+        
+        
+        A1V = Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 2 / 2 + Int(CR1V) / 2
+        A2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
+        A3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
+        A4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
+        A5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
+        A6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
+        A7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
+        A8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
+        A9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
+        
+        //SM1V = arc4random_uniform(pow2,)
+        */
+        userDefaults.set(CR1V, forKey: "CR1V")
+        userDefaults.set(CR2V, forKey: "CR2V")
+        userDefaults.set(CR3V, forKey: "CR3V")
+        userDefaults.set(CR4V, forKey: "CR4V")
+        userDefaults.set(CR5V, forKey: "CR5V")
+        userDefaults.set(CR6V, forKey: "CR6V")
+        userDefaults.set(CR7V, forKey: "CR7V")
+        userDefaults.set(CR8V, forKey: "CR8V")
+        userDefaults.set(CR9V, forKey: "CR9V")
+        
+        userDefaults.set(SM1V, forKey: "SM1V")
+        userDefaults.set(SM2V, forKey: "SM2V")
+        userDefaults.set(SM3V, forKey: "SM3V")
+        userDefaults.set(SM4V, forKey: "SM4V")
+        userDefaults.set(SM5V, forKey: "SM5V")
+        userDefaults.set(SM6V, forKey: "SM6V")
+        userDefaults.set(SM7V, forKey: "SM7V")
+        userDefaults.set(SM8V, forKey: "SM8V")
+        userDefaults.set(SM9V, forKey: "SM9V")
+        
+        userDefaults.set(A1V, forKey: "A1V")
+        userDefaults.set(A2V, forKey: "A2V")
+        userDefaults.set(A3V, forKey: "A3V")
+        userDefaults.set(A4V, forKey: "A4V")
+        userDefaults.set(A5V, forKey: "A5V")
+        userDefaults.set(A6V, forKey: "A6V")
+        userDefaults.set(A7V, forKey: "A7V")
+        userDefaults.set(A8V, forKey: "A8V")
+        userDefaults.set(A9V, forKey: "A9V")
+        
+        CR1.text = "\(CR1V)"
+        CR2.text = "\(CR2V)"
+        CR3.text = "\(CR3V)"
+        CR4.text = "\(CR4V)"
+        CR5.text = "\(CR5V)"
+        CR6.text = "\(CR6V)"
+        CR7.text = "\(CR7V)"
+        CR8.text = "\(CR8V)"
+        CR9.text = "\(CR9V)"
+        
+        SM1.text = "\(SM1V)"
+        SM2.text = "\(SM2V)"
+        SM3.text = "\(SM3V)"
+        SM4.text = "\(SM4V)"
+        SM5.text = "\(SM5V)"
+        SM6.text = "\(SM6V)"
+        SM7.text = "\(SM7V)"
+        SM8.text = "\(SM8V)"
+        SM9.text = "\(SM9V)"
+        
+        A1.text = "\(A1V)"
+        A2.text = "\(A2V)"
+        A3.text = "\(A3V)"
+        A4.text = "\(A4V)"
+        A5.text = "\(A5V)"
+        A6.text = "\(A6V)"
+        A7.text = "\(A7V)"
+        A8.text = "\(A8V)"
+        A9.text = "\(A9V)"
+        
+        print(FightsNum)
+    }
+    
+    @IBAction func B2C(_ sender: Any) {
+        FightsNum += 1
+        
+        print(FightsNum)
+    }
+    
+    @IBAction func B3C(_ sender: Any) {
+        FightsNum -= 1
+        
+        print(FightsNum)
+    }
     
     
 }
