@@ -15,7 +15,6 @@ var gameTimer: Timer!
 
 var RefreshS = true
 
-
 var LogV = 0
 var RockV = 0
 var IronOreV = 0
@@ -264,7 +263,7 @@ class StartUp: UITableViewController {
             MinerCV += 0.1 * Double(MinerV)
             while MinerCV >= 3.0 {
                 MinerCV -= 3.0
-                RockR = Int(arc4random_uniform(5))+1
+                RockR = Int(arc4random_uniform(5)) + 1
                 if RockR == 2 {
                     IronOreV += 1
                     userDefaults.set(IronOreV, forKey: "IronOreV")
