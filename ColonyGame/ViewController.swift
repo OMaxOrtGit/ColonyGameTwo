@@ -283,7 +283,7 @@ class StartUp: UITableViewController {
             CrafterCV += 0.1 * Double(CrafterV)
             while CrafterCV >= 3.0 {
                 CrafterCV -= 3.0
-                if ScrapWoodV >= 2 && GrinderV >= 1{
+                if ScrapWoodV >= 2 && GrinderV >= 1 {
                     PlankV += 1
                     userDefaults.set(PlankV, forKey: "PlankV")
                     ScrapWoodV -= 2
