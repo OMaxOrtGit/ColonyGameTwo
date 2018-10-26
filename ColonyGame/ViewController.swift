@@ -1930,7 +1930,7 @@ class War: UIViewController {
         return IfNegitive(num: (n + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2)
     }
     func A(n: Int, n2: Int) -> Int {
-        return  IfNegitive(num: (n - n2) + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.25))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.25)))))
+        return  IfNegitive(num: (n - n2) + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75)))))
     }
     
     override func viewDidLoad() {
