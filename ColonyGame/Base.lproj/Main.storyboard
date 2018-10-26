@@ -1986,6 +1986,9 @@
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avy-2j-2n9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
+                                                                <connections>
+                                                                    <action selector="B4C:" destination="AOa-85-z4H" eventType="touchUpInside" id="u7A-RH-meY"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-G6-VYK">
                                                                 <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -2055,6 +2058,9 @@
                                                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntH-em-R1F">
                                                                         <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                         <state key="normal" image="Glass"/>
+                                                                        <connections>
+                                                                            <action selector="B5C:" destination="AOa-85-z4H" eventType="touchUpInside" id="FNV-E5-nQH"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IEL-cu-WsP">
                                                                         <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -2124,6 +2130,9 @@
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSv-vE-zVe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
+                                                                <connections>
+                                                                    <action selector="B6C:" destination="AOa-85-z4H" eventType="touchUpInside" id="hdD-4x-BA2"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ytf-ea-m39">
                                                                 <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -2203,6 +2212,9 @@
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jn-Jq-Tfk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
+                                                                <connections>
+                                                                    <action selector="B7C:" destination="AOa-85-z4H" eventType="touchUpInside" id="fyH-TD-ac6"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uwy-Cp-Gza">
                                                                 <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -2269,6 +2281,9 @@
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAX-BH-zti">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
+                                                                <connections>
+                                                                    <action selector="B8C:" destination="AOa-85-z4H" eventType="touchUpInside" id="2um-q7-Zv3"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="C74-Wc-HoM">
                                                                 <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -2335,6 +2350,9 @@
                                                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y8-Fk-Hpb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
+                                                                <connections>
+                                                                    <action selector="B9C:" destination="AOa-85-z4H" eventType="touchUpInside" id="Hdr-5e-XPb"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-mB-8Il">
                                                                 <rect key="frame" x="0.0" y="98" width="125" height="98"/>
@@ -6948,14 +6966,14 @@
         <image name="Wood_Beam" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="khs-b4-bGl"/>
-        <segue reference="tXs-qr-BC8"/>
-        <segue reference="dfK-24-yb2"/>
+        <segue reference="mNY-Ey-G8Y"/>
+        <segue reference="NU5-dT-8Nt"/>
+        <segue reference="56O-Ps-w6X"/>
         <segue reference="P2z-a0-XsX"/>
-        <segue reference="BUa-cg-nFC"/>
+        <segue reference="QCt-Bn-NAe"/>
         <segue reference="OuY-Ig-Czp"/>
-        <segue reference="weo-oB-OTS"/>
-        <segue reference="7oB-gt-bqm"/>
-        <segue reference="y2C-3a-qKZ"/>
+        <segue reference="L60-5t-ZbC"/>
+        <segue reference="s22-eh-f4L"/>
+        <segue reference="3x9-Ku-J35"/>
     </inferredMetricsTieBreakers>
 </document>
