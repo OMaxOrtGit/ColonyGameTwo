@@ -2028,6 +2028,7 @@ class War: UIViewController {
         A9.text = "\(A9V)"
     }
     
+    
     func Keep() {
         
         CR1V = userDefaults.integer(forKey: "CR1V")
@@ -2092,6 +2093,16 @@ class War: UIViewController {
         
     }
     
+    func Fight() {
+        
+        
+        let alertController = UIAlertController(title: "Resaults", message:
+            "\(SwordManV) \(ArcherV)", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -2140,15 +2151,7 @@ class War: UIViewController {
     }
     
     @IBAction func B7C(_ sender: Any) {
-        
-        
-        
-        
-        let alertController = UIAlertController(title: "Resaults", message:
-            "\(SwordManV) \(ArcherV)", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
-        
-        self.present(alertController, animated: true, completion: nil)
+        Fight()
     }
     
     @IBAction func B8C(_ sender: Any) {
