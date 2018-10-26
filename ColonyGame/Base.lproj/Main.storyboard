@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -6844,6 +6844,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="120" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <state key="normal" title="Armies"/>
+                                                    <connections>
+                                                        <segue destination="Ogk-mK-PPd" kind="show" id="tXs-qr-BC8"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -6853,6 +6856,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="Qb8-Gz-lOx" secondAttribute="bottom" id="ya9-Dm-Pm4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Ogk-mK-PPd" kind="show" id="DMj-sY-kHc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="60" id="ChW-ew-ocY">
                                         <rect key="frame" x="0.0" y="395" width="375" height="60"/>
@@ -6865,6 +6871,9 @@
                                                     <rect key="frame" x="15" y="0.0" width="68" height="59.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                     <state key="normal" title="War"/>
+                                                    <connections>
+                                                        <segue destination="AOa-85-z4H" kind="show" id="NBN-vo-W7T"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -6874,6 +6883,9 @@
                                                 <constraint firstItem="8l8-PD-BNT" firstAttribute="top" secondItem="GSW-Sn-ikP" secondAttribute="top" id="wkq-gc-eMS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AOa-85-z4H" kind="show" id="OuY-Ig-Czp"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="60" id="nTV-Nz-jiv">
                                         <rect key="frame" x="0.0" y="455" width="375" height="60"/>
@@ -6936,14 +6948,14 @@
         <image name="Wood_Beam" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NnO-go-fAN"/>
-        <segue reference="GRT-kV-2eW"/>
-        <segue reference="PgS-FE-9jO"/>
-        <segue reference="UFx-uF-7Rg"/>
-        <segue reference="kwb-nw-0Ct"/>
-        <segue reference="8Ri-Td-9Pd"/>
-        <segue reference="NBZ-eI-IcN"/>
+        <segue reference="khs-b4-bGl"/>
+        <segue reference="tXs-qr-BC8"/>
+        <segue reference="dfK-24-yb2"/>
+        <segue reference="P2z-a0-XsX"/>
+        <segue reference="BUa-cg-nFC"/>
+        <segue reference="OuY-Ig-Czp"/>
+        <segue reference="weo-oB-OTS"/>
         <segue reference="7oB-gt-bqm"/>
-        <segue reference="Smk-Gw-PHf"/>
+        <segue reference="y2C-3a-qKZ"/>
     </inferredMetricsTieBreakers>
 </document>

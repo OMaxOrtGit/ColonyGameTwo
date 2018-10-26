@@ -1911,18 +1911,26 @@ class War: UIViewController {
     @IBOutlet weak var A8: UILabel!
     @IBOutlet weak var A9: UILabel!
     
-    func TwoNums() -> Int {
-        func IfNegitive(num: Int) -> Int{
-            if num < 0 {
-                return (num * -1)
-            } else {
-                return num
-            }
-            
+    func IfNegitive(num: Int) -> Int{
+        if num < 0 {
+            return (num * -1)
+        } else {
+            return num
         }
+        
+    }
+    
+    func TwoNums() -> Int {
         let num1 = Int((pow(Double(FightsNum), 1.75) / 15) + (Double(FightsNum) * 5)) + 6
         let num2 = Int((pow(Double(FightsNum), 1.75) / 10) + (Double(FightsNum) * 2.5))
         return num2 + Int(arc4random_uniform(UInt32(IfNegitive(num: (num1 - num2)))))
+    }
+    
+    func SM(n: Int) -> Int {
+        return (n + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 3.0))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 3.0)))) / 2)
+    }
+    func A(n: Int, n2: Int) -> Int {
+        return (n - n2) + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 3.0))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 3.0))))
     }
     
     override func viewDidLoad() {
@@ -1955,41 +1963,27 @@ class War: UIViewController {
             CR9V = TwoNums()
             
             
+            SM1V = SM(n: CR1V)
+            SM2V = SM(n: CR2V)
+            SM3V = SM(n: CR3V)
+            SM4V = SM(n: CR4V)
+            SM5V = SM(n: CR5V)
+            SM6V = SM(n: CR6V)
+            SM7V = SM(n: CR7V)
+            SM8V = SM(n: CR8V)
+            SM9V = SM(n: CR9V)
             
             
-                /*
-            CR1V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR2V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR3V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR4V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR5V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR6V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR7V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR8V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
-            CR9V = (Int(arc4random_uniform(2 * UInt32(Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum)))))) + (FightsNum * 4))
+            A1V = A(n: CR1V, n2: SM1V)
+            A2V = A(n: CR2V, n2: SM2V)
+            A3V = A(n: CR3V, n2: SM3V)
+            A4V = A(n: CR4V, n2: SM4V)
+            A5V = A(n: CR5V, n2: SM5V)
+            A6V = A(n: CR6V, n2: SM6V)
+            A7V = A(n: CR7V, n2: SM7V)
+            A8V = A(n: CR8V, n2: SM8V)
+            A9V = A(n: CR9V, n2: SM9V)
             
-            
-            SM1V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
-            SM2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
-            SM3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
-            SM4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
-            SM5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
-            SM6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
-            SM7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
-            SM8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
-            SM9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
-            
-            
-            A1V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR1V) / 2
-            A2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
-            A3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
-            A4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
-            A5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
-            A6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
-            A7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
-            A8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
-            A9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
-            */
             
             userDefaults.set(CR1V, forKey: "CR1V")
             userDefaults.set(CR2V, forKey: "CR2V")
@@ -2152,30 +2146,6 @@ class War: UIViewController {
         CR8V = TwoNums()
         CR9V = TwoNums()
         
-        /*
-        SM1V = Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR1V) / 2
-        SM2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
-        SM3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
-        SM4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
-        SM5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
-        SM6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
-        SM7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
-        SM8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
-        SM9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
-        
-        
-        A1V = Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 2 / 2 + Int(CR1V) / 2
-        A2V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR2V) / 2
-        A3V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR3V) / 2
-        A4V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR4V) / 2
-        A5V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR5V) / 2
-        A6V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR6V) / 2
-        A7V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR7V) / 2
-        A8V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR8V) / 2
-        A9V =  Int(arc4random_uniform(4 + UInt32(Int(truncating: NSDecimalNumber(decimal: pow(3, FightsNum))) - Int(truncating: NSDecimalNumber(decimal: pow(2, FightsNum))) ))) - 3 / 2 + Int(CR9V) / 2
-        
-        //SM1V = arc4random_uniform(pow2,)
-        */
         userDefaults.set(CR1V, forKey: "CR1V")
         userDefaults.set(CR2V, forKey: "CR2V")
         userDefaults.set(CR3V, forKey: "CR3V")
