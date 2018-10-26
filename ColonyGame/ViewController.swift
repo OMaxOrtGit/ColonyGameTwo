@@ -2061,6 +2061,27 @@ class War: UIViewController {
             CR9V = TwoNums()
             
             
+            SM1V = SM(n: CR1V)
+            SM2V = SM(n: CR2V)
+            SM3V = SM(n: CR3V)
+            SM4V = SM(n: CR4V)
+            SM5V = SM(n: CR5V)
+            SM6V = SM(n: CR6V)
+            SM7V = SM(n: CR7V)
+            SM8V = SM(n: CR8V)
+            SM9V = SM(n: CR9V)
+            
+            
+            A1V = A(n: CR1V, n2: SM1V)
+            A2V = A(n: CR2V, n2: SM2V)
+            A3V = A(n: CR3V, n2: SM3V)
+            A4V = A(n: CR4V, n2: SM4V)
+            A5V = A(n: CR5V, n2: SM5V)
+            A6V = A(n: CR6V, n2: SM6V)
+            A7V = A(n: CR7V, n2: SM7V)
+            A8V = A(n: CR8V, n2: SM8V)
+            A9V = A(n: CR9V, n2: SM9V)
+            
             
             CR1V = userDefaults.integer(forKey: "CR1V")
             CR2V = userDefaults.integer(forKey: "CR2V")
@@ -2145,6 +2166,29 @@ class War: UIViewController {
         CR7V = TwoNums()
         CR8V = TwoNums()
         CR9V = TwoNums()
+        
+        
+        SM1V = SM(n: CR1V)
+        SM2V = SM(n: CR2V)
+        SM3V = SM(n: CR3V)
+        SM4V = SM(n: CR4V)
+        SM5V = SM(n: CR5V)
+        SM6V = SM(n: CR6V)
+        SM7V = SM(n: CR7V)
+        SM8V = SM(n: CR8V)
+        SM9V = SM(n: CR9V)
+        
+        
+        A1V = A(n: CR1V, n2: SM1V)
+        A2V = A(n: CR2V, n2: SM2V)
+        A3V = A(n: CR3V, n2: SM3V)
+        A4V = A(n: CR4V, n2: SM4V)
+        A5V = A(n: CR5V, n2: SM5V)
+        A6V = A(n: CR6V, n2: SM6V)
+        A7V = A(n: CR7V, n2: SM7V)
+        A8V = A(n: CR8V, n2: SM8V)
+        A9V = A(n: CR9V, n2: SM9V)
+        
         
         userDefaults.set(CR1V, forKey: "CR1V")
         userDefaults.set(CR2V, forKey: "CR2V")
