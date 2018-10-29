@@ -1910,17 +1910,18 @@ class War: UIViewController {
     @IBOutlet weak var A7: UILabel!
     @IBOutlet weak var A8: UILabel!
     @IBOutlet weak var A9: UILabel!
+    
+    func IfNegitive(num: Int) -> Int{
+        if num < 0 {
+            return (num * -1)
+        } else {
+            return num
+        }
+    }
+    
     func Change() {
         
         
-        func IfNegitive(num: Int) -> Int{
-            if num < 0 {
-                return (num * -1)
-            } else {
-                return num
-            }
-            
-        }
         
         func TwoNums() -> Int {
             let num1 = Int((pow(Double(FightsNum), 1.75) / 15) + (Double(FightsNum) * 5)) + 6
@@ -1931,9 +1932,11 @@ class War: UIViewController {
         func SM(n: Int) -> Int {
             return IfNegitive(num: (n + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2)
         }
+        
         func A(n: Int, n2: Int) -> Int {
             return  IfNegitive(num: (n - n2) + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75)))))
         }
+        
         CR1V = TwoNums()
         CR2V = TwoNums()
         CR3V = TwoNums()
@@ -2093,11 +2096,55 @@ class War: UIViewController {
         
     }
     
-    func Fight() {
+    func Fight(SM: Int, A: Int, CR: Int) {
+        
+        func mod(O: Int, T: Int) -> Int {
+         return Int((Double(O) * 1.4) + Double(T)) + Int(Double(IfNegitive(num: ((Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5)))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2))
+        }
+        
+        var hp = mod(O: A, T: SM)
+        var dmg = mod(O: SM, T: A)
+        var Mhp = mod(O: ArcherV, T: SwordManV)
+        var Mdmg = mod(O: SwordManV, T: ArcherV)
+        
+        print(hp)
+        print(dmg)
+        print(Mhp)
+        print(Mdmg)
+        
+        func sayC() -> Int {
+            if hp <= Mdmg * 2 {
+                return CR
+            } else {
+            }
+            return CR
+        }
+        
+        func ASM() {
+            var final = 0
+            for repeats in 1...Mhp {
+                
+                if Int(arc4random_uniform(UInt32(Mhp / dmg)) + ((arc4random_uniform(hp / dmg))) != 0 {
+                    
+                }
+            }
+        }
+        
+        var say = ""
         
         
-        let alertController = UIAlertController(title: "Resaults", message:
-            "\(SwordManV) \(ArcherV)", preferredStyle: UIAlertController.Style.alert)
+        say = "You lost \(1) Archers and \(2) Sword Men \n You have won \(sayC())"
+        
+        /*
+        if hp <= Mdmg * 2 {
+            say = "You lost 0 Archers and 0 SwordMen, you have won"
+            print("1")
+        } else {
+            print("2")
+        }
+        */
+        
+        let alertController = UIAlertController(title: "Resaults", message: "\(say)", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
@@ -2151,17 +2198,15 @@ class War: UIViewController {
     }
     
     @IBAction func B7C(_ sender: Any) {
-        Fight()
+        Fight(SM: SM7V, A: A7V, CR: CR7V)
     }
     
     @IBAction func B8C(_ sender: Any) {
         SwordManV += 10
-        userDefaults.set(SwordManV, forKey: "SwordManV")
     }
     
     @IBAction func B9C(_ sender: Any) {
         ArcherV += 10
-        userDefaults.set(ArcherV, forKey: "ArcherV")
     }
 }
 
