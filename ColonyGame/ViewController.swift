@@ -1930,7 +1930,7 @@ class War: UIViewController {
         }
         
         func SM(n: Int) -> Int {
-            return IfNegitive(num: (n + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2)
+            return IfNegitive(num: (n + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2) + Int(arc4random_uniform(2)) + 1
         }
         
         func A(n: Int, n2: Int) -> Int {
@@ -2099,7 +2099,7 @@ class War: UIViewController {
     func Fight(SM: Int, A: Int, CR: Int) {
         
         func mod(O: Int, T: Int) -> Int {
-         return Int((Double(O) * 1.4) + Double(T)) + Int(Double(IfNegitive(num: ((Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5)))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2))
+         return Int((Double(O) * 1.8) + Double(T)) + Int(Double(IfNegitive(num: ((Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5)))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2))
         }
         
         var hp = mod(O: A, T: SM)
@@ -2107,9 +2107,12 @@ class War: UIViewController {
         var Mhp = mod(O: ArcherV, T: SwordManV)
         var Mdmg = mod(O: SwordManV, T: ArcherV)
         
+        print(SwordManV)
+        print(ArcherV)
         print(hp)
         print(dmg)
         print(Mhp)
+        print("\(Mhp / dmg) isfc")
         print(Mdmg)
         
         func sayC() -> Int {
@@ -2120,20 +2123,20 @@ class War: UIViewController {
             return CR
         }
         
-        func ASM() {
-            var final = 0
-            for repeats in 1...Mhp {
-                
-                if Int(arc4random_uniform(UInt32(Mhp / dmg)) + ((arc4random_uniform(hp / dmg))) != 0 {
-                    
-                }
-            }
-        }
-        
+        var final = 0
+        var AL = 0
+        var SML = 0
         var say = ""
         
+        for _ in stride(from: 10, through: Int(Mhp), by: 1){
+                print((Double(arc4random_uniform(UInt32(100 * (Mhp / dmg)))) + Double(arc4random_uniform(UInt32(100 * (Mhp / dmg))))) / 100)
+                if (Double(arc4random_uniform(UInt32(100 * (Mhp / dmg)))) + Double(arc4random_uniform(UInt32(100 * (Mhp / dmg))))) / 100 >= 1 {
+                    final += 1
+                }
+            }
         
-        say = "You lost \(1) Archers and \(2) Sword Men \n You have won \(sayC())"
+        
+        say = "You lost \(final) Archers and \(2) Sword Men \n You have won \(sayC())"
         
         /*
         if hp <= Mdmg * 2 {
@@ -2203,10 +2206,12 @@ class War: UIViewController {
     
     @IBAction func B8C(_ sender: Any) {
         SwordManV += 10
+        print(SwordManV)
     }
     
     @IBAction func B9C(_ sender: Any) {
         ArcherV += 10
+        print(ArcherV)
     }
 }
 
