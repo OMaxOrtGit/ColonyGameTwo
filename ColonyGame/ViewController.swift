@@ -2106,7 +2106,7 @@ class War: UIViewController {
         var dmg = mod(O: SM, T: A)
         var Mhp = mod(O: ArcherV, T: SwordManV)
         var Mdmg = mod(O: SwordManV, T: ArcherV)
-        
+        print("\( Double(Double(Mhp) / Double(dmg)))    Mhp / dmg")
         var final = 0.0
         var AL = 0
         var SML = 0
@@ -2114,15 +2114,16 @@ class War: UIViewController {
         var ATSM = 0
         var SMTA = 0
         var Cross = false
-        
-        for _ in stride(from: 10, through: Int(hp), by: 1){
-                if Double(arc4random_uniform(UInt32(120 * (Mhp / dmg)))) / 100 < 1 {
+        print((Double(arc4random_uniform(UInt32(100 * Double(Double(Mhp) / Double(dmg)))))) + 34000000000000)
+        for _ in stride(from: 10, through: Int(Mhp), by: 1){
+            if Int(((Double(arc4random_uniform(UInt32(40 * Double(Double(hp) / Double(Mdmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(hp) / Double(Mdmg)))))) - ((Double(arc4random_uniform(UInt32(40 * Double(Double(Mhp) / Double(dmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(Mhp) / Double(dmg))))))) > FightsNum / 10 {
                     final += 1
                 }
         }
         
+        
         func sayC() -> Int {
-            if AL <= ArcherV / 2 && SML <= SwordManV / 2 && ArcherV != 0 && SwordManV != 0{
+            if AL * 3 <= ArcherV / 2 && SML * 5 <= SwordManV / 2 && ArcherV != 0 && SwordManV != 0{
                 return CR
             } else {
                 return 0
@@ -2145,21 +2146,21 @@ class War: UIViewController {
                 TestSM()
             }
         }
+        
         func TestSM() {
             if SwordManV < SML {
-                if Cross == true && SwordManV < SML {
+                if Cross == true{
                     AL = ArcherV
                     SML = SwordManV
                 } else {
-                    if SwordManV < SML {
-                        SMTA = SML - SwordManV
-                        SML = SwordManV
-                        AL += Int(Double(SMTA) * 4.2)
-                        TestA()
-                    }
+                    SMTA = SML - SwordManV
+                    SML = SwordManV
+                    AL += Int(Double(SMTA) * 3.2)
+                    TestA()
                 }
             }
         }
+        
         TestA()
         TestSM()
         
