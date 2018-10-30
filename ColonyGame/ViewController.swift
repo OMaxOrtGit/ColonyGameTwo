@@ -2097,15 +2097,15 @@ class War: UIViewController {
     }
     
     func Fight(SM: Int, A: Int, CR: Int) {
-        
+        if ArcherV == 0 && SwordManV == 0 {
         func mod(O: Int, T: Int) -> Int {
          return Int((Double(O) * 1.8) + Double(T)) + Int(Double(IfNegitive(num: ((Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5)))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2))
         }
         
-        var hp = mod(O: A, T: SM)
-        var dmg = mod(O: SM, T: A)
-        var Mhp = mod(O: ArcherV, T: SwordManV)
-        var Mdmg = mod(O: SwordManV, T: ArcherV)
+        var hp = mod(O: A, T: SM) + 1
+        var dmg = mod(O: SM, T: A) + 1
+        var Mhp = mod(O: ArcherV, T: SwordManV) + 1
+        var Mdmg = mod(O: SwordManV, T: ArcherV) + 1
         print("\( Double(Double(Mhp) / Double(dmg)))    Mhp / dmg")
         var final = 0.0
         var AL = 0
@@ -2115,15 +2115,23 @@ class War: UIViewController {
         var SMTA = 0
         var Cross = false
         print((Double(arc4random_uniform(UInt32(100 * Double(Double(Mhp) / Double(dmg)))))) + 34000000000000)
-        for _ in stride(from: 10, through: Int(Mhp), by: 1){
-            if Int(((Double(arc4random_uniform(UInt32(40 * Double(Double(hp) / Double(Mdmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(hp) / Double(Mdmg)))))) - ((Double(arc4random_uniform(UInt32(40 * Double(Double(Mhp) / Double(dmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(Mhp) / Double(dmg))))))) > FightsNum / 10 {
+        
+        for _ in stride(from: 10, through: Int(hp), by: 1){
+            if Int(((Double(arc4random_uniform(UInt32(40 * Double(Double(hp) / Double(Mdmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(hp) / Double(Mdmg)))))) - ((Double(arc4random_uniform(UInt32(40 * Double(Double(Mhp) / Double(dmg)))))) - Double(arc4random_uniform(UInt32(20 * Double(Double(Mhp) / Double(dmg))))))) > 12 {
                     final += 1
                 }
         }
         
         
         func sayC() -> Int {
-            if AL * 3 <= ArcherV / 2 && SML * 5 <= SwordManV / 2 && ArcherV != 0 && SwordManV != 0{
+            var both = false
+            if ArcherV == 0 && SwordManV == 0 {
+                both = true
+                print(both)
+            }
+            print(AL)
+            print(SML)
+            if Int(Double(AL) * 0.8) < ArcherV && Int(Double(SML) * 0.7) < SwordManV && both == false {
                 return CR
             } else {
                 return 0
@@ -2132,11 +2140,12 @@ class War: UIViewController {
         
         print("\(final)    final")
         final /= 100
-        let ALR = arc4random_uniform(10) + 25
+        let ALR = arc4random_uniform(10) + 30
         AL = Int(final * Double(ALR))
         SML = Int((final * Double(100 - ALR)))
         print(AL + 2300000)
         print(SML + 3200000)
+        
         func TestA() {
             if ArcherV < AL {
                 ATSM = AL - ArcherV
@@ -2164,7 +2173,7 @@ class War: UIViewController {
         TestA()
         TestSM()
         
-        say = "You lost \(AL) Archers and \(SML) Sword Men \n You have won \(sayC())"
+        say = "You lost \(AL) Archers and \(SML) Sword Men\nYou now have \(ArcherV) Archers and \(SwordManV) Sword Men\n You have won \(sayC())."
         
         
         let alertController = UIAlertController(title: "Resaults", message: "\(say)", preferredStyle: UIAlertController.Style.alert)
@@ -2173,6 +2182,12 @@ class War: UIViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
+    } else {
+    let alertController = UIAlertController(title: "Need Troops", message: "Buy Sword Men or Archers.", preferredStyle: UIAlertController.Style.alert)
+    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
+    
+    self.present(alertController, animated: true, completion: nil)
+    }
     }
     
     override func viewDidLoad() {
