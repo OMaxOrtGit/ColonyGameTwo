@@ -137,35 +137,35 @@ var BowNArrowInt = 0
 var TownInt = 0
 var CastleInt = 0
 
-var CR1V = 0
-var CR2V = 0
-var CR3V = 0
-var CR4V = 0
-var CR5V = 0
-var CR6V = 0
-var CR7V = 0
-var CR8V = 0
-var CR9V = 0
+var CR1V = "0"
+var CR2V = "0"
+var CR3V = "0"
+var CR4V = "0"
+var CR5V = "0"
+var CR6V = "0"
+var CR7V = "0"
+var CR8V = "0"
+var CR9V = "0"
 
-var SM1V = 0
-var SM2V = 0
-var SM3V = 0
-var SM4V = 0
-var SM5V = 0
-var SM6V = 0
-var SM7V = 0
-var SM8V = 0
-var SM9V = 0
+var SM1V = "0"
+var SM2V = "0"
+var SM3V = "0"
+var SM4V = "0"
+var SM5V = "0"
+var SM6V = "0"
+var SM7V = "0"
+var SM8V = "0"
+var SM9V = "0"
 
-var A1V = 0
-var A2V = 0
-var A3V = 0
-var A4V = 0
-var A5V = 0
-var A6V = 0
-var A7V = 0
-var A8V = 0
-var A9V = 0
+var A1V = "0"
+var A2V = "0"
+var A3V = "0"
+var A4V = "0"
+var A5V = "0"
+var A6V = "0"
+var A7V = "0"
+var A8V = "0"
+var A9V = "0"
 
 var CR1P6 = 0
 var CR1P62 = 0
@@ -1937,37 +1937,37 @@ class War: UIViewController {
             return  IfNegitive(num: (n - n2) + (Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 1.75)))))
         }
         
-        CR1V = TwoNums()
-        CR2V = TwoNums()
-        CR3V = TwoNums()
-        CR4V = TwoNums()
-        CR5V = TwoNums()
-        CR6V = TwoNums()
-        CR7V = TwoNums()
-        CR8V = TwoNums()
-        CR9V = TwoNums()
+        CR1V = "\(TwoNums())"
+        CR2V = "\(TwoNums())"
+        CR3V = "\(TwoNums())"
+        CR4V = "\(TwoNums())"
+        CR5V = "\(TwoNums())"
+        CR6V = "\(TwoNums())"
+        CR7V = "\(TwoNums())"
+        CR8V = "\(TwoNums())"
+        CR9V = "\(TwoNums())"
         
         
-        SM1V = SM(n: CR1V)
-        SM2V = SM(n: CR2V)
-        SM3V = SM(n: CR3V)
-        SM4V = SM(n: CR4V)
-        SM5V = SM(n: CR5V)
-        SM6V = SM(n: CR6V)
-        SM7V = SM(n: CR7V)
-        SM8V = SM(n: CR8V)
-        SM9V = SM(n: CR9V)
+        SM1V = "\(SM(n: Int(CR1V)!))"
+        SM2V = "\(SM(n: Int(CR2V)!))"
+        SM3V = "\(SM(n: Int(CR3V)!))"
+        SM4V = "\(SM(n: Int(CR4V)!))"
+        SM5V = "\(SM(n: Int(CR5V)!))"
+        SM6V = "\(SM(n: Int(CR6V)!))"
+        SM7V = "\(SM(n: Int(CR7V)!))"
+        SM8V = "\(SM(n: Int(CR8V)!))"
+        SM9V = "\(SM(n: Int(CR9V)!))"
         
         
-        A1V = A(n: CR1V, n2: SM1V)
-        A2V = A(n: CR2V, n2: SM2V)
-        A3V = A(n: CR3V, n2: SM3V)
-        A4V = A(n: CR4V, n2: SM4V)
-        A5V = A(n: CR5V, n2: SM5V)
-        A6V = A(n: CR6V, n2: SM6V)
-        A7V = A(n: CR7V, n2: SM7V)
-        A8V = A(n: CR8V, n2: SM8V)
-        A9V = A(n: CR9V, n2: SM9V)
+        A1V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A2V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A3V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A4V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A5V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A6V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A7V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A8V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
+        A9V = "\(A(n: Int(CR1V)!, n2: Int(SM1V)!))"
         
         
         userDefaults.set(CR1V, forKey: "CR1V")
@@ -2034,35 +2034,35 @@ class War: UIViewController {
     
     func Keep() {
         
-        CR1V = userDefaults.integer(forKey: "CR1V")
-        CR2V = userDefaults.integer(forKey: "CR2V")
-        CR3V = userDefaults.integer(forKey: "CR3V")
-        CR4V = userDefaults.integer(forKey: "CR4V")
-        CR5V = userDefaults.integer(forKey: "CR5V")
-        CR6V = userDefaults.integer(forKey: "CR6V")
-        CR7V = userDefaults.integer(forKey: "CR7V")
-        CR8V = userDefaults.integer(forKey: "CR8V")
-        CR9V = userDefaults.integer(forKey: "CR9V")
+        CR1V = userDefaults.string(forKey: "CR1V")!
+        CR2V = userDefaults.string(forKey: "CR2V")!
+        CR3V = userDefaults.string(forKey: "CR3V")!
+        CR4V = userDefaults.string(forKey: "CR4V")!
+        CR5V = userDefaults.string(forKey: "CR5V")!
+        CR6V = userDefaults.string(forKey: "CR6V")!
+        CR7V = userDefaults.string(forKey: "CR7V")!
+        CR8V = userDefaults.string(forKey: "CR8V")!
+        CR9V = userDefaults.string(forKey: "CR9V")!
         
-        SM1V = userDefaults.integer(forKey: "SM1V")
-        SM2V = userDefaults.integer(forKey: "SM2V")
-        SM3V = userDefaults.integer(forKey: "SM3V")
-        SM4V = userDefaults.integer(forKey: "SM4V")
-        SM5V = userDefaults.integer(forKey: "SM5V")
-        SM6V = userDefaults.integer(forKey: "SM6V")
-        SM7V = userDefaults.integer(forKey: "SM7V")
-        SM8V = userDefaults.integer(forKey: "SM8V")
-        SM9V = userDefaults.integer(forKey: "SM9V")
+        SM1V = userDefaults.string(forKey: "SM1V")!
+        SM2V = userDefaults.string(forKey: "SM2V")!
+        SM3V = userDefaults.string(forKey: "SM3V")!
+        SM4V = userDefaults.string(forKey: "SM4V")!
+        SM5V = userDefaults.string(forKey: "SM5V")!
+        SM6V = userDefaults.string(forKey: "SM6V")!
+        SM7V = userDefaults.string(forKey: "SM7V")!
+        SM8V = userDefaults.string(forKey: "SM8V")!
+        SM9V = userDefaults.string(forKey: "SM9V")!
         
-        A1V = userDefaults.integer(forKey: "A1V")
-        A2V = userDefaults.integer(forKey: "A2V")
-        A3V = userDefaults.integer(forKey: "A3V")
-        A4V = userDefaults.integer(forKey: "A4V")
-        A5V = userDefaults.integer(forKey: "A5V")
-        A6V = userDefaults.integer(forKey: "A6V")
-        A7V = userDefaults.integer(forKey: "A7V")
-        A8V = userDefaults.integer(forKey: "A8V")
-        A9V = userDefaults.integer(forKey: "A9V")
+        A1V = userDefaults.string(forKey: "A1V")!
+        A2V = userDefaults.string(forKey: "A2V")!
+        A3V = userDefaults.string(forKey: "A3V")!
+        A4V = userDefaults.string(forKey: "A4V")!
+        A5V = userDefaults.string(forKey: "A5V")!
+        A6V = userDefaults.string(forKey: "A6V")!
+        A7V = userDefaults.string(forKey: "A7V")!
+        A8V = userDefaults.string(forKey: "A8V")!
+        A9V = userDefaults.string(forKey: "A9V")!
         
         CR1.text = "\(CR1V)"
         CR2.text = "\(CR2V)"
@@ -2238,7 +2238,13 @@ class War: UIViewController {
     }
     
     @IBAction func B7C(_ sender: Any) {
-        Fight(SM: SM7V, A: A7V, CR: CR7V)
+        Fight(SM: Int(SM7V)!, A: Int(A7V)!, CR: Int(CR7V)!)
+        SM7.text = "Wait Until Tomorrow"
+        userDefaults.set("Wait Until Tomorrow", forKey: "CR7V")
+        A7.text = "Wait Until Tomorrow"
+        userDefaults.set("Wait Until Tomorrow", forKey: "A7V")
+        CR7.text = "Wait Until Tomorrow"
+        userDefaults.set("Wait Until Tomorrow", forKey: "SM7V")
     }
     
     @IBAction func B8C(_ sender: Any) {
