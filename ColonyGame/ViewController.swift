@@ -2107,47 +2107,68 @@ class War: UIViewController {
         var Mhp = mod(O: ArcherV, T: SwordManV)
         var Mdmg = mod(O: SwordManV, T: ArcherV)
         
-        print(SwordManV)
-        print(ArcherV)
-        print(hp)
-        print(dmg)
-        print(Mhp)
-        print("\(Mhp / dmg) isfc")
-        print(Mdmg)
-        
-        func sayC() -> Int {
-            if hp <= Mdmg * 2 {
-                return CR
-            } else {
-            }
-            return CR
-        }
-        
-        var final = 0
+        var final = 0.0
         var AL = 0
         var SML = 0
         var say = ""
+        var ATSM = 0
+        var SMTA = 0
+        var Cross = false
         
-        for _ in stride(from: 10, through: Int(Mhp), by: 1){
-                print((Double(arc4random_uniform(UInt32(100 * (Mhp / dmg)))) + Double(arc4random_uniform(UInt32(100 * (Mhp / dmg))))) / 100)
-                if (Double(arc4random_uniform(UInt32(100 * (Mhp / dmg)))) + Double(arc4random_uniform(UInt32(100 * (Mhp / dmg))))) / 100 >= 1 {
+        for _ in stride(from: 10, through: Int(hp), by: 1){
+                if Double(arc4random_uniform(UInt32(120 * (Mhp / dmg)))) / 100 < 1 {
                     final += 1
                 }
-            }
-        
-        
-        say = "You lost \(final) Archers and \(2) Sword Men \n You have won \(sayC())"
-        
-        /*
-        if hp <= Mdmg * 2 {
-            say = "You lost 0 Archers and 0 SwordMen, you have won"
-            print("1")
-        } else {
-            print("2")
         }
-        */
+        
+        func sayC() -> Int {
+            if AL <= ArcherV / 2 && SML <= SwordManV / 2 && ArcherV != 0 && SwordManV != 0{
+                return CR
+            } else {
+                return 0
+            }
+        }
+        
+        print("\(final)    final")
+        final /= 100
+        let ALR = arc4random_uniform(10) + 25
+        AL = Int(final * Double(ALR))
+        SML = Int((final * Double(100 - ALR)))
+        print(AL + 2300000)
+        print(SML + 3200000)
+        func TestA() {
+            if ArcherV < AL {
+                ATSM = AL - ArcherV
+                Cross = true
+                AL = ArcherV
+                SML += Int(Double(ATSM) * 1.4)
+                TestSM()
+            }
+        }
+        func TestSM() {
+            if SwordManV < SML {
+                if Cross == true && SwordManV < SML {
+                    AL = ArcherV
+                    SML = SwordManV
+                } else {
+                    if SwordManV < SML {
+                        SMTA = SML - SwordManV
+                        SML = SwordManV
+                        AL += Int(Double(SMTA) * 4.2)
+                        TestA()
+                    }
+                }
+            }
+        }
+        TestA()
+        TestSM()
+        
+        say = "You lost \(AL) Archers and \(SML) Sword Men \n You have won \(sayC())"
+        
         
         let alertController = UIAlertController(title: "Resaults", message: "\(say)", preferredStyle: UIAlertController.Style.alert)
+        ArcherV -= AL
+        SwordManV -= SML
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
@@ -2193,7 +2214,7 @@ class War: UIViewController {
     }
     
     @IBAction func B5C(_ sender: Any) {
-        FightsNum += 10
+        FightsNum -= 10
     }
     
     @IBAction func B6C(_ sender: Any) {
@@ -2206,12 +2227,12 @@ class War: UIViewController {
     
     @IBAction func B8C(_ sender: Any) {
         SwordManV += 10
-        print(SwordManV)
+        print(SwordManV + 210000000)
     }
     
     @IBAction func B9C(_ sender: Any) {
         ArcherV += 10
-        print(ArcherV)
+        print(ArcherV + 120000000)
     }
 }
 
