@@ -70,6 +70,8 @@ var ArcharyRangeV = 0
 var SwordManV = 0
 var ArcherV = 0
 
+var ArmyShop = false
+
 var MinerVC = false
 var LumberJackVC = false
 var CrafterVC = false
@@ -581,6 +583,9 @@ class Building: UIViewController {
         GrinderNNNA.text = ""
     }
     
+    @IBAction func Shop(_ sender: Any) {
+        
+    }
     
     
 }
@@ -826,8 +831,10 @@ class Matterials: UIViewController {
         IronNNNA.text = ""
     }
     
-    @IBAction func menu(_ sender: Any) {
+    @IBAction func Shop(_ sender: Any) {
+        
     }
+    
     
 }
 class Town: UIViewController {
@@ -1079,6 +1086,10 @@ class Town: UIViewController {
         KingdomNNNNA.text = ""
     }
     
+    @IBAction func Shop(_ sender: Any) {
+        
+    }
+    
 }
 
 class People: UIViewController {
@@ -1208,10 +1219,15 @@ class People: UIViewController {
                                                     }
                                                 }
                                             }
-                                        }}}}}}}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-        
     }
     
     
@@ -1411,6 +1427,9 @@ class People: UIViewController {
         BSPNNA.text = "1"
     }
     
+    @IBAction func Shop(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1633,6 +1652,9 @@ class Tool: UIViewController {
         BowNArrowNNA.text = "1"
     }
     
+    @IBAction func Shop(_ sender: Any) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -1794,10 +1816,7 @@ class Army: UIViewController {
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
         }
     }
-    
-    
-    @IBAction func Needed(_ sender: Any) {
-        
+    func NeededC() {
         FenceNA.text = "Needed:"
         CampNA.text = "Needed:"
         GeneralNA.text = "Needed:"
@@ -1818,6 +1837,10 @@ class Army: UIViewController {
         
         FenceNNNA.text = "8 Nails"
         ArcherNNNA.text = "Bow N Arrow"
+    }
+    
+    @IBAction func Needed(_ sender: Any) {
+        NeededC()
     }
     
     @IBAction func Amount(_ sender: Any) {
@@ -1844,7 +1867,35 @@ class Army: UIViewController {
     }
     
     @IBAction func Shop(_ sender: Any) {
+        if ArmyShop == false {
+        FenceNA.text = "Coins:"
+        CampNA.text = "Coins:"
+        GeneralNA.text = "Coins:"
+        SoldierNA.text = "Coins:"
+        BarracksNA.text = "Coins:"
+        ArcharyRangeNA.text = "Coins:"
+        SwordManNA.text = "Coins:"
+        ArcherNA.text = "Coins:"
         
+        FenceNNA.text = "1"
+        CampNNA.text = "1"
+        GeneralNNA.text = "1"
+        SoldierNNA.text = "1"
+        BarracksNNA.text = "1"
+        ArcharyRangeNNA.text = "1"
+        SwordManNNA.text = "1"
+        ArcherNNA.text = "1"
+        
+        FenceNNNA.text = ""
+        ArcherNNNA.text = ""
+        } else {
+            NeededC()
+        }
+        if ArmyShop == true {
+            ArmyShop = false
+        } else {
+            ArmyShop = true
+        }
     }
     
     
