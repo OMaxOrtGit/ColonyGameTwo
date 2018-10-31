@@ -670,7 +670,6 @@ class Matterials: UIViewController {
         IronPartsL.text = "\(IronPartsV)"
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (Refresh) in
-            //Matterials.IronOreL.text = "hi"
             self.IronOreL.text = "\(IronOreV)"
             self.RockL.text = "\(RockV)"
             self.ScrapWoodL.text = "\(ScrapWoodV)"
