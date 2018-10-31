@@ -2097,7 +2097,6 @@ class War: UIViewController {
     }
     
     func Fight(SM: Int, A: Int, CR: Int) {
-        if ArcherV == 0 && SwordManV == 0 {
         func mod(O: Int, T: Int) -> Int {
          return Int((Double(O) * 1.8) + Double(T)) + Int(Double(IfNegitive(num: ((Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5)))) - Int(arc4random_uniform(UInt32(Double(FightsNum) * 2.5))))) / 2))
         }
@@ -2182,12 +2181,7 @@ class War: UIViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
-    } else {
-    let alertController = UIAlertController(title: "Need Troops", message: "Buy Sword Men or Archers.", preferredStyle: UIAlertController.Style.alert)
-    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
     
-    self.present(alertController, animated: true, completion: nil)
-    }
     }
     
     override func viewDidLoad() {
@@ -2238,13 +2232,28 @@ class War: UIViewController {
     }
     
     @IBAction func B7C(_ sender: Any) {
+    if SM7.text != "Wait Until Tomorrow" {
+        if ArcherV != 0 && SwordManV != 0 {
         Fight(SM: Int(SM7V)!, A: Int(A7V)!, CR: Int(CR7V)!)
+        } else {
+            let alertController = UIAlertController(title: "Need Troops", message: "Buy Sword Men or Archers.", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+    } else {
         SM7.text = "Wait Until Tomorrow"
         userDefaults.set("Wait Until Tomorrow", forKey: "CR7V")
         A7.text = "Wait Until Tomorrow"
         userDefaults.set("Wait Until Tomorrow", forKey: "A7V")
         CR7.text = "Wait Until Tomorrow"
         userDefaults.set("Wait Until Tomorrow", forKey: "SM7V")
+    
+    let alertController = UIAlertController(title: "Already Fought Today", message: "Please Wait Until Tomorrow to Fight\nOr if You Want to Today, Beat Every Fight", preferredStyle: UIAlertController.Style.alert)
+    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
+    
+    self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func B8C(_ sender: Any) {
