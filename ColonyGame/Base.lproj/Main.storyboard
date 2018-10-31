@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -4600,11 +4600,7 @@
                                             <segue destination="Hx9-HH-0Hy" kind="show" id="aaE-ST-ILB"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Shop" id="QJS-Fp-w6r">
-                                        <connections>
-                                            <action selector="Shop:" destination="2eG-nb-gpY" id="CG1-S4-vpJ"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Shop" id="QJS-Fp-w6r"/>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Need a Person for Everything Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfX-CZ-47t">
@@ -6993,14 +6989,14 @@
         <image name="Wood_Beam" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mNY-Ey-G8Y"/>
-        <segue reference="NU5-dT-8Nt"/>
-        <segue reference="56O-Ps-w6X"/>
-        <segue reference="Hwg-cQ-wYj"/>
-        <segue reference="QCt-Bn-NAe"/>
-        <segue reference="Wrq-i9-HUs"/>
-        <segue reference="L60-5t-ZbC"/>
-        <segue reference="s22-eh-f4L"/>
+        <segue reference="NnO-go-fAN"/>
+        <segue reference="GRT-kV-2eW"/>
+        <segue reference="PgS-FE-9jO"/>
+        <segue reference="UFx-uF-7Rg"/>
+        <segue reference="kwb-nw-0Ct"/>
+        <segue reference="8Ri-Td-9Pd"/>
+        <segue reference="NBZ-eI-IcN"/>
+        <segue reference="7oB-gt-bqm"/>
         <segue reference="3x9-Ku-J35"/>
     </inferredMetricsTieBreakers>
 </document>

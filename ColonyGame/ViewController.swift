@@ -70,7 +70,12 @@ var ArcharyRangeV = 0
 var SwordManV = 0
 var ArcherV = 0
 
+var MatShop = false
 var ArmyShop = false
+var BiuldingShop = false
+var TownShop = false
+
+
 
 var MinerVC = false
 var LumberJackVC = false
@@ -832,7 +837,27 @@ class Matterials: UIViewController {
     }
     
     @IBAction func Shop(_ sender: Any) {
+        LogNA.text = "Amount:"
+        RockNA.text = "Amount:"
+        ScrapWoodNA.text = "Amount:"
+        FireWoodNA.text = "Amount:"
+        StoneNA.text = "Amount:"
+        PlankNA.text = "Amount:"
+        IronNA.text = "Amount:"
+        NailNA.text = "Amount:"
+        IronPartNA.text = "Amount:"
         
+        LogNNA.text = "1"
+        RockNNA.text = "1"
+        ScrapWoodNNA.text = "5"
+        FireWoodNNA.text = "1"
+        StoneNNA.text = "1"
+        PlankNNA.text = "1"
+        IronNNA.text = "1"
+        NailNNA.text = "5"
+        IronPartsNNA.text = "3"
+        
+        IronNNNA.text = ""
     }
     
     
@@ -1427,9 +1452,6 @@ class People: UIViewController {
         BSPNNA.text = "1"
     }
     
-    @IBAction func Shop(_ sender: Any) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
