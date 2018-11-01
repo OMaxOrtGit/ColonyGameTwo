@@ -1111,6 +1111,33 @@ class Town: UIViewController {
     }
     
     @IBAction func Shop(_ sender: Any) {
+        HouseNA.text = "Shop:"
+        RoadNA.text = "Shop:"
+        TownNA.text = "Shop:"
+        CastleWallNA.text = "Shop:"
+        CastleNA.text = "Shop:"
+        RCWNA.text = "Shop:"
+        KIngdomNA.text = "Shop:"
+        EmpireNA.text = "Shop:"
+        
+        HouseNNA.text = "1"
+        RoadNNA.text = "1"
+        TownNNA.text = "1"
+        CastleNNA.text = "1"
+        CastleWallNNA.text = "1"
+        RCWNNA.text = "1"
+        KingdomNNA.text = "1"
+        EmpireNNA.text = "1"
+        
+        HouseNNNA.text = ""
+        TownNNNA.text = ""
+        CastleNNNA.text = ""
+        RCWNNNA.text = ""
+        KingdomNNNA.text = ""
+        
+        HouseNNNNA.text = ""
+        KingdomNNNNA.text = ""
+        
         
     }
     
