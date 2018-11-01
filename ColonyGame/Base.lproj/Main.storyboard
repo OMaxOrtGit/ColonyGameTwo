@@ -950,7 +950,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c93-Pc-d5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="830" y="16"/>
+            <point key="canvasLocation" x="809" y="16"/>
         </scene>
         <!--Town-->
         <scene sceneID="4ua-XM-XW2">
@@ -2481,22 +2481,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPH-S6-tQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="down" id="68y-du-YWd">
                     <connections>
-                        <segue destination="Ta5-jI-F4u" kind="show" id="L60-5t-ZbC"/>
+                        <segue destination="Ta5-jI-F4u" kind="show" id="obC-0n-cRJ"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="l86-G5-sff">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="3x9-Ku-J35"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="Uwe-Ef-dpW"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="tg9-lA-Kgl">
                     <connections>
-                        <segue destination="2eG-nb-gpY" kind="show" id="56O-Ps-w6X"/>
+                        <segue destination="2eG-nb-gpY" kind="show" id="6KV-af-kMe"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="gz0-wd-6Xs">
                     <connections>
-                        <segue destination="mHw-FE-EVH" kind="show" id="QCt-Bn-NAe"/>
+                        <segue destination="Ogk-mK-PPd" kind="show" id="cmN-IE-RU3"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -3148,11 +3148,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="awI-wz-y0N"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="P3m-dC-Ox0" appends="YES" id="tMN-Yo-dzj"/>
-                            <outletCollection property="gestureRecognizers" destination="A6l-48-Kfg" appends="YES" id="HF5-yq-P5k"/>
                             <outletCollection property="gestureRecognizers" destination="WG0-UJ-36t" appends="YES" id="7TM-5u-Z3e"/>
                             <outletCollection property="gestureRecognizers" destination="imq-Ie-7in" appends="YES" id="Rch-C6-MWh"/>
-                            <outletCollection property="gestureRecognizers" destination="qxB-CR-Yun" appends="YES" id="rmo-8r-rl7"/>
                             <outletCollection property="gestureRecognizers" destination="qgz-Va-0gR" appends="YES" id="a85-Qe-CcW"/>
                             <outletCollection property="gestureRecognizers" destination="6L7-dB-RvC" appends="YES" id="UkV-3x-rSx"/>
                         </connections>
@@ -3193,16 +3190,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHB-9x-atd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="P3m-dC-Ox0">
-                    <connections>
-                        <segue destination="AOa-85-z4H" kind="show" id="CRg-jn-2TL"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="A6l-48-Kfg">
-                    <connections>
-                        <segue destination="ieY-S1-muD" kind="show" id="jkk-QR-OK0"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="WG0-UJ-36t">
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" id="nK0-Ov-Tko"/>
@@ -3213,14 +3200,9 @@
                         <segue destination="2eG-nb-gpY" kind="show" id="wmI-s7-Zh7"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="qxB-CR-Yun">
+                <swipeGestureRecognizer direction="left" id="qgz-Va-0gR">
                     <connections>
-                        <segue destination="Ogk-mK-PPd" kind="show" id="B0u-33-zWZ"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" numberOfTouchesRequired="2" id="qgz-Va-0gR">
-                    <connections>
-                        <segue destination="gRS-zN-3fA" kind="show" id="Jdq-SZ-v0U"/>
+                        <segue destination="ieY-S1-muD" kind="show" id="ruH-wg-HPw"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="6L7-dB-RvC">
@@ -3849,12 +3831,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sbv-9f-wwY"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="Ldu-Ya-02p" appends="YES" id="qrk-zo-7cT"/>
-                            <outletCollection property="gestureRecognizers" destination="FPU-kJ-pAc" appends="YES" id="hAE-46-ZXh"/>
                             <outletCollection property="gestureRecognizers" destination="xDe-NM-LOD" appends="YES" id="lbq-Vc-1hR"/>
                             <outletCollection property="gestureRecognizers" destination="dHa-c9-4I9" appends="YES" id="Eu5-3h-gM7"/>
                             <outletCollection property="gestureRecognizers" destination="MwR-KS-CsN" appends="YES" id="66f-Eu-rru"/>
-                            <outletCollection property="gestureRecognizers" destination="mQ2-Ax-wyy" appends="YES" id="ifg-iP-hIP"/>
                             <outletCollection property="gestureRecognizers" destination="qKk-0u-kKN" appends="YES" id="a3a-uy-exU"/>
                         </connections>
                     </view>
@@ -3889,19 +3868,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6X5-lu-dpl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="Ldu-Ya-02p">
-                    <connections>
-                        <segue destination="AOa-85-z4H" kind="show" id="Wrq-i9-HUs"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="FPU-kJ-pAc">
-                    <connections>
-                        <segue destination="ieY-S1-muD" kind="show" id="5l8-yY-5gk"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="xDe-NM-LOD">
                     <connections>
-                        <segue destination="mHw-FE-EVH" kind="show" id="VyL-Be-Zkb"/>
+                        <segue destination="Ogk-mK-PPd" kind="show" id="ElH-xC-y26"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="dHa-c9-4I9">
@@ -3914,14 +3883,9 @@
                         <segue destination="2eG-nb-gpY" kind="show" id="2s0-ae-1vK"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="mQ2-Ax-wyy">
-                    <connections>
-                        <segue destination="Ogk-mK-PPd" kind="show" id="6GB-bd-aws"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="qKk-0u-kKN">
                     <connections>
-                        <segue destination="Ta5-jI-F4u" kind="show" id="khr-6h-Zm2"/>
+                        <segue destination="AOa-85-z4H" kind="show" id="jV0-Mp-g81"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -4572,11 +4536,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4xb-gj-2rh"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="weJ-ob-vHC" appends="YES" id="63t-Sa-nES"/>
-                            <outletCollection property="gestureRecognizers" destination="bDf-Jd-JLo" appends="YES" id="gIX-Rm-g9X"/>
                             <outletCollection property="gestureRecognizers" destination="LBt-gm-fCq" appends="YES" id="Uib-Yc-F8b"/>
                             <outletCollection property="gestureRecognizers" destination="cpL-OH-yid" appends="YES" id="a9e-Yu-EvB"/>
-                            <outletCollection property="gestureRecognizers" destination="HSC-Bn-Ji1" appends="YES" id="A0Q-Zq-kzV"/>
                             <outletCollection property="gestureRecognizers" destination="Ht2-TT-Vnk" appends="YES" id="Tpb-t6-OPl"/>
                             <outletCollection property="gestureRecognizers" destination="NdP-aF-qcC" appends="YES" id="5fC-1C-7Y9"/>
                         </connections>
@@ -4611,39 +4572,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ2-Wb-Mso" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="weJ-ob-vHC">
-                    <connections>
-                        <segue destination="AOa-85-z4H" kind="show" id="Qlb-XO-bre"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="bDf-Jd-JLo">
-                    <connections>
-                        <segue destination="ieY-S1-muD" kind="show" id="LUj-em-5AU"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="LBt-gm-fCq">
                     <connections>
                         <segue destination="mHw-FE-EVH" kind="show" id="gU6-SY-PHS"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="cpL-OH-yid">
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="im4-yc-YF3"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="HSC-Bn-Ji1">
-                    <connections>
-                        <segue destination="Ogk-mK-PPd" kind="show" id="Zy7-5M-i99"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" numberOfTouchesRequired="2" id="Ht2-TT-Vnk">
+                <swipeGestureRecognizer direction="up" id="Ht2-TT-Vnk">
                     <connections>
                         <segue destination="gRS-zN-3fA" kind="show" id="ORg-t6-C7E"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="NdP-aF-qcC">
                     <connections>
-                        <segue destination="Ta5-jI-F4u" kind="show" id="M00-aR-A34"/>
+                        <segue destination="Ogk-mK-PPd" kind="show" id="aup-rK-McY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="cpL-OH-yid">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="im4-yc-YF3"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -5326,12 +5272,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pMD-pd-EO2"/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="OlF-9A-Ven" appends="YES" id="Fkh-Mr-bya"/>
-                            <outletCollection property="gestureRecognizers" destination="3zL-3y-8UL" appends="YES" id="cPR-3t-C5A"/>
                             <outletCollection property="gestureRecognizers" destination="5um-Il-gzl" appends="YES" id="bJ2-cU-Uhc"/>
                             <outletCollection property="gestureRecognizers" destination="tcE-8A-xcb" appends="YES" id="LIu-q9-HxB"/>
                             <outletCollection property="gestureRecognizers" destination="uJR-aN-jaJ" appends="YES" id="E9p-r4-yGY"/>
-                            <outletCollection property="gestureRecognizers" destination="KRI-4Q-4JT" appends="YES" id="YCP-S9-B0j"/>
                             <outletCollection property="gestureRecognizers" destination="qtU-eU-R9J" appends="YES" id="mT0-Hk-8uA"/>
                         </connections>
                     </view>
@@ -5368,19 +5311,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwU-Pq-rAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cO3-HP-LFD" userLabel="Exit" sceneMemberID="exit"/>
-                <swipeGestureRecognizer direction="down" numberOfTouchesRequired="2" id="OlF-9A-Ven">
-                    <connections>
-                        <segue destination="AOa-85-z4H" kind="show" id="PFh-Qv-eXL"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="3zL-3y-8UL">
-                    <connections>
-                        <segue destination="ieY-S1-muD" kind="show" id="rmG-yc-WJf"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="left" id="5um-Il-gzl">
                     <connections>
-                        <segue destination="mHw-FE-EVH" kind="show" id="pvq-f0-JIl"/>
+                        <segue destination="AOa-85-z4H" kind="show" id="FmU-dU-HgE"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="right" id="tcE-8A-xcb">
@@ -5390,17 +5323,12 @@
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="up" id="uJR-aN-jaJ">
                     <connections>
-                        <segue destination="2eG-nb-gpY" kind="show" id="Ozb-ma-SMY"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" numberOfTouchesRequired="2" id="KRI-4Q-4JT">
-                    <connections>
-                        <segue destination="gRS-zN-3fA" kind="show" id="9uX-QE-y4E"/>
+                        <segue destination="2eG-nb-gpY" kind="show" id="dRJ-ex-rfm"/>
                     </connections>
                 </swipeGestureRecognizer>
                 <swipeGestureRecognizer direction="down" id="qtU-eU-R9J">
                     <connections>
-                        <segue destination="Ta5-jI-F4u" kind="show" id="lWG-a7-ber"/>
+                        <segue destination="AOa-85-z4H" kind="show" id="apf-Vr-8gq"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -6909,7 +6837,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gac-CD-WBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2190" y="-871"/>
+            <point key="canvasLocation" x="-2338" y="-836"/>
         </scene>
     </scenes>
     <resources>
@@ -6935,14 +6863,14 @@
         <image name="Wood_Beam" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8vp-8G-TEs"/>
-        <segue reference="DMj-sY-kHc"/>
-        <segue reference="kPi-VI-CMC"/>
-        <segue reference="P2z-a0-XsX"/>
-        <segue reference="BUa-cg-nFC"/>
-        <segue reference="NBN-vo-W7T"/>
-        <segue reference="weo-oB-OTS"/>
+        <segue reference="UX7-Y2-I0j"/>
+        <segue reference="OCO-Ur-2wG"/>
+        <segue reference="yfU-AA-qlP"/>
+        <segue reference="8wE-ki-H39"/>
+        <segue reference="zrW-n9-ase"/>
+        <segue reference="3tI-Sh-0IL"/>
+        <segue reference="ArA-9b-Whb"/>
         <segue reference="53i-7Y-9fy"/>
-        <segue reference="Vv9-9Y-EOV"/>
+        <segue reference="rf4-Jz-ILe"/>
     </inferredMetricsTieBreakers>
 </document>
