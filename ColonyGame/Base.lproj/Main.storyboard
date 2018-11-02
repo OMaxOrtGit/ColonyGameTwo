@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSu-dh-9TX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1687,21 +1687,6 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="830" y="803"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a2g-eo-JYy">
-            <objects>
-                <viewController id="wmT-7M-dkJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RES-nL-nha">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Kba-QR-8d8"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TBX-z8-1tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="830" y="1534"/>
         </scene>
         <!--War-->
         <scene sceneID="oBe-lJ-kGW">
@@ -5374,51 +5359,64 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="aJF-ii-AaO">
-                                        <rect key="frame" x="0.0" y="95" width="375" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="150" id="aJF-ii-AaO">
+                                        <rect key="frame" x="0.0" y="95" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aJF-ii-AaO" id="NQU-aB-fdx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cA1-AQ-Twx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-Nh-KeF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lft-od-qXF">
-                                                                    <rect key="frame" x="0.0" y="1.5" width="125" height="87"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="149.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron Ore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifQ-TS-SUN">
-                                                                            <rect key="frame" x="32" y="0.0" width="61.5" height="29"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-mG-i08">
-                                                                            <rect key="frame" x="0.0" y="29" width="125" height="29"/>
-                                                                            <nil key="textColor"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                                                                            <connections>
-                                                                                <action selector="IronOreITC:" destination="ieY-S1-muD" eventType="editingChanged" id="bix-qH-Zfj"/>
-                                                                            </connections>
-                                                                        </textField>
-                                                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="luw-xZ-I1X">
-                                                                            <rect key="frame" x="15.5" y="58" width="94" height="29"/>
-                                                                            <connections>
-                                                                                <action selector="IronOreISC:" destination="ieY-S1-muD" eventType="valueChanged" id="aLR-uB-sZ6"/>
-                                                                            </connections>
-                                                                        </stepper>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PvM-9Z-J2y">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="75"/>
+                                                                            <subviews>
+                                                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhy-ML-DZ1">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="75"/>
+                                                                                </pickerView>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MhB-wB-SGm">
+                                                                            <rect key="frame" x="0.0" y="75" width="125" height="74.5"/>
+                                                                            <subviews>
+                                                                                <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-mG-i08">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="37"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                                                                    <connections>
+                                                                                        <action selector="IronOreITC:" destination="ieY-S1-muD" eventType="editingChanged" id="bix-qH-Zfj"/>
+                                                                                    </connections>
+                                                                                </textField>
+                                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="luw-xZ-I1X">
+                                                                                    <rect key="frame" x="15.5" y="37" width="94" height="29"/>
+                                                                                    <connections>
+                                                                                        <action selector="IronOreISC:" destination="ieY-S1-muD" eventType="valueChanged" id="aLR-uB-sZ6"/>
+                                                                                    </connections>
+                                                                                </stepper>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="HKH-mG-i08" secondAttribute="trailing" id="M8w-55-Hiq"/>
+                                                                                <constraint firstItem="HKH-mG-i08" firstAttribute="leading" secondItem="MhB-wB-SGm" secondAttribute="leading" id="ftD-jO-nM5"/>
+                                                                            </constraints>
+                                                                        </stackView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="HKH-mG-i08" secondAttribute="trailing" id="5Ii-m2-sEo"/>
-                                                                        <constraint firstItem="HKH-mG-i08" firstAttribute="leading" secondItem="Lft-od-qXF" secondAttribute="leading" id="P3Q-5R-OQN"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="MhB-wB-SGm" secondAttribute="trailing" id="Uz9-vK-syW"/>
+                                                                        <constraint firstItem="MhB-wB-SGm" firstAttribute="leading" secondItem="Lft-od-qXF" secondAttribute="leading" id="bMa-mF-mMe"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="PvM-9Z-J2y" secondAttribute="trailing" id="h3j-Wg-rV4"/>
+                                                                        <constraint firstItem="PvM-9Z-J2y" firstAttribute="leading" secondItem="Lft-od-qXF" secondAttribute="leading" id="uK4-Rl-ke1"/>
                                                                     </constraints>
                                                                 </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPW-Dy-Jhl">
-                                                                    <rect key="frame" x="125" y="9" width="125" height="72"/>
+                                                                    <rect key="frame" x="125" y="0.0" width="125" height="149.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                                     <state key="normal" title="Sell"/>
                                                                     <connections>
@@ -5426,16 +5424,16 @@
                                                                     </connections>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HjU-Oa-wGa">
-                                                                    <rect key="frame" x="250" y="1.5" width="125" height="87"/>
+                                                                    <rect key="frame" x="250" y="0.0" width="125" height="149.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW4-5I-V5h">
-                                                                            <rect key="frame" x="57.5" y="0.0" width="10.5" height="29"/>
+                                                                            <rect key="frame" x="57.5" y="0.0" width="10.5" height="50"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" text="20" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFl-D9-43D">
-                                                                            <rect key="frame" x="0.0" y="29" width="125" height="29"/>
+                                                                            <rect key="frame" x="0.0" y="50" width="125" height="49.5"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                             <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -5444,7 +5442,7 @@
                                                                             </connections>
                                                                         </textField>
                                                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="TFe-1q-1Vp">
-                                                                            <rect key="frame" x="15.5" y="58" width="94" height="29"/>
+                                                                            <rect key="frame" x="15.5" y="99.5" width="94" height="29"/>
                                                                             <connections>
                                                                                 <action selector="IronOreCSC:" destination="ieY-S1-muD" eventType="valueChanged" id="kXg-iL-sUr"/>
                                                                                 <action selector="IronOreCTC:" destination="ieY-S1-muD" eventType="valueChanged" id="EGK-4O-Z65"/>
@@ -5457,6 +5455,14 @@
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="HjU-Oa-wGa" secondAttribute="bottom" id="7MP-Gd-XMt"/>
+                                                                <constraint firstAttribute="bottom" secondItem="yPW-Dy-Jhl" secondAttribute="bottom" id="BKc-y5-63u"/>
+                                                                <constraint firstItem="Lft-od-qXF" firstAttribute="top" secondItem="xs5-Nh-KeF" secondAttribute="top" id="LkY-pW-j62"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Lft-od-qXF" secondAttribute="bottom" id="QKT-6g-q2N"/>
+                                                                <constraint firstItem="yPW-Dy-Jhl" firstAttribute="top" secondItem="xs5-Nh-KeF" secondAttribute="top" id="mbJ-gj-KFZ"/>
+                                                                <constraint firstItem="HjU-Oa-wGa" firstAttribute="top" secondItem="xs5-Nh-KeF" secondAttribute="top" id="yf1-GU-Zz6"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
@@ -5470,7 +5476,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="kqv-eX-BSo">
-                                        <rect key="frame" x="0.0" y="185" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="245" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kqv-eX-BSo" id="Uhf-bo-lPM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -5574,7 +5580,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="gCj-2W-7H0">
-                                        <rect key="frame" x="0.0" y="275" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="335" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCj-2W-7H0" id="Tuw-A7-kq5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -5678,7 +5684,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="bX2-OV-syp">
-                                        <rect key="frame" x="0.0" y="365" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="425" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bX2-OV-syp" id="bL5-ma-5Mm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -5782,7 +5788,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="uWc-NA-uKR">
-                                        <rect key="frame" x="0.0" y="455" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="515" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uWc-NA-uKR" id="8go-xf-BMK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -5886,7 +5892,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="zpG-L8-X5u">
-                                        <rect key="frame" x="0.0" y="545" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="605" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zpG-L8-X5u" id="3zx-Jc-ojw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -5990,7 +5996,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="yYc-ag-0Rf">
-                                        <rect key="frame" x="0.0" y="635" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="695" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yYc-ag-0Rf" id="bhi-dD-gat">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6094,7 +6100,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="hcP-8D-kfB">
-                                        <rect key="frame" x="0.0" y="725" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="785" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcP-8D-kfB" id="QZ4-DR-OWW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6198,7 +6204,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="amW-9d-Jlp">
-                                        <rect key="frame" x="0.0" y="815" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="875" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="amW-9d-Jlp" id="vMt-It-ZhI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6302,7 +6308,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="Bgk-om-VbX">
-                                        <rect key="frame" x="0.0" y="905" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="965" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bgk-om-VbX" id="dLk-6d-cvL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6406,7 +6412,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="tQH-IU-gn1">
-                                        <rect key="frame" x="0.0" y="995" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="1055" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tQH-IU-gn1" id="jLO-DP-8y0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6510,7 +6516,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MtB" rowHeight="90" id="hqn-DY-Esb">
-                                        <rect key="frame" x="0.0" y="1085" width="375" height="90"/>
+                                        <rect key="frame" x="0.0" y="1145" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hqn-DY-Esb" id="AGs-3f-ixP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
@@ -6652,6 +6658,7 @@
                         <outlet property="IronOreCoin" destination="5yu-yo-23J" id="gsp-TD-P56"/>
                         <outlet property="IronOreIS" destination="R63-GB-73X" id="QmA-f8-3X8"/>
                         <outlet property="IronOreIT" destination="JNN-Gx-sN1" id="LsL-Ot-WWz"/>
+                        <outlet property="PV" destination="jhy-ML-DZ1" id="v99-Cz-Uce"/>
                         <outlet property="RoadCS" destination="ylq-Cr-WP4" id="0qc-ww-IVn"/>
                         <outlet property="RoadCT" destination="Ln4-7m-XRq" id="D18-jU-DUK"/>
                         <outlet property="RoadCoin" destination="chW-Hu-sQP" id="5GI-fj-yDH"/>
@@ -6947,14 +6954,14 @@
         <image name="Wood_Beam" width="340" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kh7-wa-1GB"/>
+        <segue reference="7ew-O6-LV1"/>
         <segue reference="OCO-Ur-2wG"/>
-        <segue reference="yfU-AA-qlP"/>
+        <segue reference="Q3M-Jg-sAq"/>
         <segue reference="8wE-ki-H39"/>
-        <segue reference="5X4-nc-bYW"/>
+        <segue reference="VdC-QV-M30"/>
         <segue reference="3tI-Sh-0IL"/>
         <segue reference="ArA-9b-Whb"/>
-        <segue reference="7oB-gt-bqm"/>
-        <segue reference="uEc-DC-Dvd"/>
+        <segue reference="Kic-aI-51E"/>
+        <segue reference="GUf-X7-sEw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2271,7 +2271,23 @@ class War: UIViewController {
 }
 
 
-class Shop: UITableViewController {
+class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    @IBOutlet weak var PV: UIPickerView!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return PVData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return PVData[row]
+    }
+    var PVData: [String] = [String]()
+    
     
     @IBOutlet weak var IronOreIS: UIStepper!
     @IBOutlet weak var FireWoodIS: UIStepper!
@@ -2334,6 +2350,9 @@ class Shop: UITableViewController {
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    }
     
     @IBAction func IronOreITC(_ sender: Any) {
         if IronOreIT.text == ""{
@@ -3291,6 +3310,11 @@ class Shop: UITableViewController {
     
     
     override func viewDidLoad() {
+        
+        PV.delegate = self
+        PV.dataSource = self
+        
+        PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
         
         IronOreIS.value = 1
         FireWoodIS.value = 1
