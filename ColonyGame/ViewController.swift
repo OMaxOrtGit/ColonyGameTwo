@@ -70,13 +70,6 @@ var ArcharyRangeV = 0
 var SwordManV = 0
 var ArcherV = 0
 
-var MatShop = false
-var ArmyShop = false
-var BiuldingShop = false
-var TownShop = false
-
-
-
 var MinerVC = false
 var LumberJackVC = false
 var CrafterVC = false
@@ -117,7 +110,7 @@ var HouseISM = 10000
 var RoadISM = 150
 var SwordISM = 300
 var BowNArrowISM = 1000
-var TownISM = 27500
+var TownISM = 275000
 var CastleISM = 600000
 
 var IronOreII = 0.0
@@ -588,10 +581,6 @@ class Building: UIViewController {
         GrinderNNNA.text = ""
     }
     
-    @IBAction func Shop(_ sender: Any) {
-        
-    }
-    
     
 }
 
@@ -812,30 +801,6 @@ class Matterials: UIViewController {
     
     @IBAction func Amount(_ sender: Any) {
         
-        LogNA.text = "Amount:"
-        RockNA.text = "Amount:"
-        ScrapWoodNA.text = "Amount:"
-        FireWoodNA.text = "Amount:"
-        StoneNA.text = "Amount:"
-        PlankNA.text = "Amount:"
-        IronNA.text = "Amount:"
-        NailNA.text = "Amount:"
-        IronPartNA.text = "Amount:"
-        
-        LogNNA.text = "1"
-        RockNNA.text = "1"
-        ScrapWoodNNA.text = "5"
-        FireWoodNNA.text = "1"
-        StoneNNA.text = "1"
-        PlankNNA.text = "1"
-        IronNNA.text = "1"
-        NailNNA.text = "5"
-        IronPartsNNA.text = "3"
-        
-        IronNNNA.text = ""
-    }
-    
-    @IBAction func Shop(_ sender: Any) {
         LogNA.text = "Amount:"
         RockNA.text = "Amount:"
         ScrapWoodNA.text = "Amount:"
@@ -1110,36 +1075,6 @@ class Town: UIViewController {
         KingdomNNNNA.text = ""
     }
     
-    @IBAction func Shop(_ sender: Any) {
-        HouseNA.text = "Shop:"
-        RoadNA.text = "Shop:"
-        TownNA.text = "Shop:"
-        CastleWallNA.text = "Shop:"
-        CastleNA.text = "Shop:"
-        RCWNA.text = "Shop:"
-        KIngdomNA.text = "Shop:"
-        EmpireNA.text = "Shop:"
-        
-        HouseNNA.text = "1"
-        RoadNNA.text = "1"
-        TownNNA.text = "1"
-        CastleNNA.text = "1"
-        CastleWallNNA.text = "1"
-        RCWNNA.text = "1"
-        KingdomNNA.text = "1"
-        EmpireNNA.text = "1"
-        
-        HouseNNNA.text = ""
-        TownNNNA.text = ""
-        CastleNNNA.text = ""
-        RCWNNNA.text = ""
-        KingdomNNNA.text = ""
-        
-        HouseNNNNA.text = ""
-        KingdomNNNNA.text = ""
-        
-        
-    }
     
 }
 
@@ -1700,10 +1635,6 @@ class Tool: UIViewController {
         BowNArrowNNA.text = "1"
     }
     
-    @IBAction func Shop(_ sender: Any) {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
@@ -1912,38 +1843,6 @@ class Army: UIViewController {
         
         FenceNNNA.text = ""
         ArcherNNNA.text = ""
-    }
-    
-    @IBAction func Shop(_ sender: Any) {
-        if ArmyShop == false {
-        FenceNA.text = "Coins:"
-        CampNA.text = "Coins:"
-        GeneralNA.text = "Coins:"
-        SoldierNA.text = "Coins:"
-        BarracksNA.text = "Coins:"
-        ArcharyRangeNA.text = "Coins:"
-        SwordManNA.text = "Coins:"
-        ArcherNA.text = "Coins:"
-        
-        FenceNNA.text = "1"
-        CampNNA.text = "1"
-        GeneralNNA.text = "1"
-        SoldierNNA.text = "1"
-        BarracksNNA.text = "1"
-        ArcharyRangeNNA.text = "1"
-        SwordManNNA.text = "1"
-        ArcherNNA.text = "1"
-        
-        FenceNNNA.text = ""
-        ArcherNNNA.text = ""
-        } else {
-            NeededC()
-        }
-        if ArmyShop == true {
-            ArmyShop = false
-        } else {
-            ArmyShop = true
-        }
     }
     
     
@@ -2225,11 +2124,12 @@ class War: UIViewController {
             var both = false
             if ArcherV == 0 && SwordManV == 0 {
                 both = true
-                print(both)
             }
             print(AL)
             print(SML)
             if Int(Double(AL) * 0.8) < ArcherV && Int(Double(SML) * 0.7) < SwordManV && both == false {
+                LandV += CR
+                userDefaults.set(LandV, forKey: "LandV")
                 return CR
             } else {
                 return 0
@@ -2271,12 +2171,16 @@ class War: UIViewController {
         TestA()
         TestSM()
         
+        ArcherV -= AL
+        SwordManV -= SML
+        
+        userDefaults.set(ArcherV, forKey: "ArcherV")
+        userDefaults.set(SwordManV, forKey: "SwordManV")
+        
         say = "You lost \(AL) Archers and \(SML) Sword Men\nYou now have \(ArcherV) Archers and \(SwordManV) Sword Men\n You have won \(sayC())."
         
         
         let alertController = UIAlertController(title: "Resaults", message: "\(say)", preferredStyle: UIAlertController.Style.alert)
-        ArcherV -= AL
-        SwordManV -= SML
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
@@ -2574,12 +2478,12 @@ class Shop: UITableViewController {
             TownCT.text = ""
         }
         if TownIT.text != "" && Int(TownIT.text!) != nil{
-            if Int(TownIT.text!)! * 27500 > 100000000000 {
+            if Int(TownIT.text!)! * 275000 > 100000000000 {
                 TownIT.deleteBackward()
             }
             TownIS.value = Double(TownIT.text!)!
             TownCS.value = Double(TownIT.text!)!
-            TownISM = 27500 * Int(TownCS.value)
+            TownISM = 275000 * Int(TownCS.value)
             TownCT.text = "\(TownISM)"
         }
     }
@@ -2782,10 +2686,10 @@ class Shop: UITableViewController {
             if Int(CastleIT.text!)! > 100000000000 {
                 CastleIT.deleteBackward()
             }
-            CastleISM = Int(Double(CastleCT.text!)! / 27500)
+            CastleISM = Int(Double(CastleCT.text!)! / 275000)
             CastleIS.value = Double(CastleISM)
             CastleCS.value = Double(CastleISM)
-            CastleISM = Int(CastleCS.value) * 27500
+            CastleISM = Int(CastleCS.value) * 275000
             CastleCT.text = "\(CastleISM)"
             CastleIT.text = "\(Int(CastleIS.value))"
         }
@@ -2959,15 +2863,15 @@ class Shop: UITableViewController {
         if TownCT.text == ""{
             TownIT.text = ""
         }
-        TownII = Double(TownCT.text!)! / 27500
+        TownII = Double(TownCT.text!)! / 275000
         if TownIT.text != "" && floor(TownII) == TownII{
             if Int(TownIT.text!)! > 100000000000 {
                 TownIT.deleteBackward()
             }
-            TownISM = Int(Double(TownCT.text!)! / 27500)
+            TownISM = Int(Double(TownCT.text!)! / 275000)
             TownIS.value = Double(TownISM)
             TownCS.value = Double(TownISM)
-            TownISM = Int(TownCS.value) * 27500
+            TownISM = Int(TownCS.value) * 275000
             TownCT.text = "\(TownISM)"
             TownIT.text = "\(Int(TownIS.value))"
         }
@@ -3179,11 +3083,13 @@ class Shop: UITableViewController {
     }
     
     @IBAction func TownBC(_ sender: Any) {
-        if Coins >= 27500 * Int(TownCS.value) {
+        if Coins >= 275000 * Int(TownCS.value) {
             TownV += 1 * Int(TownCS.value)
             userDefaults.set(TownV, forKey: "TownV")
-            Coins -= 27500 * Int(TownCS.value)
+            Coins -= 275000 * Int(TownCS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            UnEmployedV += 60 * Int(HouseIS.value)
+            userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3204,6 +3110,8 @@ class Shop: UITableViewController {
             userDefaults.set(CastleV, forKey: "CastleV")
             Coins -= 600000 * Int(CastleCS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            UnEmployedV += 900 * Int(HouseIS.value)
+            userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3289,7 +3197,7 @@ class Shop: UITableViewController {
     
     @IBAction func TownISC(_ sender: Any) {
         TownIT.text = "\(Int(TownIS.value))"
-        TownISM = 27500 * Int(TownIS.value)
+        TownISM = 275000 * Int(TownIS.value)
         TownCT.text = "\(TownISM)"
         TownCS.value = TownIS.value
     }
@@ -3369,7 +3277,7 @@ class Shop: UITableViewController {
     
     @IBAction func TownCSC(_ sender: Any) {
         TownIT.text = "\(Int(TownCS.value))"
-        TownISM = 27500 * Int(TownCS.value)
+        TownISM = 275000 * Int(TownCS.value)
         TownCT.text = "\(TownISM)"
         TownIS.value = TownCS.value
     }
@@ -3429,7 +3337,7 @@ class Shop: UITableViewController {
         RoadISM = 150 * Int(RoadIS.value)
         SwordISM = 300 * Int(SwordIS.value)
         BowNArrowISM = 1000 * Int(BowNArrowIS.value)
-        TownISM = 27500 * Int(TownIS.value)
+        TownISM = 275000 * Int(TownIS.value)
         CastleISM = 600000 * Int(CastleIS.value)
         
         IronOreCT.text = "\(Int(IronOreISM))"
