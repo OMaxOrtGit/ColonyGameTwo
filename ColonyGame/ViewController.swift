@@ -2288,7 +2288,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     var PVData: [String] = [String]()
     
+    var prices = 0
     
+    @IBOutlet weak var SellIS: UIStepper!
     @IBOutlet weak var IronOreIS: UIStepper!
     @IBOutlet weak var FireWoodIS: UIStepper!
     @IBOutlet weak var FrameIS: UIStepper!
@@ -2301,6 +2303,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownIS: UIStepper!
     @IBOutlet weak var CastleIS: UIStepper!
     
+    @IBOutlet weak var SellCS: UIStepper!
     @IBOutlet weak var IronOreCS: UIStepper!
     @IBOutlet weak var FireWoodCS: UIStepper!
     @IBOutlet weak var FrameCS: UIStepper!
@@ -2313,7 +2316,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCS: UIStepper!
     @IBOutlet weak var CastleCS: UIStepper!
     
-    
+    @IBOutlet weak var SellIT: UITextField!
     @IBOutlet weak var IronOreIT: UITextField!
     @IBOutlet weak var FireWoodIT: UITextField!
     @IBOutlet weak var FrameIT: UITextField!
@@ -2326,6 +2329,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownIT: UITextField!
     @IBOutlet weak var CastleIT: UITextField!
     
+    @IBOutlet weak var SellCT: UITextField!
     @IBOutlet weak var IronOreCT: UITextField!
     @IBOutlet weak var FireWoodCT: UITextField!
     @IBOutlet weak var FrameCT: UITextField!
@@ -2338,6 +2342,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCT: UITextField!
     @IBOutlet weak var CastleCT: UITextField!
     
+    @IBOutlet weak var SellCoin: UILabel!
     @IBOutlet weak var IronOreCoin: UILabel!
     @IBOutlet weak var FireWoodCoin: UILabel!
     @IBOutlet weak var FrameCoin: UILabel!
@@ -2352,6 +2357,8 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
     }
     
     @IBAction func IronOreITC(_ sender: Any) {
@@ -2925,6 +2932,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(IronOreV, forKey: "IronOreV")
             Coins -= 20 * Int(IronOreIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -2945,6 +2953,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FireWoodV, forKey: "FireWoodV")
             Coins -= 20 * Int(FireWoodCS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -2965,6 +2974,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FrameV, forKey: "FrameV")
             Coins -= 1000 * Int(FrameIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -2985,6 +2995,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(WallV, forKey: "WallV")
             Coins -= 1000 * Int(WallCS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3005,6 +3016,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FenceV, forKey: "FenceV")
             Coins -= 300 * Int(SoldierCS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3027,6 +3039,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
             Coins -= 10000 * Int(HouseIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3047,6 +3060,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(RoadV, forKey: "RoadV")
             Coins -= 150 * Int(RoadIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3067,6 +3081,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(SwordV, forKey: "SwordV")
             Coins -= 300 * Int(SwordIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3087,6 +3102,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(BowNArrowV, forKey: "BowNArrowV")
             Coins -= 1000 * Int(BowNArrowIS.value)
             userDefaults.set(Coins, forKey: "Coins")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3109,6 +3125,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(Coins, forKey: "Coins")
             UnEmployedV += 60 * Int(HouseIS.value)
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3131,6 +3148,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(Coins, forKey: "Coins")
             UnEmployedV += 900 * Int(HouseIS.value)
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
+            SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
             FireWoodCoin.text = "\(Coins)"
             FrameCoin.text = "\(Coins)"
@@ -3315,6 +3333,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         PV.dataSource = self
         
         PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
+        
         
         IronOreIS.value = 1
         FireWoodIS.value = 1
