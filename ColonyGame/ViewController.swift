@@ -108,7 +108,7 @@ var WallISM = 1000
 var SoldierISM = 300
 var HouseISM = 10000
 var RoadISM = 150
-var SwordISM = 300
+var SwordISM = 200
 var BowNArrowISM = 1000
 var TownISM = 275000
 var CastleISM = 600000
@@ -2355,7 +2355,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
-    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750,      1900, 350, 250, ]
+    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750,      1900, 350, 250, 1000, 550, 15, 175, 200, 150,      220, 225, 90, 140, 1500]
     
     //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
     
@@ -2431,7 +2431,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             SoldierCT.text = ""
         }
         if SoldierIT.text != "" && Int(SoldierIT.text!) != nil{
-            if Int(SoldierIT.text!)! * 300 > 100000000000 {
+            if Int(SoldierIT.text!)! * 200 > 100000000000 {
                 SoldierIT.deleteBackward()
             }
             SoldierIS.value = Double(SoldierIT.text!)!
@@ -2477,12 +2477,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             SwordCT.text = ""
         }
         if SwordIT.text != "" && Int(SwordIT.text!) != nil{
-            if Int(SwordIT.text!)! * 300 > 100000000000 {
+            if Int(SwordIT.text!)! * 200 > 100000000000 {
                 SwordIT.deleteBackward()
             }
             SwordIS.value = Double(SwordIT.text!)!
             SwordCS.value = Double(SwordIT.text!)!
-            SwordISM = 300 * Int(SwordCS.value)
+            SwordISM = 200 * Int(SwordCS.value)
             SwordCT.text = "\(SwordISM)"
         }
     }
@@ -2492,12 +2492,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             BowNArrowCT.text = ""
         }
         if BowNArrowIT.text != "" && Int(BowNArrowIT.text!) != nil{
-            if Int(BowNArrowIT.text!)! * 1000 > 100000000000 {
+            if Int(BowNArrowIT.text!)! * 1400 > 100000000000 {
                 BowNArrowIT.deleteBackward()
             }
             BowNArrowIS.value = Double(BowNArrowIT.text!)!
             BowNArrowCS.value = Double(BowNArrowIT.text!)!
-            BowNArrowISM = 1000 * Int(BowNArrowCS.value)
+            BowNArrowISM = 1400 * Int(BowNArrowCS.value)
             BowNArrowCT.text = "\(BowNArrowISM)"
         }
     }
@@ -2613,10 +2613,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(SoldierIT.text!)! > 100000000000 {
                 SoldierIT.deleteBackward()
             }
-            SoldierISM = Int(Double(SoldierCT.text!)! / 300)
+            SoldierISM = Int(Double(SoldierCT.text!)! / 200)
             SoldierIS.value = Double(SoldierISM)
             SoldierCS.value = Double(SoldierISM)
-            SoldierISM = Int(SoldierCS.value) * 300
+            SoldierISM = Int(SoldierCS.value) * 200
             SoldierCT.text = "\(SoldierISM)"
             SoldierIT.text = "\(Int(SoldierIS.value))"
         }
@@ -2647,10 +2647,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(RoadIT.text!)! > 100000000000 {
                 RoadIT.deleteBackward()
             }
-            RoadISM = Int(Double(RoadCT.text!)! / 10000)
+            RoadISM = Int(Double(RoadCT.text!)! / 150)
             RoadIS.value = Double(RoadISM)
             RoadCS.value = Double(RoadISM)
-            RoadISM = Int(RoadCS.value) * 10000
+            RoadISM = Int(RoadCS.value) * 150
             RoadCT.text = "\(RoadISM)"
             RoadIT.text = "\(Int(RoadIS.value))"
         }
@@ -2664,10 +2664,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(SwordIT.text!)! > 100000000000 {
                 SwordIT.deleteBackward()
             }
-            SwordISM = Int(Double(SwordCT.text!)! / 150)
+            SwordISM = Int(Double(SwordCT.text!)! / 200)
             SwordIS.value = Double(SwordISM)
             SwordCS.value = Double(SwordISM)
-            SwordISM = Int(SwordCS.value) * 150
+            SwordISM = Int(SwordCS.value) * 200
             SwordCT.text = "\(SwordISM)"
             SwordIT.text = "\(Int(SwordIS.value))"
         }
@@ -2681,10 +2681,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(BowNArrowIT.text!)! > 100000000000 {
                 BowNArrowIT.deleteBackward()
             }
-            BowNArrowISM = Int(Double(BowNArrowCT.text!)! / 300)
+            BowNArrowISM = Int(Double(BowNArrowCT.text!)! / 1400)
             BowNArrowIS.value = Double(BowNArrowISM)
             BowNArrowCS.value = Double(BowNArrowISM)
-            BowNArrowISM = Int(BowNArrowCS.value) * 300
+            BowNArrowISM = Int(BowNArrowCS.value) * 1400
             BowNArrowCT.text = "\(BowNArrowISM)"
             BowNArrowIT.text = "\(Int(BowNArrowIS.value))"
         }
@@ -2856,15 +2856,15 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         if SwordCT.text == ""{
             SwordIT.text = ""
         }
-        SwordII = Double(SwordCT.text!)! / 300
+        SwordII = Double(SwordCT.text!)! / 200
         if SwordIT.text != "" && floor(SwordII) == SwordII{
             if Int(SwordIT.text!)! > 100000000000 {
                 SwordIT.deleteBackward()
             }
-            SwordISM = Int(Double(SwordCT.text!)! / 300)
+            SwordISM = Int(Double(SwordCT.text!)! / 200)
             SwordIS.value = Double(SwordISM)
             SwordCS.value = Double(SwordISM)
-            SwordISM = Int(SwordCS.value) * 300
+            SwordISM = Int(SwordCS.value) * 200
             SwordCT.text = "\(SwordISM)"
             SwordIT.text = "\(Int(SwordIS.value))"
         }
@@ -3014,10 +3014,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func SoldierBC(_ sender: Any) {
-        if Coins >= 300 * Int(SoldierIS.value){
+        if Coins >= 200 * Int(SoldierIS.value){
             FenceV += 1 * Int(SoldierIS.value)
             userDefaults.set(FenceV, forKey: "FenceV")
-            Coins -= 300 * Int(SoldierCS.value)
+            Coins -= 200 * Int(SoldierCS.value)
             userDefaults.set(Coins, forKey: "Coins")
             SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
@@ -3079,10 +3079,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func SwordBC(_ sender: Any) {
-        if Coins >= 300 * Int(SwordIS.value) {
+        if Coins >= 200 * Int(SwordIS.value) {
             SwordV += 1 * Int(SwordIS.value)
             userDefaults.set(SwordV, forKey: "SwordV")
-            Coins -= 300 * Int(SwordIS.value)
+            Coins -= 200 * Int(SwordIS.value)
             userDefaults.set(Coins, forKey: "Coins")
             SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
@@ -3202,7 +3202,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SoldierISC(_ sender: Any) {
         SoldierIT.text = "\(Int(SoldierIS.value))"
-        SoldierISM = 300 * Int(SoldierIS.value)
+        SoldierISM = 200 * Int(SoldierIS.value)
         SoldierCT.text = "\(SoldierISM)"
         SoldierIS.value = SoldierCS.value
     }
@@ -3223,7 +3223,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SwordISC(_ sender: Any) {
         SwordIT.text = "\(Int(SwordIS.value))"
-        SwordISM = 300 * Int(SwordIS.value)
+        SwordISM = 200 * Int(SwordIS.value)
         SwordCT.text = "\(SwordISM)"
         SwordCS.value = SwordIS.value
     }
@@ -3282,7 +3282,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SoldierCSC(_ sender: Any) {
         SoldierIT.text = "\(Int(SoldierCS.value))"
-        SoldierISM = 300 * Int(SoldierCS.value)
+        SoldierISM = 200 * Int(SoldierCS.value)
         SoldierCT.text = "\(SoldierISM)"
         SoldierIS.value = SoldierCS.value
     }
@@ -3303,7 +3303,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SwordCSC(_ sender: Any) {
         SwordIT.text = "\(Int(SwordCS.value))"
-        SwordISM = 300 * Int(SwordCS.value)
+        SwordISM = 200 * Int(SwordCS.value)
         SwordCT.text = "\(SwordISM)"
         SwordIS.value = SwordCS.value
     }
@@ -3378,7 +3378,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         FireWoodISM = 20 * Int(FireWoodIS.value)
         FrameISM = 6000 * Int(FrameIS.value)
         WallISM = 1000 * Int(WallIS.value)
-        SoldierISM = 300 * Int(SoldierIS.value)
+        SoldierISM = 200 * Int(SoldierIS.value)
         HouseISM = 10000 * Int(HouseIS.value)
         RoadISM = 150 * Int(RoadIS.value)
         SwordISM = 300 * Int(SwordIS.value)
