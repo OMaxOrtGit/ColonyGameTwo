@@ -103,7 +103,7 @@ var Coins = 10000000
 
 var IronOreISM = 20
 var FireWoodISM = 20
-var FrameISM = 1000
+var FrameISM = 6000
 var WallISM = 1000
 var SoldierISM = 300
 var HouseISM = 10000
@@ -567,7 +567,7 @@ class Building: UIViewController {
         
         BeamNNA.text = "1"
         FrameNNA.text = "1"
-        ShingleNNA.text = "4"
+        ShingleNNA.text = "6"
         RoofNNA.text = "1"
         WallNNA.text = "1"
         DoorNNA.text = "1"
@@ -2288,7 +2288,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     var PVData: [String] = [String]()
     
-    var prices = 0
+    
     
     @IBOutlet weak var SellIS: UIStepper!
     @IBOutlet weak var IronOreIS: UIStepper!
@@ -2355,6 +2355,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
+    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750,      1900, 350, 250, ]
+    
+    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -2398,7 +2401,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             FrameCT.text = ""
         }
         if FrameIT.text != "" && Int(FrameIT.text!) != nil{
-            if Int(FrameIT.text!)! * 1000 > 100000000000 {
+            if Int(FrameIT.text!)! * 6000 > 100000000000 {
                 FrameIT.deleteBackward()
             }
             FrameIS.value = Double(FrameIT.text!)!
@@ -2500,7 +2503,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func TownITC(_ sender: Any) {
-        if TownIT.text == ""{
+        if TownIT.text == "" {
             TownCT.text = ""
         }
         if TownIT.text != "" && Int(TownIT.text!) != nil{
@@ -2515,7 +2518,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func CastleITC(_ sender: Any) {
-        if CastleIT.text == ""{
+        if CastleIT.text == "" {
             CastleCT.text = ""
         }
         if CastleIT.text != "" && Int(CastleIT.text!) != nil{
@@ -2576,10 +2579,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
-            FrameISM = Int(Double(FrameCT.text!)! / 1000)
+            FrameISM = Int(Double(FrameCT.text!)! / 6000)
             FrameIS.value = Double(FrameISM)
             FrameCS.value = Double(FrameISM)
-            FrameISM = Int(FrameCS.value) * 1000
+            FrameISM = Int(FrameCS.value) * 6000
             FrameCT.text = "\(FrameISM)"
             FrameIT.text = "\(Int(FrameIS.value))"
         }
@@ -2803,10 +2806,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
-            FrameISM = Int(Double(FrameCT.text!)! / 300)
+            FrameISM = Int(Double(FrameCT.text!)! / 6000)
             FrameIS.value = Double(FrameISM)
             FrameCS.value = Double(FrameISM)
-            FrameISM = Int(FrameCS.value) * 300
+            FrameISM = Int(FrameCS.value) * 6000
             FrameCT.text = "\(FrameISM)"
             FrameIT.text = "\(Int(FrameIS.value))"
         }
@@ -3185,7 +3188,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func FrameISC(_ sender: Any) {
         FrameIT.text = "\(Int(FrameIS.value))"
-        FrameISM = 1000 * Int(FrameIS.value)
+        FrameISM = 6000 * Int(FrameIS.value)
         FrameCT.text = "\(FrameISM)"
         FrameCS.value = FrameIS.value
     }
@@ -3265,7 +3268,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func FrameCSC(_ sender: Any) {
         FrameIT.text = "\(Int(FrameCS.value))"
-        FrameISM = 1000 * Int(FrameCS.value)
+        FrameISM = 6000 * Int(FrameCS.value)
         FrameCT.text = "\(FrameISM)"
         FrameIS.value = FrameCS.value
     }
@@ -3373,7 +3376,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         IronOreISM = 20 * Int(IronOreIS.value)
         FireWoodISM = 20 * Int(FireWoodIS.value)
-        FrameISM = 1000 * Int(FrameIS.value)
+        FrameISM = 6000 * Int(FrameIS.value)
         WallISM = 1000 * Int(WallIS.value)
         SoldierISM = 300 * Int(SoldierIS.value)
         HouseISM = 10000 * Int(HouseIS.value)
