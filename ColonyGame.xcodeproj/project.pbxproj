@@ -405,14 +405,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86H9NJ6UKT;
+				DEVELOPMENT_TEAM = 4YQ2953637;
 				INFOPLIST_FILE = ColonyGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGameSchool;
+				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGame.xcodedab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,14 +424,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 86H9NJ6UKT;
+				DEVELOPMENT_TEAM = 4YQ2953637;
 				INFOPLIST_FILE = ColonyGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGameSchool;
+				PRODUCT_BUNDLE_IDENTIFIER = org.d214.jhhs.622299.ColonyGame.xcodedab;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
