@@ -104,7 +104,7 @@ var Coins = 10000000
 var SellISM = 0
 var IronOreISM = 20
 var FireWoodISM = 20
-var FrameISM = 6000
+var FrameISM = 3750
 var WallISM = 1000
 var SoldierISM = 300
 var HouseISM = 10000
@@ -2358,7 +2358,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
-    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 10, 25, 65, 3500, 5, 750, 900,  800, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, 550, 36000, 72500, 72500]
+    var prices = [10, 8, 16, 3, 16, 20, 18     , 35, 10, 25, 65, 3500, 5, 750, 775,  800, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, 550, 36000, 72500, 72500]
     var ChS = "Log"
     var ChI = 10
     //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
@@ -2422,12 +2422,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             FrameCT.text = ""
         }
         if FrameIT.text != "" && Int(FrameIT.text!) != nil{
-            if Int(FrameIT.text!)! * 6000 > 100000000000 {
+            if Int(FrameIT.text!)! * 3750 > 100000000000 {
                 FrameIT.deleteBackward()
             }
             FrameIS.value = Double(FrameIT.text!)!
             FrameCS.value = Double(FrameIT.text!)!
-            FrameISM = 6000 * Int(FrameCS.value)
+            FrameISM = 3750 * Int(FrameCS.value)
             FrameCT.text = "\(FrameISM)"
         }
     }
@@ -2437,12 +2437,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             WallCT.text = ""
         }
         if WallIT.text != "" && Int(WallIT.text!) != nil{
-            if Int(WallIT.text!)! * 1000 > 100000000000 {
+            if Int(WallIT.text!)! * 800 > 100000000000 {
                 WallIT.deleteBackward()
             }
             WallIS.value = Double(WallIT.text!)!
             WallCS.value = Double(WallIT.text!)!
-            WallISM = 1000 * Int(WallCS.value)
+            WallISM = 800 * Int(WallCS.value)
             WallCT.text = "\(WallISM)"
         }
     }
@@ -2600,10 +2600,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
-            FrameISM = Int(Double(FrameCT.text!)! / 6000)
+            FrameISM = Int(Double(FrameCT.text!)! / 3750)
             FrameIS.value = Double(FrameISM)
             FrameCS.value = Double(FrameISM)
-            FrameISM = Int(FrameCS.value) * 6000
+            FrameISM = Int(FrameCS.value) * 3750
             FrameCT.text = "\(FrameISM)"
             FrameIT.text = "\(Int(FrameIS.value))"
         }
@@ -2617,10 +2617,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(WallIT.text!)! > 100000000000 {
                 WallIT.deleteBackward()
             }
-            WallISM = Int(Double(WallCT.text!)! / 1000)
+            WallISM = Int(Double(WallCT.text!)! / 800)
             WallIS.value = Double(WallISM)
             WallCS.value = Double(WallISM)
-            WallISM = Int(WallCS.value) * 1000
+            WallISM = Int(WallCS.value) * 800
             WallCT.text = "\(WallISM)"
             WallIT.text = "\(Int(WallIS.value))"
         }
@@ -2786,15 +2786,15 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         if FrameCT.text == ""{
             FrameIT.text = ""
         }
-        FrameII = Double(FrameCT.text!)! / 1000
+        FrameII = Double(FrameCT.text!)! / 3750
         if FrameIT.text != "" && floor(FrameII) == FrameII{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
-            FrameISM = Int(Double(FrameCT.text!)! / 1000)
+            FrameISM = Int(Double(FrameCT.text!)! / 3750)
             FrameIS.value = Double(FrameISM)
             FrameCS.value = Double(FrameISM)
-            FrameISM = Int(FrameCS.value) * 1000
+            FrameISM = Int(FrameCS.value) * 3750
             FrameCT.text = "\(FrameISM)"
             FrameIT.text = "\(Int(FrameIS.value))"
         }
@@ -2804,15 +2804,15 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         if WallCT.text == ""{
             WallIT.text = ""
         }
-        WallII = Double(WallCT.text!)! / 1000
+        WallII = Double(WallCT.text!)! / 800
         if WallIT.text != "" && floor(WallII) == WallII{
             if Int(WallIT.text!)! > 100000000000 {
                 WallIT.deleteBackward()
             }
-            WallISM = Int(Double(WallCT.text!)! / 1000)
+            WallISM = Int(Double(WallCT.text!)! / 800)
             WallIS.value = Double(WallISM)
             WallCS.value = Double(WallISM)
-            WallISM = Int(WallCS.value) * 1000
+            WallISM = Int(WallCS.value) * 800
             WallCT.text = "\(WallISM)"
             WallIT.text = "\(Int(WallIS.value))"
         }
@@ -2822,15 +2822,15 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         if FrameCT.text == ""{
             FrameIT.text = ""
         }
-        FrameII = Double(FrameCT.text!)! / 300
+        FrameII = Double(FrameCT.text!)! / 3750
         if FrameIT.text != "" && floor(FrameII) == FrameII{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
-            FrameISM = Int(Double(FrameCT.text!)! / 6000)
+            FrameISM = Int(Double(FrameCT.text!)! / 3750)
             FrameIS.value = Double(FrameISM)
             FrameCS.value = Double(FrameISM)
-            FrameISM = Int(FrameCS.value) * 6000
+            FrameISM = Int(FrameCS.value) * 3750
             FrameCT.text = "\(FrameISM)"
             FrameIT.text = "\(Int(FrameIS.value))"
         }
@@ -2993,10 +2993,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func FrameBC(_ sender: Any) {
-        if Coins >= 1000 * Int(FrameIS.value) {
+        if Coins >= 3750 * Int(FrameIS.value) {
             FrameV += 1 * Int(FrameIS.value)
             userDefaults.set(FrameV, forKey: "FrameV")
-            Coins -= 1000 * Int(FrameIS.value)
+            Coins -= 3750 * Int(FrameIS.value)
             userDefaults.set(Coins, forKey: "Coins")
             SellCoin.text = "\(Coins)"
             IronOreCoin.text = "\(Coins)"
@@ -3209,7 +3209,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func FrameISC(_ sender: Any) {
         FrameIT.text = "\(Int(FrameIS.value))"
-        FrameISM = 6000 * Int(FrameIS.value)
+        FrameISM = 3750 * Int(FrameIS.value)
         FrameCT.text = "\(FrameISM)"
         FrameCS.value = FrameIS.value
     }
@@ -3289,7 +3289,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func FrameCSC(_ sender: Any) {
         FrameIT.text = "\(Int(FrameCS.value))"
-        FrameISM = 6000 * Int(FrameCS.value)
+        FrameISM = 3750 * Int(FrameCS.value)
         FrameCT.text = "\(FrameISM)"
         FrameIS.value = FrameCS.value
     }
@@ -3397,7 +3397,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         IronOreISM = 20 * Int(IronOreIS.value)
         FireWoodISM = 20 * Int(FireWoodIS.value)
-        FrameISM = 6000 * Int(FrameIS.value)
+        FrameISM = 3750 * Int(FrameIS.value)
         WallISM = 1000 * Int(WallIS.value)
         SoldierISM = 200 * Int(SoldierIS.value)
         HouseISM = 10000 * Int(HouseIS.value)
