@@ -101,6 +101,7 @@ var BowNArrowV = 0
 
 var Coins = 10000000
 
+var SellISM = 0
 var IronOreISM = 20
 var FireWoodISM = 20
 var FrameISM = 6000
@@ -113,6 +114,7 @@ var BowNArrowISM = 1000
 var TownISM = 275000
 var CastleISM = 600000
 
+var SellII = 0.0
 var IronOreII = 0.0
 var FireWoodII = 0.0
 var FrameII = 0.0
@@ -125,6 +127,7 @@ var BowNArrowII = 0.0
 var TownII = 0.0
 var CastleII = 0.0
 
+var SellInt = 0
 var IronOreInt = 0
 var FireWoodInt = 0
 var FrameInt = 0
@@ -2355,14 +2358,32 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
-    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750, 1900,  350, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, ]
-    
-    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
+    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 10, 25, 65, 3500, 5, 750, 900,  800, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, 550, 36000, 72500, 72500]
+    var ChS = "Log"
+    var ChI = 10
+    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
+        ChS = PVData[row]
+        ChI = prices[row]
+        SellCT.text = "\(Int(SellIT.text!)! * ChI)"
     }
+    
+    @IBAction func SellITC(_ sender: Any) {
+        if SellIT.text == ""{
+            SellCT.text = ""
+        }
+        if SellIT.text != "" && Int(SellIT.text!) != nil{
+            if Int(SellIT.text!)! * ChI > 100000000000 {
+                SellIT.deleteBackward()
+            }
+            SellIS.value = Double(SellIT.text!)!
+            SellCS.value = Double(SellIT.text!)!
+            SellISM = ChI * Int(SellCS.value)
+            SellCT.text = "\(SellISM)"
+        }
+    }
+    
     
     @IBAction func IronOreITC(_ sender: Any) {
         if IronOreIT.text == ""{
@@ -2406,7 +2427,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             }
             FrameIS.value = Double(FrameIT.text!)!
             FrameCS.value = Double(FrameIT.text!)!
-            FrameISM = 1000 * Int(FrameCS.value)
+            FrameISM = 6000 * Int(FrameCS.value)
             FrameCT.text = "\(FrameISM)"
         }
     }
@@ -2431,7 +2452,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             SoldierCT.text = ""
         }
         if SoldierIT.text != "" && Int(SoldierIT.text!) != nil{
-            if Int(SoldierIT.text!)! * 200 > 100000000000 {
+            if Int(SoldierIT.text!)! * 300 > 100000000000 {
                 SoldierIT.deleteBackward()
             }
             SoldierIS.value = Double(SoldierIT.text!)!
@@ -3335,7 +3356,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         PV.delegate = self
         PV.dataSource = self
         
-        PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
+        PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
         
         
         IronOreIS.value = 1
