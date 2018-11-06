@@ -2355,7 +2355,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
     
-    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750,      1900, 350, 250, 1000, 550, 15, 175, 200, 150,      220, 225, 90, 140, 1500]
+    var prices = [10, 8, 16, 3, 15, 20, 18     , 35, 50, 50, 65, 6500, 5, 750, 1900,  350, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, ]
     
     //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range", "Land"]
     
