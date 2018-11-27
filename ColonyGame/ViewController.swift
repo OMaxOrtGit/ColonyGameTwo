@@ -1729,7 +1729,7 @@ class Army: UIViewController {
     }
     
     @IBAction func GeneralC(_ sender: Any) {
-        if CampV >= 1 && UnEmployedV >= 1 && (ASoldierV - (GeneralV * 50)) < 50{
+        if CampV >= 1 && UnEmployedV >= 1{
             GeneralV += 1
             userDefaults.set(GeneralV, forKey: "GeneralV")
             FenceL.text = "\(FenceV)"
@@ -1741,7 +1741,7 @@ class Army: UIViewController {
     }
     
     @IBAction func SoldierC(_ sender: Any) {
-        if ScaleV >= 1 && UnEmployedV >= 1 {
+        if ScaleV >= 1 && UnEmployedV >= 1  && (ASoldierV - (GeneralV * 50)) < 50{
             SoldierV += 1
             ASoldierV += 1
             userDefaults.set(SoldierV, forKey: "SoldierV")
