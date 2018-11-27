@@ -2556,6 +2556,22 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     
+    @IBAction func SellCTC(_ sender: Any) {
+        if SellCT.text == ""{
+            SellIT.text = ""
+        }
+        if SellIT.text != "" && Int(SellCT.text!) != nil{
+            if Int(SellIT.text!)! > 100000000000 {
+                SellIT.deleteBackward()
+            }
+            SellISM = Int(Double(SellCT.text!)! / 200)
+            SellIS.value = Double(SellISM)
+            SellCS.value = Double(SellISM)
+            SellISM = Int(SellCS.value) * 200
+            SellCT.text = "\(SellISM)"
+            SellIT.text = "\(Int(SellIS.value))"
+        }
+    }
     
     
     @IBAction func IronOreCTC(_ sender: Any) {
