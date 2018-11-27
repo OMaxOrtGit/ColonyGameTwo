@@ -3416,9 +3416,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="98"/>
                                                                 <state key="normal" image="Glass"/>
                                                                 <connections>
-                                                                    <action selector="FireWoodC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PT5-88-Iip"/>
                                                                     <action selector="HoeC:" destination="gRS-zN-3fA" eventType="touchUpInside" id="fdy-2R-tpX"/>
-                                                                    <action selector="LumberJackC:" destination="2eG-nb-gpY" eventType="touchUpInside" id="lvc-io-mKG"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-VS-ZMa">

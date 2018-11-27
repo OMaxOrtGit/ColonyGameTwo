@@ -2357,12 +2357,13 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBOutlet weak var BowNArrowCoin: UILabel!
     @IBOutlet weak var TownCoin: UILabel!
     @IBOutlet weak var CastleCoin: UILabel!
-    
+    var SRow = 0
     var prices = [10, 8, 16, 3, 16, 20, 18     , 35, 10, 25, 65, 3500, 5, 750, 775,  800, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, 550, 36000, 72500, 72500]
     var ChS = "Log"
     var ChI = 10
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        SRow = row
         ChS = PVData[row]
         ChI = prices[row]
         SellCT.text = "\(Int(SellIT.text!)! * ChI)"
@@ -2993,10 +2994,282 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         TownCoin.text = "\(Coins)"
         CastleCoin.text = "\(Coins)"
     }
-    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
+    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"] | 33 total
     func SellCH() -> Bool{
-        
-        return true
+        switch SRow {
+        case 0:
+            if LogV >= ChI{
+                LogV -= ChI
+                userDefaults.set(LogV, forKey: "LogV")
+                return true
+            } else {
+                return false
+            }
+        case 1:
+            if RockV >= ChI{
+                RockV -= ChI
+                userDefaults.set(RockV, forKey: "RockV")
+                return true
+            } else {
+                return false
+            }
+        case 2:
+            if IronOreV >= ChI{
+                IronOreV -= ChI
+                userDefaults.set(IronOreV, forKey: "IronOreV")
+                return true
+            } else {
+                return false
+            }
+        case 3:
+            if ScrapWoodV >= ChI{
+                ScrapWoodV -= ChI
+                userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                return true
+            } else {
+                return false
+            }
+        case 4:
+            if FireWoodV >= ChI{
+                FireWoodV -= ChI
+                userDefaults.set(FireWoodV, forKey: "FireWoodV")
+                return true
+            } else {
+                return false
+            }
+        case 5:
+            if StoneV >= ChI{
+                StoneV -= ChI
+                userDefaults.set(StoneV, forKey: "StoneV")
+                return true
+            } else {
+                return false
+            }
+        case 6:
+            if PlankV >= ChI{
+                PlankV -= ChI
+                userDefaults.set(PlankV, forKey: "PlankV")
+                return true
+            } else {
+                return false
+            }
+        case 7:
+            if IronV >= ChI{
+                clickhereforCandVEZ -= IronV
+                userDefaults.set(clickhereforCandVEZ, forKey: "IronV")
+                return true
+            } else {
+                return false
+            }
+        case 8:
+            if NailV >= ChI{
+                NailV -= ChI
+                userDefaults.set(NailV, forKey: "NailV")
+                return true
+            } else {
+                return false
+            }
+        case 9:
+            if IronPartsV >= ChI{
+                IronPartsV -= ChI
+                userDefaults.set(IronPartsV, forKey: "IronPartsV")
+                return true
+            } else {
+                return false
+            }
+        case 10:
+            if BeamV >= ChI{
+                BeamV -= ChI
+                userDefaults.set(BeamV, forKey: "BeamV")
+                return true
+            } else {
+                return false
+            }
+        case 11:
+            if FrameV >= ChI{
+                FrameV -= ChI
+                userDefaults.set(FrameV, forKey: "FrameV")
+                return true
+            } else {
+                return false
+            }
+        case 12:
+            if ShingleV >= ChI{
+                ShingleV -= ChI
+                userDefaults.set(ShingleV, forKey: "ShingleV")
+                return true
+            } else {
+                return false
+            }
+        case 13:
+            if RoofV >= ChI{
+                RoofV -= ChI
+                userDefaults.set(RoofV, forKey: "RoofV")
+                return true
+            } else {
+                return false
+            }
+        case 14:
+            if WallV >= ChI{
+                WallV -= ChI
+                userDefaults.set(WallV, forKey: "WallV")
+                return true
+            } else {
+                return false
+            }
+        case 15:
+            if DoorV >= ChI{
+                DoorV -= ChI
+                userDefaults.set(DoorV, forKey: "DoorV")
+                return true
+            } else {
+                return false
+            }
+        case 16:
+            if GrinderV >= ChI{
+                GrinderV -= ChI
+                userDefaults.set(GrinderV, forKey: "GrinderV")
+                return true
+            } else {
+                return false
+            }
+        case 17:
+            if FurnaceV >= ChI{
+                FurnaceV -= ChI
+                userDefaults.set(FurnaceV, forKey: "FurnaceV")
+                return true
+            } else {
+                return false
+            }
+        case 18:
+            if AnvilV >= ChI{
+                AnvilV -= ChI
+                userDefaults.set(AnvilV, forKey: "AnvilV")
+                return true
+            } else {
+                return false
+            }
+        case 19:
+            if StickV >= ChI{
+                StickV -= ChI
+                userDefaults.set(StickV, forKey: "StickV")
+                return true
+            } else {
+                return false
+            }
+        case 20:
+            if AxeV >= ChI{
+                AxeV -= ChI
+                userDefaults.set(AxeV, forKey: "AxeV")
+                return true
+            } else {
+                return false
+            }
+        case 21:
+            if PickV >= ChI{
+                PickV -= ChI
+                userDefaults.set(PickV, forKey: "PickV")
+                return true
+            } else {
+                return false
+            }
+        case 22:
+            if HoeV >= ChI{
+                HoeV -= ChI
+                userDefaults.set(HoeV, forKey: "HoeV")
+                return true
+            } else {
+                return false
+            }
+        case 23:
+            if ScaleV >= ChI{
+                ScaleV -= ChI
+                userDefaults.set(ScaleV, forKey: "ScaleV")
+                return true
+            } else {
+                return false
+            }
+        case 24:
+            if SwordV >= ChI{
+                SwordV -= ChI
+                userDefaults.set(SwordV, forKey: "SwordV")
+                return true
+            } else {
+                return false
+            }
+        case 25:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 26:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 27:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 28:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 29:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 30:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 31:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        case 32:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        default:
+            if clickhereforCandVEZ >= ChI{
+                clickhereforCandVEZ -= ChI
+                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+                return true
+            } else {
+                return false
+            }
+        }
     }
     
     
