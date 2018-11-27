@@ -2994,7 +2994,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         TownCoin.text = "\(Coins)"
         CastleCoin.text = "\(Coins)"
     }
-    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"] | 33 total
+    
     func SellCH() -> Bool{
         switch SRow {
         case 0:
@@ -3055,8 +3055,8 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             }
         case 7:
             if IronV >= ChI{
-                clickhereforCandVEZ -= IronV
-                userDefaults.set(clickhereforCandVEZ, forKey: "IronV")
+                IronV -= ChI
+                userDefaults.set(IronV, forKey: "IronV")
                 return true
             } else {
                 return false
@@ -3198,73 +3198,57 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
                 return false
             }
         case 25:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if BowV >= ChI{
+                BowV -= ChI
+                userDefaults.set(BowV, forKey: "BowV")
                 return true
             } else {
                 return false
             }
         case 26:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if ArrowV >= ChI{
+                ArrowV -= ChI
+                userDefaults.set(ArrowV, forKey: "ArrowV")
                 return true
             } else {
                 return false
             }
         case 27:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if BowNArrowV >= ChI{
+                BowNArrowV -= ChI
+                userDefaults.set(BowNArrowV, forKey: "BowNArrowV")
                 return true
             } else {
                 return false
             }
         case 28:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if FenceV >= ChI{
+                FenceV -= ChI
+                userDefaults.set(FenceV, forKey: "FenceV")
                 return true
             } else {
                 return false
             }
         case 29:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if CampV >= ChI{
+                CampV -= ChI
+                userDefaults.set(CampV, forKey: "CampV")
                 return true
             } else {
                 return false
             }
         case 30:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
-                return true
-            } else {
-                return false
-            }
-        case 31:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
-                return true
-            } else {
-                return false
-            }
-        case 32:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if BarracksV >= ChI{
+                BarracksV -= ChI
+                userDefaults.set(BarracksV, forKey: "BarracksV")
                 return true
             } else {
                 return false
             }
         default:
-            if clickhereforCandVEZ >= ChI{
-                clickhereforCandVEZ -= ChI
-                userDefaults.set(clickhereforCandVEZ, forKey: "clickhereforCandVEZ")
+            if ArcharyRangeV >= ChI{
+                ArcharyRangeV -= ChI
+                userDefaults.set(ArcharyRangeV, forKey: "ArcharyRangeV")
                 return true
             } else {
                 return false
@@ -3401,6 +3385,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     
+    @IBAction func SellISC(_ sender: Any) {
+        SellIT.text = "\(Int(SellIS.value))"
+        SellISM = 20 * Int(SellIS.value)
+        SellCT.text = "\(SellISM)"
+        SellCS.value = SellIS.value
+    }
     
     
     @IBAction func IronOreISC(_ sender: Any) {
@@ -3482,6 +3472,12 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     
+    @IBAction func SellCSC(_ sender: Any) {
+        SellIT.text = "\(Int(SellCS.value))"
+        SellISM = 20 * Int(SellCS.value)
+        SellCT.text = "\(SellISM)"
+        SellIS.value = SellCS.value
+    }
     
     @IBAction func IronOreCSC(_ sender: Any) {
         IronOreIT.text = "\(Int(IronOreCS.value))"

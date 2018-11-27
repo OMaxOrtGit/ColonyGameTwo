@@ -4934,8 +4934,6 @@
                                                                 <state key="normal" image="Glass"/>
                                                                 <connections>
                                                                     <action selector="ArcharyRangeC:" destination="Ogk-mK-PPd" eventType="touchUpInside" id="10T-MB-iQC"/>
-                                                                    <action selector="CarverC:" destination="2eG-nb-gpY" eventType="touchUpInside" id="rdh-bz-V7S"/>
-                                                                    <action selector="PlankC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bOw-gw-iC1"/>
                                                                 </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Gc9-vi-59u">
@@ -5379,6 +5377,9 @@
                                                                                 </textField>
                                                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="luw-xZ-I1X">
                                                                                     <rect key="frame" x="15.5" y="29" width="94" height="29"/>
+                                                                                    <connections>
+                                                                                        <action selector="SellISC:" destination="ieY-S1-muD" eventType="valueChanged" id="N7h-Xm-Jm7"/>
+                                                                                    </connections>
                                                                                 </stepper>
                                                                             </subviews>
                                                                             <constraints>
@@ -5431,6 +5432,9 @@
                                                                                 </textField>
                                                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="TFe-1q-1Vp">
                                                                                     <rect key="frame" x="15.5" y="29" width="94" height="29"/>
+                                                                                    <connections>
+                                                                                        <action selector="SellCSC:" destination="ieY-S1-muD" eventType="valueChanged" id="ozt-yW-2Lg"/>
+                                                                                    </connections>
                                                                                 </stepper>
                                                                             </subviews>
                                                                             <constraints>
