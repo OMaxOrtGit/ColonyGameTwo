@@ -2361,7 +2361,6 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     var prices = [10, 8, 16, 3, 16, 20, 18     , 35, 10, 25, 65, 3500, 5, 750, 775,  800, 250, 1000, 550, 15, 175, 200, 150, 220,     225, 90, 140, 1500, 550, 36000, 72500, 72500]
     var ChS = "Log"
     var ChI = 10
-    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         ChS = PVData[row]
@@ -2564,10 +2563,10 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             if Int(SellIT.text!)! > 100000000000 {
                 SellIT.deleteBackward()
             }
-            SellISM = Int(Double(SellCT.text!)! / 200)
+            SellISM = Int(Double(SellCT.text!)! / Double(ChI))
             SellIS.value = Double(SellISM)
             SellCS.value = Double(SellISM)
-            SellISM = Int(SellCS.value) * 200
+            SellISM = Int(SellCS.value) * ChI
             SellCT.text = "\(SellISM)"
             SellIT.text = "\(Int(SellIS.value))"
         }
@@ -2758,6 +2757,26 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             CastleISM = Int(CastleCS.value) * 275000
             CastleCT.text = "\(CastleISM)"
             CastleIT.text = "\(Int(CastleIS.value))"
+        }
+    }
+    
+    
+    
+    @IBAction func SellCTE(_ sender: Any) {
+        if SellCT.text == ""{
+            SellIT.text = ""
+        }
+        SellII = Double(SellCT.text!)! / Double(ChI)
+        if SellIT.text != "" && floor(SellII) == SellII{
+            if Int(SellIT.text!)! > 100000000000 {
+                SellIT.deleteBackward()
+            }
+            SellISM = Int(Double(SellCT.text!)! / Double(ChI))
+            SellIS.value = Double(SellISM)
+            SellCS.value = Double(SellISM)
+            SellISM = Int(SellCS.value) * Int(ChI)
+            SellCT.text = "\(SellISM)"
+            SellIT.text = "\(Int(SellIS.value))"
         }
     }
     
@@ -2960,10 +2979,33 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             CastleIT.text = "\(Int(CastleIS.value))"
         }
     }
+    func CoinR() {
+        SellCoin.text = "\(Coins)"
+        SellCoin.text = "\(Coins)"
+        FireWoodCoin.text = "\(Coins)"
+        FrameCoin.text = "\(Coins)"
+        WallCoin.text = "\(Coins)"
+        SoldierCoin.text = "\(Coins)"
+        HouseCoin.text = "\(Coins)"
+        RoadCoin.text = "\(Coins)"
+        SwordCoin.text = "\(Coins)"
+        BowNArrowCoin.text = "\(Coins)"
+        TownCoin.text = "\(Coins)"
+        CastleCoin.text = "\(Coins)"
+    }
+    //PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
+    func SellCH() -> Bool{
+        
+        return true
+    }
     
     
-    
-    
+    @IBAction func SellBC(_ sender: Any) {
+        if SellCH() == true {
+            Coins += ChI * Int(SellIS.value)
+            CoinR()
+        }
+    }
     
     
     @IBAction func IronOreBC(_ sender: Any) {
@@ -2972,18 +3014,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(IronOreV, forKey: "IronOreV")
             Coins -= 20 * Int(IronOreIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -2993,18 +3024,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FireWoodV, forKey: "FireWoodV")
             Coins -= 20 * Int(FireWoodCS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3014,18 +3034,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FrameV, forKey: "FrameV")
             Coins -= 3750 * Int(FrameIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3035,18 +3044,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(WallV, forKey: "WallV")
             Coins -= 1000 * Int(WallCS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3056,18 +3054,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(FenceV, forKey: "FenceV")
             Coins -= 200 * Int(SoldierCS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3079,18 +3066,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
             Coins -= 10000 * Int(HouseIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3100,18 +3076,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(RoadV, forKey: "RoadV")
             Coins -= 150 * Int(RoadIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3121,18 +3086,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(SwordV, forKey: "SwordV")
             Coins -= 200 * Int(SwordIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3142,18 +3096,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(BowNArrowV, forKey: "BowNArrowV")
             Coins -= 1000 * Int(BowNArrowIS.value)
             userDefaults.set(Coins, forKey: "Coins")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3165,18 +3108,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(Coins, forKey: "Coins")
             UnEmployedV += 60 * Int(HouseIS.value)
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     
@@ -3188,18 +3120,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             userDefaults.set(Coins, forKey: "Coins")
             UnEmployedV += 900 * Int(HouseIS.value)
             userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
-            SellCoin.text = "\(Coins)"
-            IronOreCoin.text = "\(Coins)"
-            FireWoodCoin.text = "\(Coins)"
-            FrameCoin.text = "\(Coins)"
-            WallCoin.text = "\(Coins)"
-            SoldierCoin.text = "\(Coins)"
-            HouseCoin.text = "\(Coins)"
-            RoadCoin.text = "\(Coins)"
-            SwordCoin.text = "\(Coins)"
-            BowNArrowCoin.text = "\(Coins)"
-            TownCoin.text = "\(Coins)"
-            CastleCoin.text = "\(Coins)"
+            CoinR()
         }
     }
     

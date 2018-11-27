@@ -5401,7 +5401,7 @@
                                                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                                     <state key="normal" title="Sell"/>
                                                                     <connections>
-                                                                        <action selector="IronOreBC:" destination="ieY-S1-muD" eventType="touchUpInside" id="ePk-Te-uFs"/>
+                                                                        <action selector="SellBC:" destination="ieY-S1-muD" eventType="touchUpInside" id="VRs-BB-68D"/>
                                                                     </connections>
                                                                 </button>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HjU-Oa-wGa">
@@ -5427,8 +5427,8 @@
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                                                     <connections>
-                                                                                        <action selector="IronOreCTE:" destination="ieY-S1-muD" eventType="editingChanged" id="YCl-MT-edr"/>
                                                                                         <action selector="SellCTC:" destination="ieY-S1-muD" eventType="editingDidEnd" id="iAF-yw-BbI"/>
+                                                                                        <action selector="SellCTE:" destination="ieY-S1-muD" eventType="editingChanged" id="bXG-Wx-Tq6"/>
                                                                                     </connections>
                                                                                 </textField>
                                                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="TFe-1q-1Vp">
