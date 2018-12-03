@@ -5372,18 +5372,24 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="179.5"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PvM-9Z-J2y">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="121.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="125" height="92.5"/>
                                                                             <subviews>
                                                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhy-ML-DZ1">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="121.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="92.5"/>
                                                                                 </pickerView>
                                                                             </subviews>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MhB-wB-SGm">
-                                                                            <rect key="frame" x="0.0" y="121.5" width="125" height="58"/>
+                                                                            <rect key="frame" x="0.0" y="92.5" width="125" height="87"/>
                                                                             <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-Zc-kZt">
+                                                                                    <rect key="frame" x="41.5" y="0.0" width="42" height="29"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <nil key="textColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
                                                                                 <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKH-mG-i08">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
+                                                                                    <rect key="frame" x="0.0" y="29" width="125" height="29"/>
                                                                                     <nil key="textColor"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -5392,16 +5398,16 @@
                                                                                     </connections>
                                                                                 </textField>
                                                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="9.2233720368547758e+18" translatesAutoresizingMaskIntoConstraints="NO" id="luw-xZ-I1X">
-                                                                                    <rect key="frame" x="15.5" y="29" width="94" height="29"/>
+                                                                                    <rect key="frame" x="15.5" y="58" width="94" height="29"/>
                                                                                     <connections>
                                                                                         <action selector="SellISC:" destination="ieY-S1-muD" eventType="valueChanged" id="N7h-Xm-Jm7"/>
                                                                                     </connections>
                                                                                 </stepper>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="58" id="LV8-mf-BqC"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="HKH-mG-i08" secondAttribute="trailing" id="M8w-55-Hiq"/>
                                                                                 <constraint firstItem="HKH-mG-i08" firstAttribute="leading" secondItem="MhB-wB-SGm" secondAttribute="leading" id="ftD-jO-nM5"/>
+                                                                                <constraint firstAttribute="height" constant="87" id="i8m-OQ-Wsp"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
@@ -6682,6 +6688,7 @@
                         <outlet property="SellCoin" destination="qW4-5I-V5h" id="4t9-r1-QxY"/>
                         <outlet property="SellIS" destination="luw-xZ-I1X" id="1NQ-Hx-PbV"/>
                         <outlet property="SellIT" destination="HKH-mG-i08" id="o4G-fh-4pa"/>
+                        <outlet property="SellThingLabel" destination="QSQ-Zc-kZt" id="2Zj-KK-utg"/>
                         <outlet property="SoldierCS" destination="fJs-tx-yR2" id="iCh-cs-dF0"/>
                         <outlet property="SoldierCT" destination="q8z-e2-sAL" id="lM5-gQ-St7"/>
                         <outlet property="SoldierCoin" destination="Ocj-mQ-hyL" id="kj2-2H-BEj"/>
@@ -6974,12 +6981,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="lnf-pD-RKU"/>
         <segue reference="cmN-IE-RU3"/>
-        <segue reference="dRJ-ex-rfm"/>
+        <segue reference="PgS-FE-9jO"/>
         <segue reference="8wE-ki-H39"/>
         <segue reference="kwb-nw-0Ct"/>
         <segue reference="FmU-dU-HgE"/>
-        <segue reference="obC-0n-cRJ"/>
-        <segue reference="vrP-MI-G8L"/>
+        <segue reference="NBZ-eI-IcN"/>
+        <segue reference="Kic-aI-51E"/>
         <segue reference="WDO-qi-mv7"/>
     </inferredMetricsTieBreakers>
 </document>

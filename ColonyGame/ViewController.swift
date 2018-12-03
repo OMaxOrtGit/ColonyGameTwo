@@ -2293,6 +2293,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     var PVData: [String] = [String]()
     
     
+    @IBOutlet weak var SellThingLabel: UILabel!
     
     @IBOutlet weak var SellIS: UIStepper!
     @IBOutlet weak var IronOreIS: UIStepper!
@@ -2767,8 +2768,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func SellCTE(_ sender: Any) {
         if SellCT.text == ""{
             SellIT.text = ""
+        } else {
+            SellII = Double(SellCT.text!)! / Double(ChI)
         }
-        SellII = Double(SellCT.text!)! / Double(ChI)
         if SellIT.text != "" && floor(SellII) == SellII{
             if Int(SellIT.text!)! > 100000000000 {
                 SellIT.deleteBackward()
@@ -2786,8 +2788,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func IronOreCTE(_ sender: Any) {
         if IronOreCT.text == ""{
             IronOreIT.text = ""
+        } else {
+            IronOreII = Double(IronOreCT.text!)! / 20
         }
-        IronOreII = Double(IronOreCT.text!)! / 20
         if IronOreIT.text != "" && floor(IronOreII) == IronOreII{
             if Int(IronOreIT.text!)! > 100000000000 {
                 IronOreIT.deleteBackward()
@@ -2804,8 +2807,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func FireWoodCTE(_ sender: Any) {
         if FireWoodCT.text == ""{
             FireWoodIT.text = ""
+        } else {
+            FireWoodII = Double(FireWoodCT.text!)! / 20
         }
-        FireWoodII = Double(FireWoodCT.text!)! / 20
         if FireWoodIT.text != "" && floor(FireWoodII) == FireWoodII{
             if Int(FireWoodIT.text!)! > 100000000000 {
                 FireWoodIT.deleteBackward()
@@ -2822,8 +2826,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func FrameCTE(_ sender: Any) {
         if FrameCT.text == ""{
             FrameIT.text = ""
-        }
+        } else {
         FrameII = Double(FrameCT.text!)! / 3750
+        }
         if FrameIT.text != "" && floor(FrameII) == FrameII{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
@@ -2840,8 +2845,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func WallCTE(_ sender: Any) {
         if WallCT.text == ""{
             WallIT.text = ""
+        } else {
+            WallII = Double(WallCT.text!)! / 800
         }
-        WallII = Double(WallCT.text!)! / 800
         if WallIT.text != "" && floor(WallII) == WallII{
             if Int(WallIT.text!)! > 100000000000 {
                 WallIT.deleteBackward()
@@ -2858,8 +2864,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func FenceCTE(_ sender: Any) {
         if FrameCT.text == ""{
             FrameIT.text = ""
+        } else {
+            FrameII = Double(FrameCT.text!)! / 3750
         }
-        FrameII = Double(FrameCT.text!)! / 3750
         if FrameIT.text != "" && floor(FrameII) == FrameII{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
@@ -2877,8 +2884,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func HouseCTE(_ sender: Any) {
         if HouseCT.text == ""{
             HouseIT.text = ""
+        } else {
+            HouseII = Double(HouseCT.text!)! / 10000
         }
-        HouseII = Double(HouseCT.text!)! / 10000
         if HouseIT.text != "" && floor(HouseII) == HouseII{
             if Int(HouseIT.text!)! > 100000000000 {
                 HouseIT.deleteBackward()
@@ -2895,8 +2903,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func RoadCTE(_ sender: Any) {
         if RoadCT.text == ""{
             RoadIT.text = ""
+        } else {
+            RoadII = Double(RoadCT.text!)! / 150
         }
-        RoadII = Double(RoadCT.text!)! / 150
         if RoadIT.text != "" && floor(RoadII) == RoadII{
             if Int(RoadIT.text!)! > 100000000000 {
                 RoadIT.deleteBackward()
@@ -2913,8 +2922,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func SwordCTE(_ sender: Any) {
         if SwordCT.text == ""{
             SwordIT.text = ""
+        } else {
+            SwordII = Double(SwordCT.text!)! / 200
         }
-        SwordII = Double(SwordCT.text!)! / 200
         if SwordIT.text != "" && floor(SwordII) == SwordII{
             if Int(SwordIT.text!)! > 100000000000 {
                 SwordIT.deleteBackward()
@@ -2931,8 +2941,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func BowNArrowCTE(_ sender: Any) {
         if BowNArrowCT.text == ""{
             BowNArrowIT.text = ""
+        } else {
+            BowNArrowII = Double(BowNArrowCT.text!)! / 1000
         }
-        BowNArrowII = Double(BowNArrowCT.text!)! / 1000
         if BowNArrowIT.text != "" && floor(BowNArrowII) == BowNArrowII{
             if Int(BowNArrowIT.text!)! > 100000000000 {
                 BowNArrowIT.deleteBackward()
@@ -2949,8 +2960,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func TownCTE(_ sender: Any) {
         if TownCT.text == ""{
             TownIT.text = ""
+        } else {
+            TownII = Double(TownCT.text!)! / 275000
         }
-        TownII = Double(TownCT.text!)! / 275000
         if TownIT.text != "" && floor(TownII) == TownII{
             if Int(TownIT.text!)! > 100000000000 {
                 TownIT.deleteBackward()
@@ -2967,8 +2979,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     @IBAction func CastleCTE(_ sender: Any) {
         if CastleCT.text == ""{
             CastleIT.text = ""
+        } else {
+            CastleII = Double(CastleCT.text!)! / 600000
         }
-        CastleII = Double(CastleCT.text!)! / 600000
         if CastleIT.text != "" && floor(CastleII) == CastleII{
             if Int(CastleIT.text!)! > 100000000000 {
                 CastleIT.deleteBackward()
@@ -2983,7 +2996,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     func CoinR() {
         SellCoin.text = "\(Coins)"
-        SellCoin.text = "\(Coins)"
+        IronOreCoin.text = "\(Coins)"
         FireWoodCoin.text = "\(Coins)"
         FrameCoin.text = "\(Coins)"
         WallCoin.text = "\(Coins)"
@@ -2999,256 +3012,256 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     func SellCH() -> Bool{
         switch SRow {
         case 0:
-            if LogV >= ChI{
-                LogV -= ChI
+            if LogV >=  Int(SellIS.value){
+                LogV -=  Int(SellIS.value)
                 userDefaults.set(LogV, forKey: "LogV")
                 return true
             } else {
                 return false
             }
         case 1:
-            if RockV >= ChI{
-                RockV -= ChI
+            if RockV >=  Int(SellIS.value){
+                RockV -=  Int(SellIS.value)
                 userDefaults.set(RockV, forKey: "RockV")
                 return true
             } else {
                 return false
             }
         case 2:
-            if IronOreV >= ChI{
-                IronOreV -= ChI
+            if IronOreV >=  Int(SellIS.value){
+                IronOreV -=  Int(SellIS.value)
                 userDefaults.set(IronOreV, forKey: "IronOreV")
                 return true
             } else {
                 return false
             }
         case 3:
-            if ScrapWoodV >= ChI{
-                ScrapWoodV -= ChI
+            if ScrapWoodV >=  Int(SellIS.value){
+                ScrapWoodV -=  Int(SellIS.value)
                 userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
                 return true
             } else {
                 return false
             }
         case 4:
-            if FireWoodV >= ChI{
-                FireWoodV -= ChI
+            if FireWoodV >=  Int(SellIS.value){
+                FireWoodV -=  Int(SellIS.value)
                 userDefaults.set(FireWoodV, forKey: "FireWoodV")
                 return true
             } else {
                 return false
             }
         case 5:
-            if StoneV >= ChI{
-                StoneV -= ChI
+            if StoneV >=  Int(SellIS.value){
+                StoneV -=  Int(SellIS.value)
                 userDefaults.set(StoneV, forKey: "StoneV")
                 return true
             } else {
                 return false
             }
         case 6:
-            if PlankV >= ChI{
-                PlankV -= ChI
+            if PlankV >=  Int(SellIS.value){
+                PlankV -=  Int(SellIS.value)
                 userDefaults.set(PlankV, forKey: "PlankV")
                 return true
             } else {
                 return false
             }
         case 7:
-            if IronV >= ChI{
-                IronV -= ChI
+            if IronV >=  Int(SellIS.value){
+                IronV -=  Int(SellIS.value)
                 userDefaults.set(IronV, forKey: "IronV")
                 return true
             } else {
                 return false
             }
         case 8:
-            if NailV >= ChI{
-                NailV -= ChI
+            if NailV >=  Int(SellIS.value){
+                NailV -=  Int(SellIS.value)
                 userDefaults.set(NailV, forKey: "NailV")
                 return true
             } else {
                 return false
             }
         case 9:
-            if IronPartsV >= ChI{
-                IronPartsV -= ChI
+            if IronPartsV >=  Int(SellIS.value){
+                IronPartsV -=  Int(SellIS.value)
                 userDefaults.set(IronPartsV, forKey: "IronPartsV")
                 return true
             } else {
                 return false
             }
         case 10:
-            if BeamV >= ChI{
-                BeamV -= ChI
+            if BeamV >=  Int(SellIS.value){
+                BeamV -=  Int(SellIS.value)
                 userDefaults.set(BeamV, forKey: "BeamV")
                 return true
             } else {
                 return false
             }
         case 11:
-            if FrameV >= ChI{
-                FrameV -= ChI
+            if FrameV >=  Int(SellIS.value){
+                FrameV -=  Int(SellIS.value)
                 userDefaults.set(FrameV, forKey: "FrameV")
                 return true
             } else {
                 return false
             }
         case 12:
-            if ShingleV >= ChI{
-                ShingleV -= ChI
+            if ShingleV >=  Int(SellIS.value){
+                ShingleV -=  Int(SellIS.value)
                 userDefaults.set(ShingleV, forKey: "ShingleV")
                 return true
             } else {
                 return false
             }
         case 13:
-            if RoofV >= ChI{
-                RoofV -= ChI
+            if RoofV >=  Int(SellIS.value){
+                RoofV -=  Int(SellIS.value)
                 userDefaults.set(RoofV, forKey: "RoofV")
                 return true
             } else {
                 return false
             }
         case 14:
-            if WallV >= ChI{
-                WallV -= ChI
+            if WallV >=  Int(SellIS.value){
+                WallV -=  Int(SellIS.value)
                 userDefaults.set(WallV, forKey: "WallV")
                 return true
             } else {
                 return false
             }
         case 15:
-            if DoorV >= ChI{
-                DoorV -= ChI
+            if DoorV >=  Int(SellIS.value){
+                DoorV -=  Int(SellIS.value)
                 userDefaults.set(DoorV, forKey: "DoorV")
                 return true
             } else {
                 return false
             }
         case 16:
-            if GrinderV >= ChI{
-                GrinderV -= ChI
+            if GrinderV >=  Int(SellIS.value){
+                GrinderV -=  Int(SellIS.value)
                 userDefaults.set(GrinderV, forKey: "GrinderV")
                 return true
             } else {
                 return false
             }
         case 17:
-            if FurnaceV >= ChI{
-                FurnaceV -= ChI
+            if FurnaceV >=  Int(SellIS.value){
+                FurnaceV -=  Int(SellIS.value)
                 userDefaults.set(FurnaceV, forKey: "FurnaceV")
                 return true
             } else {
                 return false
             }
         case 18:
-            if AnvilV >= ChI{
-                AnvilV -= ChI
+            if AnvilV >=  Int(SellIS.value){
+                AnvilV -=  Int(SellIS.value)
                 userDefaults.set(AnvilV, forKey: "AnvilV")
                 return true
             } else {
                 return false
             }
         case 19:
-            if StickV >= ChI{
-                StickV -= ChI
+            if StickV >=  Int(SellIS.value){
+                StickV -=  Int(SellIS.value)
                 userDefaults.set(StickV, forKey: "StickV")
                 return true
             } else {
                 return false
             }
         case 20:
-            if AxeV >= ChI{
-                AxeV -= ChI
+            if AxeV >=  Int(SellIS.value){
+                AxeV -=  Int(SellIS.value)
                 userDefaults.set(AxeV, forKey: "AxeV")
                 return true
             } else {
                 return false
             }
         case 21:
-            if PickV >= ChI{
-                PickV -= ChI
+            if PickV >=  Int(SellIS.value){
+                PickV -=  Int(SellIS.value)
                 userDefaults.set(PickV, forKey: "PickV")
                 return true
             } else {
                 return false
             }
         case 22:
-            if HoeV >= ChI{
-                HoeV -= ChI
+            if HoeV >=  Int(SellIS.value){
+                HoeV -=  Int(SellIS.value)
                 userDefaults.set(HoeV, forKey: "HoeV")
                 return true
             } else {
                 return false
             }
         case 23:
-            if ScaleV >= ChI{
-                ScaleV -= ChI
+            if ScaleV >=  Int(SellIS.value){
+                ScaleV -=  Int(SellIS.value)
                 userDefaults.set(ScaleV, forKey: "ScaleV")
                 return true
             } else {
                 return false
             }
         case 24:
-            if SwordV >= ChI{
-                SwordV -= ChI
+            if SwordV >=  Int(SellIS.value){
+                SwordV -=  Int(SellIS.value)
                 userDefaults.set(SwordV, forKey: "SwordV")
                 return true
             } else {
                 return false
             }
         case 25:
-            if BowV >= ChI{
-                BowV -= ChI
+            if BowV >=  Int(SellIS.value){
+                BowV -=  Int(SellIS.value)
                 userDefaults.set(BowV, forKey: "BowV")
                 return true
             } else {
                 return false
             }
         case 26:
-            if ArrowV >= ChI{
-                ArrowV -= ChI
+            if ArrowV >=  Int(SellIS.value){
+                ArrowV -=  Int(SellIS.value)
                 userDefaults.set(ArrowV, forKey: "ArrowV")
                 return true
             } else {
                 return false
             }
         case 27:
-            if BowNArrowV >= ChI{
-                BowNArrowV -= ChI
+            if BowNArrowV >=  Int(SellIS.value){
+                BowNArrowV -=  Int(SellIS.value)
                 userDefaults.set(BowNArrowV, forKey: "BowNArrowV")
                 return true
             } else {
                 return false
             }
         case 28:
-            if FenceV >= ChI{
-                FenceV -= ChI
+            if FenceV >=  Int(SellIS.value){
+                FenceV -=  Int(SellIS.value)
                 userDefaults.set(FenceV, forKey: "FenceV")
                 return true
             } else {
                 return false
             }
         case 29:
-            if CampV >= ChI{
-                CampV -= ChI
+            if CampV >=  Int(SellIS.value){
+                CampV -=  Int(SellIS.value)
                 userDefaults.set(CampV, forKey: "CampV")
                 return true
             } else {
                 return false
             }
         case 30:
-            if BarracksV >= ChI{
-                BarracksV -= ChI
+            if BarracksV >=  Int(SellIS.value){
+                BarracksV -=  Int(SellIS.value)
                 userDefaults.set(BarracksV, forKey: "BarracksV")
                 return true
             } else {
                 return false
             }
         default:
-            if ArcharyRangeV >= ChI{
-                ArcharyRangeV -= ChI
+            if ArcharyRangeV >=  Int(SellIS.value){
+                ArcharyRangeV -=  Int(SellIS.value)
                 userDefaults.set(ArcharyRangeV, forKey: "ArcharyRangeV")
                 return true
             } else {
@@ -3259,8 +3272,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     
     @IBAction func SellBC(_ sender: Any) {
+        print(Int(SellIS.value))
         if SellCH() == true {
-            Coins += ChI * Int(SellIS.value)
+            Coins +=  ChI * Int(SellIS.value)
             CoinR()
         }
     }
@@ -3388,7 +3402,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SellISC(_ sender: Any) {
         SellIT.text = "\(Int(SellIS.value))"
-        SellISM = 20 * Int(SellIS.value)
+        SellISM = ChI * Int(SellIS.value)
         SellCT.text = "\(SellISM)"
         SellCS.value = SellIS.value
     }
@@ -3626,6 +3640,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         TownCT.text = "\(Int(TownISM))"
         CastleCT.text = "\(Int(CastleISM))"
         
+        SellCoin.text = "\(Coins)"
         IronOreCoin.text = "\(Coins)"
         FireWoodCoin.text = "\(Coins)"
         FrameCoin.text = "\(Coins)"
