@@ -99,7 +99,7 @@ var BowV = 0
 var ArrowV = 0
 var BowNArrowV = 0
 
-var Coins = 10000000
+var Coins = 0
 
 var SellISM = 0
 var IronOreISM = 20
@@ -249,11 +249,6 @@ class StartUp: UITableViewController {
         SwordManV = userDefaults.integer(forKey: "SwordManV")
         ArcherV = userDefaults.integer(forKey: "ArcherV")
         LandV = userDefaults.integer(forKey: "LandV")
-        
-        UnEmployedV = 1
-        userDefaults.set(UnEmployedV, forKey: "UnEmployedV")
-        PickV = 1
-        userDefaults.set(PickV, forKey: "PickV")
         
         
         
@@ -2771,10 +2766,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             SellII = Double(SellCT.text!)! / Double(ChI)
         }
-        if SellIT.text != "" && floor(SellII) == SellII{
-            if Int(SellIT.text!)! > 100000000000 {
-                SellIT.deleteBackward()
-            }
+        if floor(SellII) == SellII && Int(SellCT.text!) != nil{
             SellISM = Int(Double(SellCT.text!)! / Double(ChI))
             SellIS.value = Double(SellISM)
             SellCS.value = Double(SellISM)
@@ -2791,10 +2783,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             IronOreII = Double(IronOreCT.text!)! / 20
         }
-        if IronOreIT.text != "" && floor(IronOreII) == IronOreII{
-            if Int(IronOreIT.text!)! > 100000000000 {
-                IronOreIT.deleteBackward()
-            }
+        if floor(IronOreII) == IronOreII && Int(IronOreCT.text!) != nil{
             IronOreISM = Int(Double(IronOreCT.text!)! / 20)
             IronOreIS.value = Double(IronOreISM)
             IronOreCS.value = Double(IronOreISM)
@@ -2810,10 +2799,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             FireWoodII = Double(FireWoodCT.text!)! / 20
         }
-        if FireWoodIT.text != "" && floor(FireWoodII) == FireWoodII{
-            if Int(FireWoodIT.text!)! > 100000000000 {
-                FireWoodIT.deleteBackward()
-            }
+        if floor(FireWoodII) == FireWoodII && Int(FireWoodCT.text!) != nil{
             FireWoodISM = Int(Double(FireWoodCT.text!)! / 20)
             FireWoodIS.value = Double(FireWoodISM)
             FireWoodCS.value = Double(FireWoodISM)
@@ -2829,7 +2815,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
         FrameII = Double(FrameCT.text!)! / 3750
         }
-        if FrameIT.text != "" && floor(FrameII) == FrameII{
+        if floor(FrameII) == FrameII && Int(FrameCT.text!) != nil{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
@@ -2848,10 +2834,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             WallII = Double(WallCT.text!)! / 800
         }
-        if WallIT.text != "" && floor(WallII) == WallII{
-            if Int(WallIT.text!)! > 100000000000 {
-                WallIT.deleteBackward()
-            }
+        if floor(WallII) == WallII && Int(WallCT.text!) != nil{
             WallISM = Int(Double(WallCT.text!)! / 800)
             WallIS.value = Double(WallISM)
             WallCS.value = Double(WallISM)
@@ -2867,7 +2850,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             FrameII = Double(FrameCT.text!)! / 3750
         }
-        if FrameIT.text != "" && floor(FrameII) == FrameII{
+        if FrameIT.text != "" && floor(FrameII) == FrameII && Int(FrameCT.text!) != nil{
             if Int(FrameIT.text!)! > 100000000000 {
                 FrameIT.deleteBackward()
             }
@@ -2887,7 +2870,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             HouseII = Double(HouseCT.text!)! / 10000
         }
-        if HouseIT.text != "" && floor(HouseII) == HouseII{
+        if HouseIT.text != "" && floor(HouseII) == HouseII && Int(HouseCT.text!) != nil{
             if Int(HouseIT.text!)! > 100000000000 {
                 HouseIT.deleteBackward()
             }
@@ -2906,7 +2889,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             RoadII = Double(RoadCT.text!)! / 150
         }
-        if RoadIT.text != "" && floor(RoadII) == RoadII{
+        if RoadIT.text != "" && floor(RoadII) == RoadII && Int(RoadCT.text!) != nil{
             if Int(RoadIT.text!)! > 100000000000 {
                 RoadIT.deleteBackward()
             }
@@ -2925,7 +2908,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             SwordII = Double(SwordCT.text!)! / 200
         }
-        if SwordIT.text != "" && floor(SwordII) == SwordII{
+        if SwordIT.text != "" && floor(SwordII) == SwordII && Int(SwordCT.text!) != nil{
             if Int(SwordIT.text!)! > 100000000000 {
                 SwordIT.deleteBackward()
             }
@@ -2944,7 +2927,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             BowNArrowII = Double(BowNArrowCT.text!)! / 1000
         }
-        if BowNArrowIT.text != "" && floor(BowNArrowII) == BowNArrowII{
+        if BowNArrowIT.text != "" && floor(BowNArrowII) == BowNArrowII && Int(BowNArrowCT.text!) != nil{
             if Int(BowNArrowIT.text!)! > 100000000000 {
                 BowNArrowIT.deleteBackward()
             }
@@ -2963,7 +2946,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             TownII = Double(TownCT.text!)! / 275000
         }
-        if TownIT.text != "" && floor(TownII) == TownII{
+        if TownIT.text != "" && floor(TownII) == TownII && Int(TownCT.text!) != nil{
             if Int(TownIT.text!)! > 100000000000 {
                 TownIT.deleteBackward()
             }
@@ -2982,7 +2965,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         } else {
             CastleII = Double(CastleCT.text!)! / 600000
         }
-        if CastleIT.text != "" && floor(CastleII) == CastleII{
+        if CastleIT.text != "" && floor(CastleII) == CastleII && Int(CastleCT.text!) != nil{
             if Int(CastleIT.text!)! > 100000000000 {
                 CastleIT.deleteBackward()
             }
@@ -2994,6 +2977,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             CastleIT.text = "\(Int(CastleIS.value))"
         }
     }
+    
     func CoinR() {
         SellCoin.text = "\(Coins)"
         IronOreCoin.text = "\(Coins)"
@@ -3275,6 +3259,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         print(Int(SellIS.value))
         if SellCH() == true {
             Coins +=  ChI * Int(SellIS.value)
+            userDefaults.set(Coins, forKey: "Coins")
             CoinR()
         }
     }
@@ -3578,7 +3563,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         PV.dataSource = self
         
         PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
-        
+        Coins = userDefaults.integer(forKey: "Coins")
         
         IronOreIS.value = 1
         FireWoodIS.value = 1
