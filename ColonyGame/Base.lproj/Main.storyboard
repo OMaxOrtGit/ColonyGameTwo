@@ -5382,8 +5382,8 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MhB-wB-SGm">
                                                                             <rect key="frame" x="0.0" y="92.5" width="125" height="87"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-Zc-kZt">
-                                                                                    <rect key="frame" x="41.5" y="0.0" width="42" height="29"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSQ-Zc-kZt">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="29"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -5405,9 +5405,11 @@
                                                                                 </stepper>
                                                                             </subviews>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="QSQ-Zc-kZt" secondAttribute="trailing" id="4Bd-Lh-dWf"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="HKH-mG-i08" secondAttribute="trailing" id="M8w-55-Hiq"/>
                                                                                 <constraint firstItem="HKH-mG-i08" firstAttribute="leading" secondItem="MhB-wB-SGm" secondAttribute="leading" id="ftD-jO-nM5"/>
                                                                                 <constraint firstAttribute="height" constant="87" id="i8m-OQ-Wsp"/>
+                                                                                <constraint firstItem="QSQ-Zc-kZt" firstAttribute="leading" secondItem="MhB-wB-SGm" secondAttribute="leading" id="qqI-fl-wGa"/>
                                                                             </constraints>
                                                                         </stackView>
                                                                     </subviews>
@@ -6986,7 +6988,7 @@
         <segue reference="kwb-nw-0Ct"/>
         <segue reference="FmU-dU-HgE"/>
         <segue reference="NBZ-eI-IcN"/>
-        <segue reference="Kic-aI-51E"/>
+        <segue reference="7oB-gt-bqm"/>
         <segue reference="WDO-qi-mv7"/>
     </inferredMetricsTieBreakers>
 </document>

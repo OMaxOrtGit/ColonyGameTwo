@@ -1908,13 +1908,6 @@ class War: UIViewController {
     @IBOutlet weak var A8: UILabel!
     @IBOutlet weak var A9: UILabel!
     
-    func IfNegitive(num: Int) -> Int{
-        if num < 0 {
-            return (num * -1)
-        } else {
-            return num
-        }
-    }
     
     func Change() {
         
@@ -2364,7 +2357,9 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         ChS = PVData[row]
         ChI = prices[row]
         SellCT.text = "\(Int(SellIT.text!)! * ChI)"
+        sellT()
     }
+    
     
     @IBAction func SellITC(_ sender: Any) {
         if SellIT.text == ""{
@@ -3261,6 +3256,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
             Coins +=  ChI * Int(SellIS.value)
             userDefaults.set(Coins, forKey: "Coins")
             CoinR()
+            sellT()
         }
     }
     
@@ -3563,6 +3559,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         PV.dataSource = self
         
         PVData = ["Log", "Rock", "Iron Ore", "Scrap Wood", "Fire Wood", "Stone", "Plank", "Iron", "Nail", "Iron Part", "Beam", "Frame", "Shingels", "Roof", "Wall", "Door", "Grinder", "Furnace", "Anvil", "Stick", "Axe", "Pick", "Saw", "Medal", "Sword", "Bow", "Arrow", "Bow N Arrow", "Fence", "Camp", "Barracks", "Archary Range"]
+        //saw is hoe metal is scale
         Coins = userDefaults.integer(forKey: "Coins")
         
         IronOreIS.value = 1
@@ -3638,5 +3635,84 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         TownCoin.text = "\(Coins)"
         CastleCoin.text = "\(Coins)"
         
+        sellT()
+    }
+    
+    func sellT() {
+        switch SRow {
+        case 0:
+            SellThingLabel.text = "\(LogV)"
+        case 1:
+            SellThingLabel.text = "\(RockV)"
+        case 2:
+            SellThingLabel.text = "\(IronOreV)"
+        case 3:
+            SellThingLabel.text = "\(ScrapWoodV)"
+        case 4:
+            SellThingLabel.text = "\(FireWoodV)"
+        case 5:
+            SellThingLabel.text = "\(StoneV)"
+        case 6:
+            SellThingLabel.text = "\(PlankV)"
+        case 7:
+            SellThingLabel.text = "\(IronV)"
+        case 8:
+            SellThingLabel.text = "\(NailV)"
+        case 9:
+            SellThingLabel.text = "\(IronPartsV)"
+        case 10:
+            SellThingLabel.text = "\(BeamV)"
+        case 11:
+            SellThingLabel.text = "\(FrameV)"
+        case 12:
+            SellThingLabel.text = "\(ShingleV)"
+        case 13:
+            SellThingLabel.text = "\(RoofV)"
+        case 14:
+            SellThingLabel.text = "\(WallV)"
+        case 15:
+            SellThingLabel.text = "\(DoorV)"
+        case 16:
+            SellThingLabel.text = "\(GrinderV)"
+        case 17:
+            SellThingLabel.text = "\(FurnaceV)"
+        case 18:
+            SellThingLabel.text = "\(AnvilV)"
+        case 19:
+            SellThingLabel.text = "\(StickV)"
+        case 20:
+            SellThingLabel.text = "\(AxeV)"
+        case 21:
+            SellThingLabel.text = "\(PickV)"
+        case 22:
+            SellThingLabel.text = "\(HoeV)"
+        case 23:
+            SellThingLabel.text = "\(ScaleV)"
+        case 24:
+            SellThingLabel.text = "\(SwordV)"
+        case 25:
+            SellThingLabel.text = "\(BowV)"
+        case 26:
+            SellThingLabel.text = "\(ArrowV)"
+        case 27:
+            SellThingLabel.text = "\(BowNArrowV)"
+        case 28:
+            SellThingLabel.text = "\(FenceV)"
+        case 29:
+            SellThingLabel.text = "\(CampV)"
+        case 30:
+            SellThingLabel.text = "\(BarracksV)"
+        default:
+            SellThingLabel.text = "\(ArcharyRangeV)"
+        }
+    }
+    
+}
+
+func IfNegitive(num: Int) -> Int{
+    if num < 0 {
+        return (num * -1)
+    } else {
+        return num
     }
 }
