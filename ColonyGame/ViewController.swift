@@ -194,6 +194,100 @@ var ETArmy = false
 var ETBuild = false
 var ETTown = false
 
+var SEnd = false
+
+func timer() {
+    
+    Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        MinerVC = true
+        test = true
+        MinerCV += 0.1 * Double(MinerV)
+        while MinerCV >= 3.0 {
+            MinerCV -= 3.0
+            RockR = Int(arc4random_uniform(5)) + 1
+            if RockR == 2 {
+                IronOreV += 1
+                userDefaults.set(IronOreV, forKey: "IronOreV")
+            } else {
+                RockV += 1
+                userDefaults.set(RockV, forKey: "RockV")
+            }}
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        LumberJackCV += 0.1 * Double(LumberJackV)
+        while LumberJackCV >= 3.0 {
+            LumberJackCV -= 3.0
+           LogV += 1
+            userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+            print("Lumber Jack")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        CrafterCV += 0.1 * Double(CrafterV)
+        while CrafterCV >= 3.0 {
+            CrafterCV -= 3.0
+            if ScrapWoodV >= 2 && GrinderV >= 1 {
+                PlankV += 1
+                userDefaults.set(PlankV, forKey: "PlankV")
+                ScrapWoodV -= 2
+                userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+            }}
+            DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        CarverCV += 0.1 * Double(CarverV)
+        while CarverCV >= 3.0 {
+            CarverCV -= 3.0
+            if RockV >= 1 && GrinderV >= 1{
+                StoneV += 1
+                userDefaults.set(StoneV, forKey: "StoneV")
+                RockV -= 1
+                userDefaults.set(RockV, forKey: "RockV")
+            }}
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        BSICV += 0.1 * Double(BSIV)
+        while BSICV >= 3.0 {
+            BSICV -= 3.0
+            if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
+                IronV += 1
+                userDefaults.set(IronV, forKey: "IronV")
+                IronOreV -= 1
+                userDefaults.set(IronOreV, forKey: "IronOreV")
+                FireWoodV -= 1
+                userDefaults.set(FireWoodV, forKey: "FireWoodV")
+            }}
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        BSNCV += 0.1 * Double(BSNV)
+        while BSNCV >= 3.0 {
+            BSNCV -= 3.0
+            if IronV >= 1 && AnvilV >= 1{
+                NailV += 5
+                userDefaults.set(NailV, forKey: "NailV")
+                IronV -= 1
+                userDefaults.set(IronV, forKey: "IronV")
+            }}
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        BSPCV += 0.1 * Double(BSPV)
+        while BSPCV >= 3.0 {
+            BSPCV -= 3.0
+            if IronV >= 1 && AnvilV >= 1{
+                IronPartsV += 3
+                userDefaults.set(IronPartsV, forKey: "IronPartsV")
+                IronV -= 1
+                userDefaults.set(IronV, forKey: "IronV")
+            }}
+        DispatchQueue.main.asyncAfter(deadline: .now() + (0.0125)) {
+        FarmerCV += 0.1 * Double(FarmerV)
+        while FarmerCV >= 3.0 {
+            FarmerCV -= 3.0
+            if LogV >= 1{
+                ScrapWoodV += 5
+                userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
+                LogV -= 1
+                userDefaults.set(LogV, forKey: "LogV")
+                
+            }}}}}}}}}
+        }
+    }
+}
 class StartUp: UITableViewController {
     
     
@@ -260,102 +354,8 @@ class StartUp: UITableViewController {
         
         
         if MinerV >= 1 || LumberJackV >= 1 || CrafterV >= 1 || BSIV >= 1 || BSNV >= 1 || BSPV >= 1{
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
-                
-                MinerVC = true
-                test = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                    MinerCV += 0.1 * Double(MinerV)
-                    while MinerCV >= 3.0 {
-                        MinerCV -= 3.0
-                        RockR = Int(arc4random_uniform(5)) + 1
-                        if RockR == 2 {
-                            IronOreV += 1
-                            userDefaults.set(IronOreV, forKey: "IronOreV")
-                        } else {
-                            RockV += 1
-                            userDefaults.set(RockV, forKey: "RockV")
-                        }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                        LumberJackCV += 0.1 * Double(LumberJackV)
-                        while LumberJackCV >= 3.0 {
-                            LumberJackCV -= 3.0
-                            ScrapWoodV += 5
-                            userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                            CrafterCV += 0.1 * Double(CrafterV)
-                            while CrafterCV >= 3.0 {
-                                CrafterCV -= 3.0
-                                if ScrapWoodV >= 2 && GrinderV >= 1 {
-                                    PlankV += 1
-                                    userDefaults.set(PlankV, forKey: "PlankV")
-                                    ScrapWoodV -= 2
-                                    userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                                }}
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                CarverCV += 0.3 * Double(CarverV)
-                                while CarverCV >= 3.0 {
-                                    CarverCV -= 3.0
-                                    if RockV >= 1 && GrinderV >= 1{
-                                        StoneV += 1
-                                        userDefaults.set(StoneV, forKey: "StoneV")
-                                        RockV -= 1
-                                        userDefaults.set(RockV, forKey: "RockV")
-                                    }
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                    BSICV += 0.1 * Double(BSIV)
-                                    while BSICV >= 3.0 {
-                                        BSICV -= 3.0
-                                        if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
-                                            IronV += 1
-                                            userDefaults.set(IronV, forKey: "IronV")
-                                            IronOreV -= 1
-                                            userDefaults.set(IronOreV, forKey: "IronOreV")
-                                            FireWoodV -= 1
-                                            userDefaults.set(FireWoodV, forKey: "FireWoodV")
-                                        }
-                                    }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                        BSNCV += 0.1 * Double(BSNV)
-                                        while BSNCV >= 3.0 {
-                                            BSNCV -= 3.0
-                                            if IronV >= 1 && AnvilV >= 1{
-                                                NailV += 5
-                                                userDefaults.set(NailV, forKey: "NailV")
-                                                IronV -= 1
-                                                userDefaults.set(IronV, forKey: "IronV")
-                                            }
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                            BSPCV += 0.1 * Double(BSPV)
-                                            while BSPCV >= 3.0 {
-                                                BSPCV -= 3.0
-                                                if IronV >= 1 && AnvilV >= 1{
-                                                    IronPartsV += 3
-                                                    userDefaults.set(IronPartsV, forKey: "IronPartsV")
-                                                    IronV -= 1
-                                                    userDefaults.set(IronV, forKey: "IronV")
-                                                }
-                                            }
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                                FarmerCV += 0.3 * Double(FarmerV)
-                                                while FarmerCV >= 3.0 {
-                                                    FarmerCV -= 3.0
-                                                    if LogV >= 1{
-                                                        ScrapWoodV += 5
-                                                        userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                                                        LogV -= 1
-                                                        userDefaults.set(LogV, forKey: "LogV")
-                                                    }
-                                                }
-                                            }
-                                        }}}}}}}
-            }
+            timer()
         }
-        
     }
 }
 
@@ -419,7 +419,36 @@ class Building: UIViewController {
             }
         }
     }
-    
+    func ShingleR() {
+        if ShingleV < 128 {
+            self.RoofNNA.textColor = UIColor.red
+        }
+    }
+    func NailR() {
+        if NailV < 72 {
+            self.FrameNNNA.textColor = UIColor.red
+            if NailV < 40 {
+                self.DoorNNNA.textColor = UIColor.red
+                if NailV < 27 {
+                    self.WallNNNA.textColor = UIColor.red
+                }
+            }
+        }
+    }
+    func Beam() {
+        if BeamV < 36 {
+            self.FrameNNNA.textColor = UIColor.red
+        } else {
+            self.FrameNNNA.textColor = UIColor.black
+        }
+    }
+    func IronParts() {
+        if IronPartsV < 2 {
+            self.DoorNNNNA.textColor = UIColor.red
+        } else {
+            self.DoorNNNNA.textColor = UIColor.black
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
@@ -445,33 +474,12 @@ class Building: UIViewController {
         FurnaceL.text = "\(FurnaceV)"
         AnvilL.text = "\(AnvilV)"
         
-        if BeamV < 36 {
-            self.FrameNNNA.textColor = UIColor.red
-        } else {
-            self.FrameNNNA.textColor = UIColor.black
-        }
         
-        if ShingleV < 128 {
-            self.RoofNNA.textColor = UIColor.red
-        }
+        ShingleR()
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (TBuild)  in
             self.PlankR()
-            if NailV < 72 {
-                self.FrameNNNA.textColor = UIColor.red
-                if NailV < 40 {
-                    self.DoorNNNA.textColor = UIColor.red
-                    if NailV < 27 {
-                        self.WallNNNA.textColor = UIColor.red
-                    }
-                }
-            }
             self.StoneR()
-            if IronPartsV < 2 {
-                self.DoorNNNNA.textColor = UIColor.red
-            } else {
-                self.DoorNNNNA.textColor = UIColor.black
-            }
             if RockV < 10 {
                 self.GrinderNNNA.textColor = UIColor.red
             } else {
@@ -557,9 +565,7 @@ class Building: UIViewController {
             ShingleL.text = "\(ShingleV)"
             StoneV -= 1
             userDefaults.set(StoneV, forKey: "StoneV")
-            if ShingleV < 128 {
-                self.RoofNNA.textColor = UIColor.red
-            }
+            ShingleR()
             StoneR()
         }
     }
@@ -1227,113 +1233,6 @@ class People: UIViewController {
     @IBOutlet weak var BSINNA: UILabel!
     @IBOutlet weak var BSNNNA: UILabel!
     @IBOutlet weak var BSPNNA: UILabel!
-    
-    func timer() {
-        
-        if MinerV >= 1 || LumberJackV >= 1 || CrafterV >= 1 || BSIV >= 1 || BSNV >= 1 || BSPV >= 1{
-            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (MinerT) in
-                
-                MinerVC = true
-                test = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                    MinerCV += 0.1 * Double(MinerV)
-                    while MinerCV >= 3.0 {
-                        MinerCV -= 3.0
-                        RockR = Int(arc4random_uniform(5))+1
-                        if RockR == 2 {
-                            IronOreV += 1
-                            userDefaults.set(IronOreV, forKey: "IronOreV")
-                        } else {
-                            RockV += 1
-                            userDefaults.set(RockV, forKey: "RockV")
-                        }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                        LumberJackCV += 0.1 * Double(LumberJackV)
-                        while LumberJackCV >= 3.0 {
-                            LumberJackCV -= 3.0
-                            LogV += 1
-                            userDefaults.set(LogV, forKey: "LogV")
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                            CrafterCV += 0.1 * Double(CrafterV)
-                            while CrafterCV >= 3.0 {
-                                CrafterCV -= 3.0
-                                if ScrapWoodV >= 2 && GrinderV >= 1{
-                                    PlankV += 1
-                                    userDefaults.set(PlankV, forKey: "PlankV")
-                                    ScrapWoodV -= 2
-                                    userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                                }}
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                CarverCV += 0.3 * Double(CarverV)
-                                while CarverCV >= 3.0 {
-                                    CarverCV -= 3.0
-                                    if RockV >= 1 && GrinderV >= 1{
-                                        StoneV += 1
-                                        userDefaults.set(StoneV, forKey: "StoneV")
-                                        RockV -= 1
-                                        userDefaults.set(RockV, forKey: "RockV")
-                                    }
-                                }
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                    BSICV += 0.1 * Double(BSIV)
-                                    while BSICV >= 3.0 {
-                                        BSICV -= 3.0
-                                        if IronOreV >= 1 && FireWoodV >= 1 && FurnaceV >= 1{
-                                            IronV += 1
-                                            userDefaults.set(IronV, forKey: "IronV")
-                                            IronOreV -= 1
-                                            userDefaults.set(IronOreV, forKey: "IronOreV")
-                                            FireWoodV -= 1
-                                            userDefaults.set(FireWoodV, forKey: "FireWoodV")
-                                        }
-                                    }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                        BSNCV += 0.1 * Double(BSNV)
-                                        while BSNCV >= 3.0 {
-                                            BSNCV -= 3.0
-                                            if IronV >= 1 && AnvilV >= 1{
-                                                NailV += 5
-                                                userDefaults.set(NailV, forKey: "NailV")
-                                                IronV -= 1
-                                                userDefaults.set(IronV, forKey: "IronV")
-                                            }
-                                        }
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                            BSPCV += 0.1 * Double(BSPV)
-                                            while BSPCV >= 3.0 {
-                                                BSPCV -= 3.0
-                                                if IronV >= 1 && AnvilV >= 1{
-                                                    IronPartsV += 3
-                                                    userDefaults.set(IronPartsV, forKey: "IronPartsV")
-                                                    IronV -= 1
-                                                    userDefaults.set(IronV, forKey: "IronV")
-                                                }
-                                            }
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-                                                FarmerCV += 0.3 * Double(FarmerV)
-                                                while FarmerCV >= 3.0 {
-                                                    FarmerCV -= 3.0
-                                                    if LogV >= 1{
-                                                        ScrapWoodV += 5
-                                                        userDefaults.set(ScrapWoodV, forKey: "ScrapWoodV")
-                                                        LogV -= 1
-                                                        userDefaults.set(LogV, forKey: "LogV")
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
     
     
     
@@ -3590,7 +3489,7 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     @IBAction func SellCSC(_ sender: Any) {
         SellIT.text = "\(Int(SellCS.value))"
-        SellISM = 20 * Int(SellCS.value)
+        SellISM = ChI * Int(SellCS.value)
         SellCT.text = "\(SellISM)"
         SellIS.value = SellCS.value
     }
@@ -3755,7 +3654,13 @@ class Shop: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         TownCoin.text = "\(Coins)"
         CastleCoin.text = "\(Coins)"
         
-        sellT()
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (SellU) in
+            if SEnd == false {
+                self.sellT()
+            } else {
+                SellU.invalidate()
+            }
+        }
     }
     
     func sellT() {
