@@ -401,13 +401,22 @@ class Building: UIViewController {
     
     func PlankR() {
         if PlankV >= 3 {
-            self.WallNNA.textColor = UIColor.black
+            self.WallNNA.textColor = UIColor.red
             if PlankV >= 18 {
-                self.DoorNNA.textColor = UIColor.black
+                self.DoorNNA.textColor = UIColor.red
                 if PlankV >= 27 {
+                    self.BeamNNA.textColor = UIColor.red
+                } else {
                     self.BeamNNA.textColor = UIColor.black
                 }
+            } else {
+                self.BeamNNA.textColor = UIColor.black
+                self.DoorNNA.textColor = UIColor.black
             }
+        } else {
+            self.BeamNNA.textColor = UIColor.black
+            self.DoorNNA.textColor = UIColor.black
+            self.WallNNA.textColor = UIColor.black
         }
     }
     
@@ -416,12 +425,19 @@ class Building: UIViewController {
             self.FurnaceNNA.textColor = UIColor.red
             if StoneV < 1 {
                 self.ShingleNNA.textColor = UIColor.red
+            } else {
+                self.ShingleNNA.textColor = UIColor.black
             }
+        } else {
+            self.FurnaceNNA.textColor = UIColor.black
+            self.ShingleNNA.textColor = UIColor.black
         }
     }
     func ShingleR() {
         if ShingleV < 128 {
             self.RoofNNA.textColor = UIColor.red
+        } else {
+            self.RoofNNA.textColor = UIColor.black
         }
     }
     func NailR() {
@@ -431,8 +447,17 @@ class Building: UIViewController {
                 self.DoorNNNA.textColor = UIColor.red
                 if NailV < 27 {
                     self.WallNNNA.textColor = UIColor.red
+                } else {
+                    self.WallNNNA.textColor = UIColor.black
                 }
+            } else {
+                self.DoorNNNA.textColor = UIColor.black
+                self.WallNNNA.textColor = UIColor.black
             }
+        } else {
+            self.FrameNNNA.textColor = UIColor.black
+            self.DoorNNNA.textColor = UIColor.black
+            self.WallNNNA.textColor = UIColor.black
         }
     }
     func Beam() {
@@ -496,15 +521,6 @@ class Building: UIViewController {
                 self.AnvilNNA.textColor = UIColor.black
             }
             
-            if PlankV >= 3 {
-                self.WallNNA.textColor = UIColor.black
-                if PlankV >= 18 {
-                    self.DoorNNA.textColor = UIColor.black
-                    if PlankV >= 27 {
-                        self.BeamNNA.textColor = UIColor.black
-                    }
-                }
-            }
             if NailV >= 27 {
                 self.FrameNNNA.textColor = UIColor.black
                 if NailV >= 40 {
