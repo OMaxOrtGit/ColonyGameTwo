@@ -397,83 +397,11 @@ class Building: UIViewController {
     @IBOutlet weak var DoorNNNA: UILabel!
     @IBOutlet weak var GrinderNNNA: UILabel!
     
-    @IBOutlet var DoorNNNNA: UITextField!
+    @IBOutlet var DoorNNNNA: UILabel!
     
-    func PlankR() {
-        if PlankV >= 3 {
-            self.WallNNA.textColor = UIColor.red
-            if PlankV >= 18 {
-                self.DoorNNA.textColor = UIColor.red
-                if PlankV >= 27 {
-                    self.BeamNNA.textColor = UIColor.red
-                } else {
-                    self.BeamNNA.textColor = UIColor.black
-                }
-            } else {
-                self.BeamNNA.textColor = UIColor.black
-                self.DoorNNA.textColor = UIColor.black
-            }
-        } else {
-            self.BeamNNA.textColor = UIColor.black
-            self.DoorNNA.textColor = UIColor.black
-            self.WallNNA.textColor = UIColor.black
-        }
-    }
     
-    func StoneR() {
-        if StoneV < 50 {
-            self.FurnaceNNA.textColor = UIColor.red
-            if StoneV < 1 {
-                self.ShingleNNA.textColor = UIColor.red
-            } else {
-                self.ShingleNNA.textColor = UIColor.black
-            }
-        } else {
-            self.FurnaceNNA.textColor = UIColor.black
-            self.ShingleNNA.textColor = UIColor.black
-        }
-    }
-    func ShingleR() {
-        if ShingleV < 128 {
-            self.RoofNNA.textColor = UIColor.red
-        } else {
-            self.RoofNNA.textColor = UIColor.black
-        }
-    }
-    func NailR() {
-        if NailV < 72 {
-            self.FrameNNNA.textColor = UIColor.red
-            if NailV < 40 {
-                self.DoorNNNA.textColor = UIColor.red
-                if NailV < 27 {
-                    self.WallNNNA.textColor = UIColor.red
-                } else {
-                    self.WallNNNA.textColor = UIColor.black
-                }
-            } else {
-                self.DoorNNNA.textColor = UIColor.black
-                self.WallNNNA.textColor = UIColor.black
-            }
-        } else {
-            self.FrameNNNA.textColor = UIColor.black
-            self.DoorNNNA.textColor = UIColor.black
-            self.WallNNNA.textColor = UIColor.black
-        }
-    }
-    func Beam() {
-        if BeamV < 36 {
-            self.FrameNNNA.textColor = UIColor.red
-        } else {
-            self.FrameNNNA.textColor = UIColor.black
-        }
-    }
-    func IronParts() {
-        if IronPartsV < 2 {
-            self.DoorNNNNA.textColor = UIColor.red
-        } else {
-            self.DoorNNNNA.textColor = UIColor.black
-        }
-    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
@@ -485,7 +413,7 @@ class Building: UIViewController {
         WallV = userDefaults.integer(forKey: "WallV")
         DoorV = userDefaults.integer(forKey: "DoorV")
         GrinderV = userDefaults.integer(forKey: "GrinderV")
-        FurnaceV = userDefaults.integer(forKey: "FurnaceV")
+        FurnaceV = 3
         AnvilV = userDefaults.integer(forKey: "AnvilV")
         
         
@@ -500,43 +428,6 @@ class Building: UIViewController {
         AnvilL.text = "\(AnvilV)"
         
         
-        ShingleR()
-        
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { (TBuild)  in
-            self.PlankR()
-            self.StoneR()
-            if RockV < 10 {
-                self.GrinderNNNA.textColor = UIColor.red
-            } else {
-                self.GrinderNNNA.textColor = UIColor.black
-            }
-            if ScrapWoodV < 20 {
-                self.GrinderNNA.textColor = UIColor.red
-            } else {
-                self.GrinderNNA.textColor = UIColor.black
-            }
-            if IronV < 10 {
-                self.AnvilNNA.textColor = UIColor.red
-            } else {
-                self.AnvilNNA.textColor = UIColor.black
-            }
-            
-            if NailV >= 27 {
-                self.FrameNNNA.textColor = UIColor.black
-                if NailV >= 40 {
-                    self.DoorNNNA.textColor = UIColor.black
-                    if NailV >= 72 {
-                        self.WallNNNA.textColor = UIColor.black
-                    }
-                }
-            }
-            if StoneV < 1 {
-                self.FurnaceNNA.textColor = UIColor.black
-                if StoneV < 50 {
-                    self.ShingleNNA.textColor = UIColor.black
-                }
-            }
-        }
     }
     
     @IBAction func BeamC(_ sender: Any) {
@@ -546,12 +437,6 @@ class Building: UIViewController {
             BeamL.text = "\(BeamV)"
             PlankV -= 3
             userDefaults.set(PlankV, forKey: "PlankV")
-            if BeamV < 36 {
-                self.FrameNNNA.textColor = UIColor.red
-            }
-            if PlankV < 3 {
-                self.BeamNNA.textColor = UIColor.red
-            }
         }
     }
     
@@ -565,12 +450,6 @@ class Building: UIViewController {
             BeamL.text = "\(BeamV)"
             NailV -= 72
             userDefaults.set(NailV, forKey: "NailV")
-            if BeamV < 36 {
-                self.FrameNNNA.textColor = UIColor.red
-            }
-            if NailV < 72 {
-                self.FrameNNNA.textColor = UIColor.red
-            }
         }
     }
     
@@ -581,8 +460,6 @@ class Building: UIViewController {
             ShingleL.text = "\(ShingleV)"
             StoneV -= 1
             userDefaults.set(StoneV, forKey: "StoneV")
-            ShingleR()
-            StoneR()
         }
     }
     
@@ -594,9 +471,6 @@ class Building: UIViewController {
             ShingleV -= 128
             userDefaults.set(ShingleV, forKey: "ShingleV")
             ShingleL.text = "\(ShingleV)"
-            if ShingleV < 128 {
-                self.RoofNNA.textColor = UIColor.red
-            }
         }
     }
     
@@ -609,7 +483,6 @@ class Building: UIViewController {
             userDefaults.set(PlankV, forKey: "PlankV")
             NailV -= 27
             userDefaults.set(NailV, forKey: "NailV")
-            PlankR()
         }
     }
     
@@ -624,7 +497,6 @@ class Building: UIViewController {
             userDefaults.set(NailV, forKey: "NailV")
             IronPartsV -= 2
             userDefaults.set(IronPartsV, forKey: "IronPartsV")
-            PlankR()
         }
     }
     
@@ -685,8 +557,10 @@ class Building: UIViewController {
         
         FrameNNNA.text = "72 Nails"
         WallNNNA.text = "27 Nails"
-        DoorNNNA.text = "40 Nails 2 Parts"
+        DoorNNNA.text = "40 Nails"
         GrinderNNNA.text = "10 Rock"
+        
+        DoorNNNNA.text = "2 Parts"
     }
     
     
@@ -716,6 +590,8 @@ class Building: UIViewController {
         WallNNNA.text = ""
         DoorNNNA.text = ""
         GrinderNNNA.text = ""
+        
+        DoorNNNNA.text = ""
     }
     
     
